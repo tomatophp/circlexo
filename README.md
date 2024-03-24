@@ -1,22 +1,39 @@
-![Screenshot](https://github.com/tomatophp/tomato-themes-module/blob/master/art/screenshot.png)
+# CircleXO
 
-# Tomato Themes
-
-A Theme System Like Wordpress on your Tomato Admin
+Social Network To manage your profile on the web
 
 ## Installation
 
 ```bash
-composer require tomatophp/tomato-themes-module
+git clone git@github.com:tomatophp/circlexo.git
+cd circlexo
+cp .env.example .env
+```
+create new database `circlexo` and update `.env` file
+
+```dotenv
+DB_DATABASE=circlexo
+DB_USERNAME=root
+DB_PASSWORD=12345678
+```
+
+```bash
+composer install
+php artisan key:generate
+php artisan config:cache
+php artisan migrate
+```
+
+build assets
+
+```
+yarn
+yarn build
 ```
 
 ## Support
 
 you can join our discord server to get support [TomatoPHP](https://discord.gg/VZc8nBJ3ZU)
-
-## Docs
-
-you can check docs of this package on [Docs](https://docs.tomatophp.com/plugins/tomato-themes)
 
 ## Changelog
 
