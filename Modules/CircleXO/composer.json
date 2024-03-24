@@ -1,0 +1,33 @@
+{
+    "name": "tomatophp/circlexo-module",
+    "type": "laravel-module",
+    "description": "CircleXO Plugin to Have Base Helpers for CircleXO",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CircleXO\\": "",
+            "Modules\\CircleXO\\App\\": "app/",
+            "Modules\\CircleXO\\Database\\Factories\\": "database/factories/",
+            "Modules\\CircleXO\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\CircleXO\\Tests\\": "tests/"
+        }
+    }
+}

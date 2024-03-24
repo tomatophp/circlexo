@@ -84,13 +84,37 @@ class Account extends Authenticatable implements HasMedia
     protected $appends = [
         'birthday',
         'gender',
-        'more'
+        'more',
+        'avatar',
+        'cover',
+        'social',
+        'bio',
     ];
 
     public function getMoreAttribute()
     {
         $metas = $this->accountsMetas()->get()->pluck('value', 'key')->toArray();
         return $metas;
+    }
+
+    public function getSocialAttribute()
+    {
+        return $this->meta('social') ?: null;
+    }
+
+    public function getBioAttribute()
+    {
+        return $this->meta('bio') ?: null;
+    }
+
+    public function getAvatarAttribute()
+    {
+        return $this->getMedia('avatar')->first()?->getUrl() ?: null;
+    }
+
+    public function getCoverAttribute()
+    {
+        return $this->getMedia('cover')->first()?->getUrl() ?: null;
     }
 
     public function getBirthdayAttribute()
@@ -116,7 +140,7 @@ class Account extends Authenticatable implements HasMedia
      * @param string|null $value
      * @return Model|string
      */
-    public function meta(string $key, string|null $value=null): Model|string|null
+    public function meta(string $key, string|array|null $value=null): Model|array|string|null
     {
         if($value){
             return $this->accountsMetas()->updateOrCreate(['key' => $key], ['value' => $value]);
