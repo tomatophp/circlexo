@@ -40,6 +40,7 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/edit/social', [ProfileController::class, 'social'])->name('social.show');
     Route::post('/edit/meta', [ProfileController::class, 'updateMeta'])->name('meta.update');
     Route::post('/edit/media', [ProfileController::class, 'updateMedia'])->name('media.update');
+    Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 });
 
 Route::middleware(['splade'])->group(function (){

@@ -106,4 +106,10 @@ class ProfileController extends Controller
         Toast::success('Profile updated successfully')->autoDismiss(2);
         return redirect()->back();
     }
+
+    public function logout()
+    {
+        auth('accounts')->logout();
+        return redirect()->route('account.login');
+    }
 }

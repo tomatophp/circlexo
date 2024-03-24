@@ -66,6 +66,7 @@
                 <x-circle-xo-button href="{{url('qr')}}" label="QR" size="sm"/>
                 <x-circle-xo-button href="{{url('contact')}}" label="Contact" size="sm"/>
                 <x-circle-xo-button href="{{url('follow')}}" label="Follow" size="sm"/>
+                <x-circle-xo-button href="{{route('profile.logout')}}" danger method="POST" label="Logout" size="sm"/>
             </div>
         </div>
         {{ $slot }}
