@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/tomatophp/circlexo/blob/master/art/screenshot.png)
+
 # CircleXO
 
 Social Network To manage your profile on the web
