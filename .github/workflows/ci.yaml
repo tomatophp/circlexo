@@ -1,11 +1,13 @@
-name: Tomato CI/CD
+name: CircleXO CI/CD
 on:
   pull_request:
     branches:
       - master
+      - develop
   push:
     branches:
       - master
+      - develop
 jobs:
   laravel:
     name: Laravel (PHP ${{ matrix.php-versions }})
