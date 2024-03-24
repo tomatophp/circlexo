@@ -3,10 +3,6 @@ set -e
 
 echo "Deployment started ..."
 
-# Enter maintenance mode or return true
-# if already is in maintenance mode
-(php artisan down) || true
-
 # Pull the latest version of the app
 git reset --hard
 git pull origin master
@@ -27,7 +23,5 @@ yarn build
 # Run database migrations
 php8.2  artisan migrate --force
 
-# Exit maintenance mode
-php8.2  artisan up
 
 echo "Deployment finished!"
