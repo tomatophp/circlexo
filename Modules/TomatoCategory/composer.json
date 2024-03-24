@@ -1,0 +1,51 @@
+{
+    "name": "tomatophp/tomato-category-module",
+    "type": "laravel-module",
+    "description": "manage category/tags/types for any model with splade/tomato PHP",
+    "keywords": [
+        "php",
+        "laravel",
+        "cateogry",
+        "cms",
+        "types",
+        "tags",
+        "tomat-php"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "EngFadyMondy@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoCategory\\": "",
+            "Modules\\TomatoCategory\\App\\": "app/",
+            "Modules\\TomatoCategory\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoCategory\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoCategory\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/tomato-translations-module": "^1.0",
+        "tomatophp/console-helpers": "^1.1",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

@@ -16,6 +16,7 @@ use Laravel\Sanctum\HasApiTokens;
     use HasApiTokens, HasFactory, Notifiable;
     use HasTeams;
     use HasProfilePhoto;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

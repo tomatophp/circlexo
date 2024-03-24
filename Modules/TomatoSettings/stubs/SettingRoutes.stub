@@ -1,0 +1,4 @@
+Route::middleware(['web', 'splade', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/settings/{{ group }}', [{{ name }}::class, 'index'])->name('settings.{{ group }}.index');
+    Route::post('/settings/{{ group }}', [{{ name }}::class, 'store'])->name('settings.{{ group }}.store');
+});

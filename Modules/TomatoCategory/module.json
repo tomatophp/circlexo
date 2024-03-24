@@ -1,0 +1,30 @@
+{
+    "name": "TomatoCategory",
+    "alias": "tomato-category",
+    "description": {
+        "ar": "Manage category\/tags\/types for any model with splade\/tomato PHP",
+        "en": "Manage category\/tags\/types for any model with splade\/tomato PHP",
+        "gr": "Manage category\/tags\/types for any model with splade\/tomato PHP",
+        "sp": "Manage category\/tags\/types for any model with splade\/tomato PHP"
+    },
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Modules\\TomatoCategory\\App\\Providers\\TomatoCategoryServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Category",
+        "en": "Tomato Category",
+        "gr": "Tomato Category",
+        "sp": "Tomato Category"
+    },
+    "color": "#14d0ff",
+    "icon": "bx bxs-category",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-category-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-category",
+    "required": ["TomatoTranslations"]
+}

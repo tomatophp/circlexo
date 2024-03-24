@@ -1,0 +1,57 @@
+{
+    "name": "tomatophp/tomato-roles-module",
+    "type": "laravel-module",
+    "description": "ACL Roles / Permissions for Tomato Admin build for Splade",
+    "keywords": [
+        "Splade",
+        "Breeze",
+        "inertiajs",
+        "vuejs",
+        "blade",
+        "php8",
+        "laravel",
+        "ACL",
+        "roles",
+        "permissions"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "EngFadyMondy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/console-helpers": "^1.1",
+        "spatie/laravel-permission": "*",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoRoles\\": "",
+            "Modules\\TomatoRoles\\App\\": "app/",
+            "Modules\\TomatoRoles\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoRoles\\Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoRoles\\Tests\\": "tests/"
+        }
+    }
+}

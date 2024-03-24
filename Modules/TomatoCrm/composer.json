@@ -1,0 +1,56 @@
+{
+    "name": "tomatophp/tomato-crm-module",
+    "type": "laravel-module",
+    "description": "full accounts manager with API/Notifications/Contacts to manage your contacts and accounts",
+    "keywords": [
+        "php",
+        "laravel",
+        "crm",
+        "customer manager",
+        "account manager",
+        "auth builder",
+        "auth api"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoCrm\\": "",
+            "Modules\\TomatoCrm\\App\\": "app/",
+            "Modules\\TomatoCrm\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoCrm\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoCrm\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/console-helpers": "^1.1",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/tomato-roles-module": "^1.0",
+        "tomatophp/tomato-category-module": "^1.0",
+        "tomatophp/tomato-locations-module": "^1.0",
+        "tomatophp/tomato-notifications-module": "^1.0",
+        "tomatophp/tomato-translations-module": "^1.0",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0",
+        "spatie/macroable": "^2.0"
+    }
+}

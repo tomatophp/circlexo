@@ -1,0 +1,29 @@
+{
+    "name": "TomatoTranslations",
+    "alias": "tomato-translations",
+    "description": {
+        "ar": "Database Base Translations Keys with Google Translations API Integration",
+        "en": "Database Base Translations Keys with Google Translations API Integration",
+        "gr": "Database Base Translations Keys with Google Translations API Integration",
+        "sp": "Database Base Translations Keys with Google Translations API Integration"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoTranslations\\App\\Providers\\TomatoTranslationsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Translations",
+        "en": "Tomato Translations",
+        "gr": "Tomato Translations",
+        "sp": "Tomato Translations"
+    },
+    "color": "#1FBC9C",
+    "icon": "bx bx-globe",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-translations-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-translations"
+}

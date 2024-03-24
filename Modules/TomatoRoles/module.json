@@ -1,0 +1,29 @@
+{
+    "name": "TomatoRoles",
+    "alias": "tomato-roles",
+    "description": {
+        "ar": "إدارة الرتب والمستخدمين داخل النظام",
+        "en": "ACL Roles Permissions for TomatoPHP build with Splade",
+        "gr": "ACL Roles Permissions for TomatoPHP build with Splade",
+        "sp": "ACL Roles Permissions for TomatoPHP build with Splade"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoRoles\\App\\Providers\\TomatoRolesServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "إدارة الرتب",
+        "en": "Tomato Roles",
+        "gr": "Tomato Roles",
+        "sp": "Tomato Roles"
+    },
+    "color": "#E84B3C",
+    "icon": "bx bxs-lock-alt",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-roles-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-roles"
+}

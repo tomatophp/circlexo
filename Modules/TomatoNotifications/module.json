@@ -1,0 +1,30 @@
+{
+    "name": "TomatoNotifications",
+    "alias": "tomato-notifications",
+    "description": {
+        "ar": "Laravel Notifications Channel with GUI to send notifications with templates",
+        "en": "Laravel Notifications Channel with GUI to send notifications with templates",
+        "gr": "Laravel Notifications Channel with GUI to send notifications with templates",
+        "sp": "Laravel Notifications Channel with GUI to send notifications with templates"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoNotifications\\App\\Providers\\TomatoNotificationsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Notifications",
+        "en": "Tomato Notifications",
+        "gr": "Tomato Notifications",
+        "sp": "Tomato Notifications"
+    },
+    "color": "#7d7d7d",
+    "icon": "bx bxs-bell",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-notifications-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-notifications",
+    "required": ["TomatoSettings", "TomatoTranslations", "TomatoRoles"]
+}

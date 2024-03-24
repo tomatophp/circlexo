@@ -8,7 +8,12 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "tomatophp/tomato-admin": "^1.2"
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-crm-module": "^1.0",
+        "tomatophp/tomato-notifications-module": "^1.0",
+        "tomatophp/tomato-roles-module": "^1.0",
+        "tomatophp/tomato-settings-module": "^1.0",
+        "tomatophp/tomato-translations-module": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -60,7 +65,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "joshbrw/laravel-module-installer": true
         }
     },
     "minimum-stability": "stable",

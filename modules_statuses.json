@@ -1,2 +1,9 @@
 {
+    "TomatoRoles": true,
+    "TomatoTranslations": true,
+    "TomatoSettings": true,
+    "TomatoNotifications": true,
+    "TomatoLocations": true,
+    "TomatoCategory": true,
+    "TomatoCrm": true
 }

@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Spatie\LaravelSettings\Settings;
+
+class {{ name }} extends Settings
+{
+    public string ${{ group }}_name = '';
+
+    public static function group(): string
+    {
+        return '{{ group }}';
+    }
+}

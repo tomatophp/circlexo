@@ -1,0 +1,54 @@
+{
+    "name": "tomatophp/tomato-locations-module",
+    "type": "laravel-module",
+    "description": "Database seeds for Locations plugin for TomatoPHP",
+    "keywords": [
+        "php",
+        "laravel",
+        "tomatophp",
+        "splade",
+        "countires",
+        "cities",
+        "area",
+        "languages",
+        "currency"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "EngFadyMondy@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoLocations\\": "",
+            "Modules\\TomatoLocations\\App\\": "app/",
+            "Modules\\TomatoLocations\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoLocations\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoLocations\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/tomato-translations-module": "^1.0",
+        "tomatophp/tomato-settings-module": "^1.0",
+        "tomatophp/console-helpers": "^1.1",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

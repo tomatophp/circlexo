@@ -1,0 +1,30 @@
+{
+    "name": "TomatoLocations",
+    "alias": "tomato-locations",
+    "description": {
+        "ar": "Database seeds for Locations plugin for TomatoPHP",
+        "en": "Database seeds for Locations plugin for TomatoPHP",
+        "gr": "Database seeds for Locations plugin for TomatoPHP",
+        "sp": "Database seeds for Locations plugin for TomatoPHP"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoLocations\\App\\Providers\\TomatoLocationsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Locations",
+        "en": "Tomato Locations",
+        "gr": "Tomato Locations",
+        "sp": "Tomato Locations"
+    },
+    "color": "#1100ff",
+    "icon": "bx bxs-map",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-locations-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-locations",
+    "required": ["TomatoTranslations","TomatoSettings"]
+}

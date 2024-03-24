@@ -1,0 +1,30 @@
+{
+    "name": "TomatoSettings",
+    "alias": "tomato-settings",
+    "description": {
+        "ar": "Full Settings Generator \/ Manager with GUI for TomatoPHP build with Splade",
+        "en": "Full Settings Generator \/ Manager with GUI for TomatoPHP build with Splade",
+        "gr": "Full Settings Generator \/ Manager with GUI for TomatoPHP build with Splade",
+        "sp": "Full Settings Generator \/ Manager with GUI for TomatoPHP build with Splade"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoSettings\\App\\Providers\\TomatoSettingsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Settings",
+        "en": "Tomato Settings",
+        "gr": "Tomato Settings",
+        "sp": "Tomato Settings"
+    },
+    "color": "#ff1fad",
+    "icon": "bx bxs-cog",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-settings-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-settings",
+    "required": ["TomatoRoles"]
+}

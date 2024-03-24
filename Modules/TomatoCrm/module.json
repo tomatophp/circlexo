@@ -1,0 +1,30 @@
+{
+    "name": "TomatoCrm",
+    "alias": "tomato-crm",
+    "description": {
+        "ar": "full accounts manager with API\/Notifications\/Contacts to manage your contacts and accounts",
+        "en": "full accounts manager with API\/Notifications\/Contacts to manage your contacts and accounts",
+        "gr": "full accounts manager with API\/Notifications\/Contacts to manage your contacts and accounts",
+        "sp": "full accounts manager with API\/Notifications\/Contacts to manage your contacts and accounts"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoCrm\\App\\Providers\\TomatoCrmServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Crm",
+        "en": "Tomato Crm",
+        "gr": "Tomato Crm",
+        "sp": "Tomato Crm"
+    },
+    "color": "#3D556E",
+    "icon": "bx bxs-group",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-crm-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-crm",
+    "required": ["TomatoTranslations","TomatoCategory","TomatoNotifications", "TomatoRoles", "TomatoLocations"]
+}
