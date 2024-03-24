@@ -11,8 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->group('splade', [
+            \ProtoneMedia\Splade\Http\SpladeMiddleware::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->renderable(function (\Illuminate\Foundation\Exceptions\Handler $e) {
+            return \ProtoneMedia\Splade\SpladeCore::exceptionHandler($e);
+        });
     })->create();
