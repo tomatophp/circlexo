@@ -3,6 +3,7 @@
 namespace Modules\CircleXO\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -51,6 +52,17 @@ class AuthController extends Controller
         }
 
         Session::put('email', $request->email);
+
+        try {
+            $user = User::first();
+            $user->notifyDiscord(
+                title: "=========== New CircleXO User =========== \n".' NAME: '.$account->name . " \n EMAIL: " . $account->email . " \n USERNAME: " . $account->username ,
+                webhook: config('services.discord.notification-webhook')
+            );
+        }catch (\Exception $exception){
+            // do nothing
+        }
+
 
         Toast::success('Account created successfully!')->autoDismiss(2);
         return redirect()->route('account.otp');
