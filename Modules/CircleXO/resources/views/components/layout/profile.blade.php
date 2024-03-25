@@ -50,6 +50,13 @@
                 <div class="text-center flex flex-col mt-4">
                     <div class="flex justify-center gap-2  font-bold">
                         <x-splade-link :href="url(auth('accounts')->user()->username)"  class="text-2xl">{{ auth('accounts')->user()->name }}</x-splade-link>
+                        @if(auth('accounts')->user()->type === 'verified')
+                            <div class="flex flex-col justify-center items-center mt-2">
+                                <x-tomato-admin-tooltip :text="__('Verified Account')">
+                                    <i class="bx bxs-badge-check text-blue-400 text-xl"></i>
+                                </x-tomato-admin-tooltip>
+                            </div>
+                        @endif
                         <x-splade-link modal :href="route('profile.info.show')" class="flex flex-col justify-center items-center mt-1">
                             <i class="bx bxs-edit text-green-500 text-lg"></i>
                         </x-splade-link>
