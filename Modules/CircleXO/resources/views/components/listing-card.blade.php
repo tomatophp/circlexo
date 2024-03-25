@@ -7,9 +7,6 @@
                 <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
                     {{ $item->description }}
                 </div>
-                <div class="flex justify-end mb-4">
-                    <i class="bx bxs-quote-single-right text-6xl text-gray-700"></i>
-                </div>
             </div>
         @elseif($item->getMedia('image')->first())
             <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-gray-800 bg-cover bg-center ">
@@ -113,12 +110,11 @@
     <div class=" flex justify-center border-b border-gray-700">
         @if($item->type === 'review')
             <div class="w-full h-64 bg-gray-800" style="background-color: {{ $item->color }}">
-                <i class="bx bxs-quote-single-left text-6xl text-gray-700 mt-4"></i>
+                <div>
+                    <i class="bx bxs-quote-single-left text-6xl text-gray-700"></i>
+                </div>
                 <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
                     {{ $item->description }}
-                </div>
-                <div class="flex justify-end mb-4">
-                    <i class="bx bxs-quote-single-right text-6xl text-gray-700"></i>
                 </div>
             </div>
         @elseif($item->getMedia('image')->first())
