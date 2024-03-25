@@ -7,7 +7,7 @@
         @spladeHead
         @vite('resources/js/app.js')
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased dark">
         @splade
     </body>
 </html>

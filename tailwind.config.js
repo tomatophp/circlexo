@@ -26,10 +26,22 @@ module.exports = {
         },
         extend: {
             colors: {
+                main: {
+                    "600": "#F8CF00",
+                    "400": "#FBD92F",
+                },
+                second: {
+                    "600": "#00E0B2",
+                    "400": "#08FFCC",
+                },
+                thead: {
+                    "600": "#7400C0",
+                    "400": "#8805DD",
+                },
                 danger: colors.rose,
                 primary: colors.blue,
                 success: colors.green,
-                warning: colors.amber,
+                warning: colors.orange,
                 black: colors.black,
             },
             zIndex: {

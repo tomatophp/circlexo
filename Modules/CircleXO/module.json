@@ -1,0 +1,27 @@
+{
+    "name": "CircleXO",
+    "alias": "circle-xo",
+    "description": {
+        "ar": "CircleXO Plugin to Have Base Helpers for CircleXO",
+        "en": "CircleXO Plugin to Have Base Helpers for CircleXO",
+        "gr": "CircleXO Plugin to Have Base Helpers for CircleXO",
+        "sp": "CircleXO Plugin to Have Base Helpers for CircleXO"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleXO\\App\\Providers\\CircleXOServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "CircleXO",
+        "en": "CircleXO",
+        "gr": "CircleXO",
+        "sp": "CircleXO"
+    },
+    "color": "#F2C511",
+    "icon": "bx bxs-circle",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0"
+}
