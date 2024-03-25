@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function (){
-    \Illuminate\Support\Facades\Event::dispatch(new \App\Events\CheckSocket(['data'=>'test']));
-});
-
 Route::middleware(['splade'])->group(function () {
     // Registers routes to support the interactive components...
     Route::spladeWithVueBridge();
