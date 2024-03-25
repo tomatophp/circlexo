@@ -42,12 +42,15 @@ class ProfileController extends Controller
 
     public function updateInfo(Request $request)
     {
-        $request->merge([
-            "username" => '@'.strtolower($request->get('username')),
-        ]);
+        if(!empty($request->get('username'))){
+            $request->merge([
+                "username" => '@'.strtolower($request->get('username')),
+            ]);
+        }
 
         $request->validate([
             "name" => "required|string|max:255",
+            "bio" => "nullable|string|max:255",
             "username" => "required|string|max:255|unique:accounts,username,".auth('accounts')->id(),
             "email" => "required|string|email|max:255|unique:accounts,email,".auth('accounts')->id(),
         ]);
@@ -56,10 +59,15 @@ class ProfileController extends Controller
 
         $account->update($request->all());
 
+        if($request->has('bio') && !empty($request->get('bio'))){
+            $account->meta('bio', $request->get('bio'));
+        }
+        else {
+            $account->metaDestroy('bio');
+        }
 
         Toast::success('Profile updated successfully')->autoDismiss(2);
         return redirect()->back();
-
     }
 
     public function updateMeta(Request $request)

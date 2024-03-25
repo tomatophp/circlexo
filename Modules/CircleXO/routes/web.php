@@ -18,6 +18,7 @@ use Modules\CircleXO\App\Http\Controllers\ProfileController;
 
 Route::middleware(['splade'])->group(function (){
     Route::get('/', [CircleXOController::class, 'index'])->name('home');
+    Route::get('/menu', [CircleXOController::class, 'menu'])->name('home.menu');
 });
 
 Route::middleware(['splade'])->name('account.')->prefix('auth')->group(function (){

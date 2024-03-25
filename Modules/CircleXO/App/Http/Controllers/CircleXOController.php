@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\TomatoCrm\App\Models\Account;
+use App\Models\Account;
 
 class CircleXOController extends Controller
 {
@@ -16,6 +16,11 @@ class CircleXOController extends Controller
     public function index()
     {
         return view('circle-xo::index');
+    }
+
+    public function menu()
+    {
+        return view('circle-xo::menu');
     }
 
     public function profile($username)

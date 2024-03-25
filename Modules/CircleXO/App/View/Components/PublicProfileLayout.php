@@ -4,7 +4,7 @@ namespace Modules\CircleXO\App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Modules\TomatoCrm\App\Models\Account;
+use App\Models\Account;
 
 class PublicProfileLayout extends Component
 {

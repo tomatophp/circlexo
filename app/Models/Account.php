@@ -149,6 +149,11 @@ class Account extends Authenticatable implements HasMedia
             return $this->accountsMetas()->where('key', $key)->first()?->value;
         }
     }
+
+    public function metaDestroy(string $key): Model|array|string|null
+    {
+        return $this->accountsMetas()->updateOrCreate(['key' => $key], ['value' => null]);
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
