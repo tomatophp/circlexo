@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
 use Modules\TomatoCrm\App\Models\Group;
+use Multicaret\Acquaintances\Traits\Friendable;
+use Multicaret\Acquaintances\Traits\CanFollow;
+use Multicaret\Acquaintances\Traits\CanBeFollowed;
 
 /**
  * @property integer $id
@@ -42,6 +46,9 @@ class Account extends Authenticatable implements HasMedia
 {
     use InteractsWithMedia;
     use HasApiTokens, HasFactory, Notifiable;
+    use InteractWithNotifications;
+    use Friendable;
+    use CanFollow, CanBeFollowed;
 
     /**
      * @var array

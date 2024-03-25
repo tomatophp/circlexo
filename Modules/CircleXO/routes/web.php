@@ -5,6 +5,7 @@ use Modules\CircleXO\App\Http\Controllers\CircleXOController;
 use Modules\CircleXO\App\Http\Controllers\AuthController;
 use Modules\CircleXO\App\Http\Controllers\ProfileController;
 use Modules\CircleXO\App\Http\Controllers\ProfileListingController;
+use Modules\CircleXO\App\Http\Controllers\ProfileNotificationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +27,16 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/menu', [CircleXOController::class, 'menu'])->name('home.menu');
 });
 
-Route::middleware(['splade'])->name('account.')->prefix('auth')->group(function (){
+Route::middleware(['splade', 'throttle:login'])->name('account.')->prefix('auth')->group(function (){
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'store'])->name('register.store');
     Route::get('/reset', [AuthController::class, 'reset'])->name('reset');
+    Route::post('/reset', [AuthController::class, 'email'])->name('email');
+    Route::get('/password', [AuthController::class, 'password'])->name('password');
+    Route::post('/password', [AuthController::class, 'passwordUpdate'])->name('password.update');
     Route::get('/otp', [AuthController::class, 'otp'])->name('otp');
     Route::post('/otp', [AuthController::class, 'checkOtp'])->name('otp.check');
-    Route::get('/email', [AuthController::class, 'email'])->name('email');
+    Route::post('/otp/resend', [AuthController::class, 'resend'])->name('otp.resend');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'check'])->name('login.check');
 });
@@ -63,6 +67,16 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile/listing')->name(
     Route::post('/{listing}', [ProfileListingController::class, 'update'])->name('update');
     Route::delete('/{listing}', [ProfileListingController::class, 'destroy'])->name('destroy');
 });
+
+Route::middleware([ 'splade', 'auth:accounts'])->prefix('profile/notifications')->name('profile.notifications.')->group(function() {
+    Route::get('/', [ProfileNotificationsController::class, 'index'])->name('index');
+    Route::post('/read', [ProfileNotificationsController::class, 'read'])->name('read');
+    Route::delete('/clear', [ProfileNotificationsController::class, 'clearUser'])->name('clear');
+    Route::get('/{model}', [ProfileNotificationsController::class, 'show'])->name('show');
+    Route::post('/{model}', [ProfileNotificationsController::class, 'readSelected'])->name('read.selected');
+    Route::delete('/{model}', [ProfileNotificationsController::class, 'destroy'])->name('destroy');
+});
+
 
 Route::middleware(['splade'])->group(function (){
     Route::get('/{username}', [CircleXOController::class, 'profile'])->name('profile');

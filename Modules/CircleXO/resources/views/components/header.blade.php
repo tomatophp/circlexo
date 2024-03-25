@@ -12,6 +12,11 @@
         </div>
         <div class="w-full flex justify-end text-main-600">
             @if(auth('accounts')->user())
+                <x-splade-link modal href="{{ route('profile.notifications.index') }}">
+                    <x-tomato-admin-tooltip :text="__('Notifications')">
+                        <i class="bx bxs-bell bx-sm md:bx-lg text-second-600 px-2 my-2" ></i>
+                    </x-tomato-admin-tooltip>
+                </x-splade-link>
                 <x-splade-link href="{{ route('profile.index') }}">
                     <x-tomato-admin-tooltip :text="__('Profile')">
                         <i class="bx bxs-user-circle bx-sm md:bx-lg px-2 my-2" ></i>

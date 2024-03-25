@@ -68,6 +68,36 @@ class AuthController extends Controller
         return redirect()->route('account.otp');
     }
 
+    public function resend()
+    {
+        if(auth('accounts')->user()){
+            return redirect()->route('profile.index');
+        }
+
+        if (Session::has('email')){
+            $account = Account::where('email', Session::get('email'))->first();
+            if($account){
+                $account->update([
+                    "otp_code" => rand(100000, 999999)
+                ]);
+
+                SendOTP::dispatch(Account::class, $account->id);
+                AccountRegistered::dispatch(Account::class, $account->id);
+
+                Toast::success('OTP code sent successfully!')->autoDismiss(2);
+                return redirect()->back();
+            }
+            else
+            {
+                return redirect()->route('account.register');
+            }
+        }
+        else
+        {
+            return redirect()->route('account.register');
+        }
+    }
+
     public function login()
     {
         if(auth('accounts')->user()){
@@ -106,6 +136,79 @@ class AuthController extends Controller
         }
 
         return view('circle-xo::auth.reset');
+    }
+
+    public function email(Request $request)
+    {
+        $request->validate([
+           "email" => "required|string|email|max:255|exists:accounts,email"
+        ]);
+
+        $account = Account::where('email', $request->get('email'))->first();
+
+        if($account){
+            $account->update([
+                "otp_code" => rand(100000, 999999)
+            ]);
+
+            SendOTP::dispatch(Account::class, $account->id);
+            AccountRegistered::dispatch(Account::class, $account->id);
+
+            if (Session::has('email')){
+                Session::forget('email');
+            }
+
+            Session::put('email', $account->email);
+
+            Toast::success('OTP code sent successfully!')->autoDismiss(2);
+            return redirect()->route('account.password');
+        }
+        else {
+            Toast::danger('Invalid email!')->autoDismiss(2);
+            return redirect()->back();
+        }
+    }
+
+    public function password()
+    {
+        if(auth('accounts')->user()){
+            return redirect()->route('profile.index');
+        }
+
+        if (Session::has('email')){
+            return view('circle-xo::auth.password');
+        }
+        else
+        {
+            return redirect()->route('account.register');
+        }
+    }
+
+    public function passwordUpdate(Request $request)
+    {
+        $request->validate([
+            'otp_code' => 'required|string|max:6|exists:accounts,otp_code',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $account = Account::where('email', Session::get('email'))->first();
+
+        if ($account->otp_code == $request->otp_code){
+            $account->otp_activated_at = Carbon::now();
+            $account->otp_code = null;
+            $account->password = bcrypt($request->get('password'));
+            $account->save();
+
+            Session::forget('email');
+
+            Toast::success('Account password has been reset successfully!')->autoDismiss(2);
+            return redirect()->route('account.login');
+        }
+        else
+        {
+            Toast::danger('Invalid OTP code!')->autoDismiss(2);
+            return redirect()->back();
+        }
     }
 
     public function otp()
@@ -147,6 +250,5 @@ class AuthController extends Controller
             Toast::danger('Invalid OTP code!')->autoDismiss(2);
             return redirect()->back();
         }
-
     }
 }
