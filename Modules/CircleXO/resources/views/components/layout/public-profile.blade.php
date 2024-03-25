@@ -17,7 +17,7 @@
                 @if($account->meta('social'))
                     @foreach($account->meta('social') as $social)
                         <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="$social['name']">
+                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name']">
                                 @if($social['name'] !== 'website')
                                     <i class="bx bxl-{{ $social['name'] }} text-2xl text-gray-200 hover:text-white"></i>
                                 @else
@@ -70,7 +70,7 @@
                 @if($account->meta('social'))
                     @foreach($account->meta('social') as $social)
                         <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="$social['name']">
+                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name']">
                                 @if($social['name'] !== 'website')
                                     <i class="bx bxl-{{ $social['name'] }} text-2xl text-gray-200 hover:text-white"></i>
                                 @else
