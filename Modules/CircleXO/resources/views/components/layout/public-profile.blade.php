@@ -69,7 +69,14 @@
                 </div>
             </div>
             <div class="flex justify-center md:justify-end gap-4 mt-8 mx-16">
-                <x-circle-xo-button modal href="{{route('home.contact', $account->username)}}" :label="__('Send Message')" size="sm"/>
+                <x-circle-xo-button modal href="{{route('home.contact', $account->username)}}" :label="__('Send Message')" size="sm" />
+                @if(auth('accounts')->user())
+                    @if(!auth('accounts')->user()->isFollowing($account))
+                        <x-circle-xo-button  href="{{route('profile.actions.follow', $account->username)}}"  :label="__('Follow')" size="sm"/>
+                    @else
+                        <x-circle-xo-button  href="{{route('profile.actions.unfollow', $account->username)}}" danger confirm-danger :label="__('UnFollow')" size="sm"/>
+                    @endif
+                @endif
             </div>
             <div class="justify-center md:justify-start gap-4 my-8 mx-16 flex lg:hidden">
                 @if($account->meta('social'))

@@ -38,7 +38,7 @@ class AccountContactTable extends AbstractTable
      */
     public function for()
     {
-        return AccountContact::query()->where('account_id', $this->accountId);
+        return AccountContact::query()->where('account_id', $this->accountId)->orderBy('id','desc');
     }
 
     /**
@@ -57,7 +57,6 @@ class AccountContactTable extends AbstractTable
             ->rowModal(function ($item) {
                 return route('profile.messages.show', $item);
             })
-//            ->bulkAction()
             ->export();
     }
 }

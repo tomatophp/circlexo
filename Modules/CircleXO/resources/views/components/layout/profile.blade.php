@@ -92,6 +92,7 @@
                         <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-lock" :label="__('Edit Password')" href="{{ route('profile.password.show') }}" />
                         <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-plus-circle" :label="__('List Item')" href="{{ route('profile.listing.create') }}" />
                         <x-tomato-admin-dropdown-item type="link" icon="bx bx-message" :label="__('Messages')" href="{{ route('profile.messages') }}" />
+                        <x-tomato-admin-dropdown-item type="link" icon="bx bxs-user-plus" :label="__('Following')" href="{{ route('profile.following') }}" />
                     </x-tomato-admin-dropdown>
                 </x-tomato-admin-tooltip>
             </div>

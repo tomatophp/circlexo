@@ -6,6 +6,7 @@ use Modules\CircleXO\App\Http\Controllers\AuthController;
 use Modules\CircleXO\App\Http\Controllers\ProfileController;
 use Modules\CircleXO\App\Http\Controllers\ProfileListingController;
 use Modules\CircleXO\App\Http\Controllers\ProfileNotificationsController;
+use Modules\CircleXO\App\Http\Controllers\ProfileActionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/menu', [CircleXOController::class, 'menu'])->name('home.menu');
 });
 
-Route::middleware(['splade', 'throttle:login'])->name('account.')->prefix('auth')->group(function (){
+Route::middleware(['splade', 'throttle:10'])->name('account.')->prefix('auth')->group(function (){
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'store'])->name('register.store');
     Route::get('/reset', [AuthController::class, 'reset'])->name('reset');
@@ -45,6 +46,7 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/', [ProfileController::class, 'index'])->name('index');
     Route::get('/qr', [ProfileController::class, 'qr'])->name('qr');
     Route::post('/qr', [ProfileController::class, 'qrUpdate'])->name('qr.update');
+    Route::get('/following', [ProfileController::class, 'following'])->name('following');
     Route::get('/messages', [ProfileController::class, 'messages'])->name('messages');
     Route::get('/messages/{message}', [ProfileController::class, 'message'])->name('messages.show');
     Route::get('/edit/password', [ProfileController::class, 'password'])->name('password.show');
@@ -66,6 +68,11 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile/listing')->name(
     Route::get('/{listing}/edit', [ProfileListingController::class, 'edit'])->name('edit');
     Route::post('/{listing}', [ProfileListingController::class, 'update'])->name('update');
     Route::delete('/{listing}', [ProfileListingController::class, 'destroy'])->name('destroy');
+});
+
+Route::middleware(['splade', 'auth:accounts'])->prefix('profile/actions')->name('profile.actions.')->group(function () {
+    Route::get('/follow/{account}', [ProfileActionsController::class, 'follow'])->name('follow');
+    Route::get('/unfollow/{account}', [ProfileActionsController::class, 'unfollow'])->name('unfollow');
 });
 
 Route::middleware([ 'splade', 'auth:accounts'])->prefix('profile/notifications')->name('profile.notifications.')->group(function() {

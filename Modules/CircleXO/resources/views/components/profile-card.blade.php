@@ -1,4 +1,4 @@
-<div class="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700 p-4 min-w-64 max-w-80">
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-700 p-4 min-w-64">
     <div class="flex flex-col items-center justify-center">
         <div class="my-4">
             @if($account->avatar)
@@ -27,6 +27,15 @@
             {{$account->bio}}
         </p>
         @endif
+        <div class="my-4">
+            @if(auth('accounts')->user())
+                @if(!auth('accounts')->user()->isFollowing($account))
+                    <x-circle-xo-button  href="{{route('profile.actions.follow', $account->username)}}"  :label="__('Follow')" size="sm"/>
+                @else
+                    <x-circle-xo-button  href="{{route('profile.actions.unfollow', $account->username)}}" danger confirm-danger :label="__('UnFollow')" size="sm"/>
+                @endif
+            @endif
+        </div>
         <h6 class="my-2 text-sm text-gray-300">Joined {{ $account->created_at->diffForHumans() }}</h6>
     </div>
 </div>

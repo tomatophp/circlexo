@@ -18,8 +18,8 @@
 @seoKeywords(setting('site_keywords'))
 
 <x-circle-xo-app-layout>
-    <div class="min-h-screen  flex flex-col justify-center items-center mx-6 my-8 lg:my-16">
-        <div class="justify-between flex">
+    <div class="min-h-screen flex flex-col justify-center items-center mx-6 my-8 lg:my-16">
+        <div class="w-full justify-between flex">
             <div class="flex flex-col justify-center items-center w-full">
                 <x-circle-xo-card
                   class="w-full lg:w-1/2"
