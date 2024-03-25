@@ -1,7 +1,7 @@
 <div class="bg-gray-900 min-h-screen min-w-screen h-full w-full text-white">
     <x-circle-xo-header />
     <div class="h-full min-h-screen">
-        <div class="h-[350px] bg-gray-700 bg-cover border-b border-gray-700">
+        <div class="h-[150px] lg:h-[350px] bg-gray-700 bg-cover border-b border-gray-700">
             @if(auth('accounts')->user()->cover)
                 <x-splade-link modal :href="route('profile.cover.show')" class="flex flex-col justify-center items-center text-center h-full">
                     <img src="{{ auth('accounts')->user()->cover }}" class="w-full h-full bg-cover bg-center object-cover" alt="avatar">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="text-center flex flex-col mt-4">
                     <div class="flex justify-center gap-2  font-bold">
-                        <h1  class="text-2xl">{{ auth('accounts')->user()->name }}</h1>
+                        <x-splade-link :href="url(auth('accounts')->user()->username)"  class="text-2xl">{{ auth('accounts')->user()->name }}</x-splade-link>
                         <x-splade-link modal :href="route('profile.info.show')" class="flex flex-col justify-center items-center mt-1">
                             <i class="bx bxs-edit text-green-500 text-lg"></i>
                         </x-splade-link>
@@ -66,15 +66,34 @@
                         </p>
                     @endif
 
-                    <h6 class="my-2 text-sm text-gray-300">Joined {{ auth('accounts')->user()->created_at->diffForHumans() }}</h6>
+                    @if(auth('accounts')->user()->address)
+                    <div class="flex justify-center gap-2 text-sm">
+                        <i class="bx bxs-map mt-1 text-main-600 "></i>
+                        <h1 class="text-gray-300">
+                            {{ auth('accounts')->user()->address }}
+                        </h1>
+                    </div>
+                    @endif
+                    <h6 class="my-2 text-sm text-gray-300">{{__('Joined')}} {{ auth('accounts')->user()->created_at->diffForHumans() }}</h6>
                 </div>
             </div>
             <div class="flex justify-center md:justify-end gap-4 mt-8 mx-16">
-                <x-circle-xo-button href="{{url('qr')}}"  size="sm" secondary>
+                <x-circle-xo-button modal href="{{route('profile.qr')}}"  size="sm" success>
                     <i class="bx bx-qr"></i>
                 </x-circle-xo-button>
-                <x-circle-xo-button href="{{url('contact')}}" label="Contact" size="sm"/>
-                <x-circle-xo-button href="{{url('follow')}}" label="Follow" size="sm"/>
+                <x-tomato-admin-tooltip :text="__('Settings')">
+                    <x-tomato-admin-dropdown>
+                        <x-slot:button>
+                            <button>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                        </x-slot:button>
+                        <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-edit" :label="__('Edit Profile')" href="{{ route('profile.info.show') }}" />
+                        <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-lock" :label="__('Edit Password')" href="{{ route('profile.password.show') }}" />
+                        <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-plus-circle" :label="__('List Item')" href="{{ route('profile.listing.create') }}" />
+                        <x-tomato-admin-dropdown-item type="link" icon="bx bx-message" :label="__('Messages')" href="{{ route('profile.messages') }}" />
+                    </x-tomato-admin-dropdown>
+                </x-tomato-admin-tooltip>
             </div>
             <div class="justify-center md:justify-start gap-4 my-8 mx-16 flex lg:hidden ">
                 <x-splade-link modal :href="route('profile.social.show')">

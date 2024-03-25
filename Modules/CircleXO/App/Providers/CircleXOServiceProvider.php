@@ -48,6 +48,8 @@ class CircleXOServiceProvider extends ServiceProvider
             \Modules\CircleXO\App\View\Components\Card::class,
             \Modules\CircleXO\App\View\Components\ProfileCard::class,
             \Modules\CircleXO\App\View\Components\Logo::class,
+            \Modules\CircleXO\App\View\Components\ListingCard::class,
+            \Modules\CircleXO\App\View\Components\ListingFilterItem::class,
         ]);
     }
 

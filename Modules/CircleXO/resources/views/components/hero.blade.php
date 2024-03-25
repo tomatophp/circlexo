@@ -15,8 +15,15 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <div class="flex flex-col justify-center  p-16">
-                <x-circle-xo-profile-card :account="App\Models\Account::orderBy('id','desc')->first()"/>
+            <div class="flex flex-col justify-center p-16">
+                @php
+                    $accounts = \App\Models\Account::inRandomOrder()->take(3)->get();
+                @endphp
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    @foreach($accounts as $account)
+                        <x-circle-xo-profile-card :account="$account"/>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

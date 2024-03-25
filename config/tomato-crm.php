@@ -60,7 +60,7 @@ return [
     "views" => [
         "accounts" => [
             "buttons" => null,
-            "actions" => null
+            "actions" => "circle-xo::verify"
         ]
     ],
 

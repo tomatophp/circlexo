@@ -15,9 +15,11 @@
         </div>
         <x-splade-link href="{{ route('profile', $account->username) }}" class="flex justify-center gap-2  font-bold">
             <h1 class="text-2xl">{{ $account->name }}</h1>
-            <div class="flex flex-col justify-center items-center mt-1">
-                <i class="bx bxs-check-circle text-green-500 text-lg"></i>
-            </div>
+            @if($account->type === 'verified')
+                <div class="flex flex-col justify-center items-center mt-1">
+                    <i class="bx bxs-badge-check text-blue-400 text-2xl"></i>
+                </div>
+            @endif
         </x-splade-link>
         <h6 class="text-sm font-medium text-gray-300">{{$account->username}}</h6>
         @if($account->bio)
