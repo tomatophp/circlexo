@@ -7,7 +7,9 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
+        "laravel/reverb": "@beta",
         "laravel/tinker": "^2.9",
+        "pusher/pusher-php-server": "7.2",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "tomatophp/tomato-admin": "^1.2",
         "tomatophp/tomato-crm-module": "^1.0",
