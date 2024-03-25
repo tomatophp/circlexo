@@ -21,24 +21,26 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
-        "jquery": "^3.7.1",
-        "@vueuse/core": "^10.5.0",
         "@suadelabs/vue3-multiselect": "^1.0.2",
         "@tailwindcss/line-clamp": "^0.4.2",
+        "@vueuse/core": "^10.5.0",
         "boxicons": "^2.1.4",
         "codemirror-editor-vue3": "^2.1.8",
+        "jquery": "^3.7.1",
+        "laravel-echo": "^1.16.0",
+        "lodash-es": "^4.17.21",
+        "md-editor-v3": "^4.12.1",
         "moment": "^2.29.4",
         "numeral": "^2.0.6",
         "postcss-import": "^15.1.0",
+        "pusher-js": "^8.4.0-rc2",
+        "swiper": "^11.0.5",
         "tailwindcss-rtl": "^0.9.0",
         "tippy.js": "^6.3.7",
-        "lodash-es": "^4.17.21",
         "vue-draggable-next": "^2.2.1",
+        "vue3-carousel": "^0.3.1",
         "vue3-editor": "^0.1.1",
         "vue3-swatches": "^1.2.3",
-        "swiper": "^11.0.5",
-        "vue3-tel-input": "^1.0.4",
-        "vue3-carousel": "^0.3.1",
-        "md-editor-v3": "^4.12.1"
+        "vue3-tel-input": "^1.0.4"
     }
 }
