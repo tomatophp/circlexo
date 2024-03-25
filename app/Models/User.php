@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+ use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
  use Spatie\Permission\Traits\HasRoles;
 
  class User extends Authenticatable
@@ -17,6 +18,7 @@ use Laravel\Sanctum\HasApiTokens;
     use HasTeams;
     use HasProfilePhoto;
     use HasRoles;
+    use InteractWithNotifications;
 
     /**
      * The attributes that are mass assignable.
