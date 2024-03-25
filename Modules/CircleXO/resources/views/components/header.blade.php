@@ -12,8 +12,21 @@
         </div>
         <div class="w-full flex justify-end text-main-600">
             @if(auth('accounts')->user())
-                <x-splade-link modal href="{{ route('profile.notifications.index') }}">
+                <x-splade-link modal href="{{ route('profile.notifications.index') }}"
+                               class="block shrink-0 relative group">
                     <x-tomato-admin-tooltip :text="__('Notifications')">
+                        @php
+                            $notifications = \Modules\TomatoNotifications\App\Models\UserNotification::where('model_id', auth('accounts')->user()->id)
+                                ->where('model_type', config('tomato-crm.model'))
+                                ->doesntHave('userRead')
+                                ->count();
+                        @endphp
+                        @if($notifications)
+                            <div class="absolute top-0 font-bold left-6 bg-gray-700 border border-gray-500 shadow-sm text-gray-200 rounded-full text-[10px] w-4 h-4 text-center">
+                                {{ $notifications }}
+                            </div>
+                        @endif
+
                         <i class="bx bxs-bell bx-sm md:bx-lg text-second-600 px-2 my-2" ></i>
                     </x-tomato-admin-tooltip>
                 </x-splade-link>

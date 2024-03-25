@@ -31,6 +31,11 @@ class ProfileController extends Controller
         return view('circle-xo::profile.index', compact('listing'));
     }
 
+    public function following(Request $request)
+    {
+        return view('circle-xo::profile.following');
+    }
+
     public function messages(Request $request)
     {
         return view('circle-xo::profile.messages', [

@@ -15,7 +15,7 @@ return [
         /*
          * Model name of User model
          */
-        'user' => 'User',
+        'user' => 'Account',
         /*
          * Model name of Interaction Relation model
          */
@@ -38,7 +38,7 @@ return [
         /*
          * user foreign key column name within interactions table.
          */
-        'interactions_user_id_fk_column_name' => 'user_id',
+        'interactions_user_id_fk_column_name' => 'account_id',
         /*
          * user foreign key column type within interactions table.
          */

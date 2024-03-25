@@ -75,8 +75,6 @@ class CircleXOController extends Controller
 
     public function send($username, Request $request)
     {
-
-
         $account = Account::where('username', $username)->first();
         if($account){
             $request->validate([
@@ -106,6 +104,12 @@ class CircleXOController extends Controller
             $contact->message = $request->get('message');
             $contact->anonymous_message = $request->get('anonymous_message');
             $contact->save();
+
+            $account->notifyDB(
+                message: $contact->message,
+                title: __('You have a new message'),
+                url: url('profile/messages')
+            );
 
             Toast::success('Message Sent Successfully')->autoDismiss(2);
             return redirect()->back();

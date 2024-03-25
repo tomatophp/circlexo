@@ -62,7 +62,7 @@ class ProfileListingController extends Controller
             ]);
         }
 
-        $lastListing = AccountListing::where('account_id', auth()->id())->orderBy('order', 'desc')->first();
+        $lastListing = AccountListing::where('account_id', auth('accounts')->id())->orderBy('order', 'desc')->first();
         $listing = new AccountListing();
         $listing->title = $request->get('title');
         $listing->type = $request->get('type');
@@ -78,6 +78,17 @@ class ProfileListingController extends Controller
         $listing->order = $lastListing ? $lastListing->order+1 : 0;
         $listing->account_id = auth()->id();
         $listing->save();
+
+        if($listing->is_active){
+            $followers = auth('accounts')->user()->followers()->get();
+            foreach ($followers as $follower){
+                $follower->notifyDB(
+                    message: auth('accounts')->user()->username . " " . __('Just add new listing'),
+                    title: __('New Listing'),
+                    url: url(auth('accounts')->user()->username)
+                );
+            }
+        }
 
         if($request->hasFile('image')){
             $listing->addMediaFromRequest('image')->toMediaCollection('image');
@@ -138,6 +149,17 @@ class ProfileListingController extends Controller
         }
 
         $listing->update($request->all());
+
+        if($listing->is_active){
+            $followers = auth('accounts')->user()->followers()->get();
+            foreach ($followers as $follower){
+                $follower->notifyDB(
+                    message: auth('accounts')->user()->username . " " . __('Just update listing'),
+                    title: __('Update Listing'),
+                    url: url(auth('accounts')->user()->username)
+                );
+            }
+        }
 
         if($request->hasFile('image') && $request->file('image')->getClientOriginalName() !== 'blob'){
             $listing->clearMediaCollection('image');
