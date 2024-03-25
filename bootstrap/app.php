@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -17,4 +18,16 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->renderable(\ProtoneMedia\Splade\SpladeCore::exceptionHandler($exceptions->handler));
+        $exceptions->reportable(function (Throwable $e) {
+            try {
+                $user = User::first();
+                $user->notifyDiscord(
+                    title: "================= ERROR ================= \n".'MESSAGE: '.$e->getMessage() . ' | FILE: '.$e->getFile().' | LINE: '.$e->getLine().' | URL: ' . url()->current(),
+                    webhook: config('services.discord.error-webhook')
+                );
+            }catch (\Exception $exception){
+                // do nothing
+            }
+        });
+
     })->create();

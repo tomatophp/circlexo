@@ -1,3 +1,21 @@
+@php
+    SEO::openGraphType('WebPage');
+    SEO::openGraphSiteName($account->username . ' | '. setting('site_name'));
+    SEO::openGraphTitle($account->username . ' | '.  setting('site_name'));
+    SEO::openGraphUrl(url()->current());
+    SEO::openGraphImage($account->avatar ?: setting('site_profile'));
+    SEO::metaByProperty('og:description',$account->bio ?: setting('site_description'));
+
+    SEO::twitterCard('summary_large_image');
+    SEO::twitterTitle($account->username . ' | '. setting('site_name'));
+    SEO::twitterDescription($account->bio ?: setting('site_description'));
+    SEO::twitterImage($account->avatar ?: setting('site_profile'));
+
+    SEO::canonical(url()->current());
+@endphp
+@seoTitle($account->username . ' | '. setting('site_name'))
+@seoDescription($account->bio ?: setting('site_description'))
+@seoKeywords(setting('site_keywords'))
 <x-circle-xo-public-profile-layout :account="$account">
     <div class="my-4">
         <div class="mx-8 md:mx-16 flex justify-center">

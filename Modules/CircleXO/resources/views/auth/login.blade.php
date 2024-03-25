@@ -1,3 +1,22 @@
+@php
+    SEO::openGraphType('WebPage');
+    SEO::openGraphSiteName('Login | '. setting('site_name'));
+    SEO::openGraphTitle('Login | '. setting('site_name'));
+    SEO::openGraphUrl(url()->current());
+    SEO::openGraphImage(setting('site_profile'));
+    SEO::metaByProperty('og:description',setting('site_description'));
+
+    SEO::twitterCard('summary_large_image');
+    SEO::twitterTitle('Login | '. setting('site_name'));
+    SEO::twitterDescription(setting('site_description'));
+    SEO::twitterImage(setting('site_profile'));
+
+    SEO::canonical(url()->current());
+@endphp
+@seoTitle('Login | '. setting('site_name'))
+@seoDescription(setting('site_description'))
+@seoKeywords(setting('site_keywords'))
+
 <x-circle-xo-app-layout>
     <div class="h-screen flex flex-col justify-center items-center  mx-6">
         <div class="w-full justify-between flex">
