@@ -17,9 +17,9 @@
         <div class="w-full flex justify-center">
             <div class="flex flex-col justify-center p-16">
                 @php
-                    $accounts = \App\Models\Account::inRandomOrder()->take(3)->get();
+                    $accounts = \App\Models\Account::inRandomOrder()->take(4)->get();
                 @endphp
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     @foreach($accounts as $account)
                         <x-circle-xo-profile-card :account="$account"/>
                     @endforeach

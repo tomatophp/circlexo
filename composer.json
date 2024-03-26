@@ -6,9 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "http-interop/http-factory-guzzle": "^1.2",
         "laravel/framework": "^11.0",
         "laravel/reverb": "@beta",
+        "laravel/scout": "^10.8",
+        "laravel/socialite": "^5.12",
         "laravel/tinker": "^2.9",
+        "meilisearch/meilisearch-php": "^1.7",
         "multicaret/laravel-acquaintances": "^3.6",
         "pusher/pusher-php-server": "7.2",
         "simplesoftwareio/simple-qrcode": "^4.2",

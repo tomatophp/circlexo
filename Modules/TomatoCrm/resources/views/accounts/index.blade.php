@@ -26,7 +26,7 @@
                     @if(config('tomato-crm.features.groups'))
                         <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-3">
                             @foreach($groups as $group)
-                                <div class="relative border border-zinc-200 dark:bg-zinc-800 dark:border-zinc-700 p-4 rounded-lg bg-white @if(isset(request()->get('filter')['group_id']) && request()->get('filter')['group_id'] == $group->id) ring-2 ring-primary-500 @endif">
+                                <div class="relative border border-gray-200 dark:bg-gray-800 dark:border-gray-700 p-4 rounded-lg bg-white @if(isset(request()->get('filter')['group_id']) && request()->get('filter')['group_id'] == $group->id) ring-2 ring-primary-500 @endif">
                                     <x-splade-link :href="route('admin.groups.edit', $group->id)" modal class="absolute top-3 rtl:right-3 ltr:left-3 text-warning-500">
                                         <i class="bx bx-edit"></i>
                                     </x-splade-link>
@@ -34,11 +34,11 @@
                                     <div @click.prevent="table.updateQuery('filter[group_id]', @js($group->id))" class="flex flex-col items-center justify-center cursor-pointer">
                                         <i class="{{$group->icon}} bx-lg" style="color: {{$group->color}}"></i>
                                         <h1 class="font-bold text-2xl">{{$group->name}}</h1>
-                                        <h1 class="text-zinc-400 text-sm">{{$group->accounts()->count()}} {{__('Customer')}}</h1>
+                                        <h1 class="text-gray-400 text-sm">{{$group->accounts()->count()}} {{__('Customer')}}</h1>
                                     </div>
                                 </div>
                             @endforeach
-                            <x-splade-link modal :href="route('admin.groups.create')" class="border border-zinc-200 dark:border-zinc-700 px-4 py-8 rounded-lg bg-primary-500 text-white flex flex-col items-center justify-center">
+                            <x-splade-link modal :href="route('admin.groups.create')" class="border border-gray-200 dark:border-gray-700 px-4 py-8 rounded-lg bg-primary-500 text-white flex flex-col items-center justify-center">
                                 <i class="bx bx-plus-circle bx-lg"></i>
                                 <h1 class="font-bold text-xl">{{__('Create New Group')}}</h1>
                             </x-splade-link>
@@ -59,7 +59,7 @@
 
                             </div>
                             @else
-                                <div class="w-12 h-12 border rounded-full border-zinc-200 bg-white dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100">
+                                <div class="w-12 h-12 border rounded-full border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                                     <div class="flex flex-col items-center justify-center mt-3">
                                         <div>
                                             @if($item->type === 'customer')
@@ -78,8 +78,8 @@
                         </div>
                         <div class="flex flex-col">
                             <x-splade-link :href="route('admin.accounts.show', $item->id)" class="text-lg font-bold">{{$item->name}}</x-splade-link>
-                            <a href="mailto:{{$item->email}}" class="text-sm text-zinc-400">{{$item->email}}</a>
-                            <a href="tel:{{$item->phone}}" class="text-sm text-zinc-400">{{$item->phone}}</a>
+                            <a href="mailto:{{$item->email}}" class="text-sm text-gray-400">{{$item->email}}</a>
+                            <a href="tel:{{$item->phone}}" class="text-sm text-gray-400">{{$item->phone}}</a>
                             @if(config('tomato-crm.features.groups'))
                             <div class="my-2 grid grid-cols-4 gap-2">
                                 @foreach($item->groups as $group)

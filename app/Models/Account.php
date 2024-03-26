@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Scout\Searchable;
 use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -47,7 +48,7 @@ class Account extends Authenticatable implements HasMedia
     use HasApiTokens, HasFactory, Notifiable;
     use InteractWithNotifications;
     use CanFollow, CanBeFollowed;
-
+    use Searchable;
     /**
      * @var array
      */
@@ -95,6 +96,14 @@ class Account extends Authenticatable implements HasMedia
         'social',
         'bio',
     ];
+
+    /**
+     * Get the name of the index associated with the model.
+     */
+    public function searchableAs(): string
+    {
+        return 'username_index';
+    }
 
     public function getMoreAttribute()
     {

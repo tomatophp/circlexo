@@ -38,7 +38,7 @@
                             <div class="flex justifiy-end gap-2">
                                 <x-splade-link confirm method="POST" :href="route('admin.account-requests.approve', $meta->id)">
                                     <x-tomato-admin-tooltip text="{{ __('Approve Item') }}">
-                                        <i class="bx bxs-check-circle text-zinc-400 bx-sm"></i>
+                                        <i class="bx bxs-check-circle text-gray-400 bx-sm"></i>
                                     </x-tomato-admin-tooltip>
                                 </x-splade-link>
                                 <button @click.prevent="data.is_rejected = !data.is_rejected">

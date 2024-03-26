@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\TomatoCrm\App\Facades\TomatoCrm;
+use ProtoneMedia\Splade\Facades\Splade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        Splade::defaultModalCloseExplicitly();
     }
 }
