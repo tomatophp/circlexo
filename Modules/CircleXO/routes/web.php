@@ -27,6 +27,11 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/', [CircleXOController::class, 'index'])->name('home');
 });
 
+Route::middleware('web')->group(function (){
+    Route::get('/login/{provider}', [AuthController::class, 'provider'])->name('provider');
+    Route::get('/login/{provider}/callback', [AuthController::class, 'callback'])->name('provider.callback');
+});
+
 Route::middleware(['splade', 'throttle:10'])->name('account.')->prefix('auth')->group(function (){
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'store'])->name('register.store');
@@ -43,11 +48,14 @@ Route::middleware(['splade', 'throttle:10'])->name('account.')->prefix('auth')->
 
 Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile.')->group(function (){
     Route::get('/', [ProfileController::class, 'index'])->name('index');
+    Route::delete('/destroy', [ProfileController::class, 'destroy'])->name('destroy');
     Route::get('/qr', [ProfileController::class, 'qr'])->name('qr');
     Route::post('/qr', [ProfileController::class, 'qrUpdate'])->name('qr.update');
     Route::get('/following', [ProfileController::class, 'following'])->name('following');
     Route::get('/messages', [ProfileController::class, 'messages'])->name('messages');
     Route::get('/messages/{message}', [ProfileController::class, 'message'])->name('messages.show');
+    Route::get('/edit/social-accounts', [ProfileController::class, 'socialAccounts'])->name('social-accounts.show');
+    Route::post('/edit/social-accounts', [ProfileController::class, 'socialAccountsUpdate'])->name('social-accounts.update');
     Route::get('/edit/password', [ProfileController::class, 'password'])->name('password.show');
     Route::post('/edit/password', [ProfileController::class, 'updatePassword'])->name('password.update');
     Route::get('/edit/avatar', [ProfileController::class, 'avatar'])->name('avatar.show');

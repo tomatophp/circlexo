@@ -31,6 +31,26 @@ class ProfileController extends Controller
         return view('circle-xo::profile.index', compact('listing'));
     }
 
+    public function socialAccounts()
+    {
+        return view('circle-xo::profile.edit.social-accounts');
+    }
+
+    public function socialAccountsUpdate(Request $request)
+    {
+        $request->validate([
+            "provider" => "required|string|in:discord,twitter-oauth-2,github",
+        ]);
+
+        $account = auth('accounts')->user();
+        $account->metaDestroy($request->get('provider').'_id');
+        $account->metaDestroy($request->get('provider').'_token');
+        $account->metaDestroy($request->get('provider').'_refresh_token');
+
+        Toast::success('Social account removed successfully')->autoDismiss(2);
+        return redirect()->back();
+    }
+
     public function following(Request $request)
     {
         return view('circle-xo::profile.following');
@@ -225,6 +245,16 @@ class ProfileController extends Controller
 
     public function logout()
     {
+        auth('accounts')->logout();
+        return redirect()->route('account.login');
+    }
+
+    public function destroy()
+    {
+        $account = auth('accounts')->user();
+        $account->delete();
+
+        Toast::success('Account deleted successfully')->autoDismiss(2);
         auth('accounts')->logout();
         return redirect()->route('account.login');
     }
