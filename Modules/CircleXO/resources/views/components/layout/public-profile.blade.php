@@ -14,19 +14,7 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="justify-start gap-4 mt-8 mx-16 hidden lg:flex">
-                @if($account->meta('social'))
-                    @foreach($account->meta('social') as $social)
-                        <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name']">
-                                @if($social['name'] !== 'website')
-                                    <i class="bx bxl-{{ $social['name'] }} text-2xl text-zinc-200 hover:text-white"></i>
-                                @else
-                                    <i class="bx bx-link text-2xl text-zinc-200 hover:text-white"></i>
-                                @endif
-                            </x-tomato-admin-tooltip>
-                        </a>
-                    @endforeach
-                @endif
+                <x-circle-xo-social-links :account="$account"/>
             </div>
             <div>
                 <div class="flex justify-center flex-col items-center -mt-12">
@@ -81,19 +69,7 @@
                 @endif
             </div>
             <div class="justify-center md:justify-start gap-4 my-8 mx-16 flex lg:hidden">
-                @if($account->meta('social'))
-                    @foreach($account->meta('social') as $social)
-                        <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name'] ">
-                                @if($social['name'] !== 'website')
-                                    <i class="bx bxl-{{ $social['name'] }} text-2xl text-zinc-200 hover:text-white"></i>
-                                @else
-                                    <i class="bx bx-link text-2xl text-zinc-200 hover:text-white"></i>
-                                @endif
-                            </x-tomato-admin-tooltip>
-                        </a>
-                    @endforeach
-                @endif
+               <x-circle-xo-social-links :account="$account"/>
             </div>
         </div>
         {{ $slot }}

@@ -198,6 +198,73 @@ class ProfileController extends Controller
         return redirect()->back();
     }
 
+    public function socialStore(Request $request)
+    {
+        $request->validate([
+            "name" => "required|string",
+            "link" => "required|string|url|max:255",
+            "label" => "required|string|max:255"
+        ]);
+
+        $account = auth('accounts')->user();
+        $social = $account->meta('social');
+        $social[] = [
+            'name' => $request->get('name'),
+            'link' => $request->get('link'),
+            'label' => $request->get('label'),
+        ];
+        $account->meta('social', $social);
+
+        Toast::success('Social account added successfully')->autoDismiss(2);
+        return redirect()->back();
+    }
+
+    public function socialEdit($network)
+    {
+        $network = collect(auth('accounts')->user()->meta('social'))->where('name', $network)->first();
+        return view('circle-xo::profile.edit.social-edit', compact('network'));
+    }
+
+    public function socialUpdate(Request $request, $network)
+    {
+        $request->validate([
+            "name" => "required|string",
+            "link" => "required|string|url|max:255",
+            "label" => "required|string|max:255"
+        ]);
+
+        $account = auth('accounts')->user();
+        $social = $account->meta('social');
+        foreach ($social as $key=>$item){
+            if($item['name'] === $network){
+                $social[$key] = [
+                    'name' => $request->get('name'),
+                    'link' => $request->get('link'),
+                    'label' => $request->get('label'),
+                ];
+            }
+        }
+        $account->meta('social', $social);
+
+        Toast::success('Social account updated successfully')->autoDismiss(2);
+        return redirect()->back();
+    }
+
+    public function socialDestroy(Request $request, $network)
+    {
+        $account = auth('accounts')->user();
+        $social = $account->meta('social');
+        foreach ($social as $key=>$item){
+            if($item['name'] === $network){
+                 unset($social[$key]);
+            }
+        }
+        $account->meta('social', $social);
+
+        Toast::success('Social account removed successfully')->autoDismiss(2);
+        return redirect()->back();
+    }
+
     public function updateMeta(Request $request)
     {
         $account = auth('accounts')->user();
