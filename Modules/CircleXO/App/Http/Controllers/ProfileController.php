@@ -31,6 +31,11 @@ class ProfileController extends Controller
         return view('circle-xo::profile.index', compact('listing'));
     }
 
+    public function sponsoring()
+    {
+        return view('circle-xo::profile.edit.sponsoring');
+    }
+
     public function socialAccounts()
     {
         return view('circle-xo::profile.edit.social-accounts');
@@ -271,6 +276,11 @@ class ProfileController extends Controller
 
         if($request->has('social')){
             $account->meta('social', $request->get('social'));
+        }
+
+        if($request->has('sponsoring_link') || $request->has('sponsoring_message')){
+            $account->meta('sponsoring_message', $request->get('sponsoring_message'));
+            $account->meta('sponsoring_link', $request->get('sponsoring_link'));
         }
 
         Toast::success('Profile updated successfully')->autoDismiss(2);

@@ -75,9 +75,16 @@
                 </div>
             </div>
             <div class="flex justify-center md:justify-end gap-4 mt-8 mx-16">
-                <x-circle-xo-button modal href="{{route('profile.qr')}}"  size="sm" success>
-                    <i class="bx bx-qr"></i>
-                </x-circle-xo-button>
+                <x-tomato-admin-tooltip :text="__('QR Generator')">
+                    <x-splade-link modal href="{{route('profile.qr')}}" class="bg-success-600 text-white rounded-md shadow-md font-bold text-sm px-4 py-2">
+                        <i class="bx bx-qr"></i>
+                    </x-splade-link>
+                </x-tomato-admin-tooltip>
+                <x-tomato-admin-tooltip :text="__('Sponsoring')">
+                    <x-splade-link modal href="{{route('profile.sponsoring.show')}}" class="bg-danger-600 text-white rounded-md shadow-md font-bold text-sm px-4 py-2">
+                        <i class="bx bxs-heart"></i>
+                    </x-splade-link>
+                </x-tomato-admin-tooltip>
                 <x-tomato-admin-tooltip :text="__('Settings')">
                     <x-tomato-admin-dropdown>
                         <x-slot:button>

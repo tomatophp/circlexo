@@ -36,6 +36,19 @@ class CircleXOController extends Controller
         return redirect()->back();
     }
 
+
+
+    public function sponsoring($username)
+    {
+        $account = Account::where('username', $username)->first();
+        if($account && $account->meta('sponsoring_message') && $account->meta('sponsoring_link')){
+            return view('circle-xo::sponsoring', compact('account'));
+        }
+        else {
+            abort(404);
+        }
+    }
+
     public function contact($username)
     {
         $account = Account::where('username', $username)->first();

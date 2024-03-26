@@ -62,6 +62,7 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/edit/cover', [ProfileController::class, 'cover'])->name('cover.show');
     Route::get('/edit/info', [ProfileController::class, 'info'])->name('info.show');
     Route::post('/edit/info', [ProfileController::class, 'updateInfo'])->name('info.update');
+    Route::get('/edit/sponsoring', [ProfileController::class, 'sponsoring'])->name('sponsoring.show');
     Route::get('/edit/social', [ProfileController::class, 'social'])->name('social.show');
     Route::post('/edit/social', [ProfileController::class, 'socialStore'])->name('social.store');
     Route::get('/edit/social/{network}', [ProfileController::class, 'socialEdit'])->name('social.edit');
@@ -98,6 +99,7 @@ Route::middleware([ 'splade', 'auth:accounts'])->prefix('profile/notifications')
 
 Route::middleware(['splade'])->group(function (){
     Route::get('/{username}', [CircleXOController::class, 'profile'])->name('profile');
+    Route::get('/{username}/sponsoring', [CircleXOController::class, 'sponsoring'])->name('home.sponsoring');
     Route::get('/{username}/contact', [CircleXOController::class, 'contact'])->name('home.contact');
     Route::post('/{username}/contact', [CircleXOController::class, 'send'])->name('home.contact.send');
     Route::get('/{username}/posts/{post}', [CircleXOController::class, 'post'])->name('home.posts');
