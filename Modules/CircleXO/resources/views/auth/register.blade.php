@@ -37,10 +37,10 @@
                         <x-splade-input name="email" :label="__('Email')" />
                         <x-splade-input name="password" :label="__('Password')" type="password" />
                         <x-splade-input name="password_confirmation" :label="__('Confirm Password')" type="password" />
-                        <x-splade-submit spinner :label="__('Register')" class="bg-main-600 border-main-400 text-gray-900" />
-                        <div class="my-4 text-sm text-gray-300 sm:mt-0">
+                        <x-splade-submit spinner :label="__('Register')" class="bg-main-600 border-main-400 text-zinc-900" />
+                        <div class="my-4 text-sm text-zinc-300 sm:mt-0">
                             {{__('Already have an account?')}}
-                            <x-splade-link href="{{route('account.login')}}" class="text-gray-400 underline">{{__('Log in')}}</x-splade-link>.
+                            <x-splade-link href="{{route('account.login')}}" class="text-zinc-400 underline">{{__('Log in')}}</x-splade-link>.
                         </div>
                     </x-splade-form>
 

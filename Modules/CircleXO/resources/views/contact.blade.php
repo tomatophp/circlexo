@@ -14,6 +14,6 @@
         @endif
         <x-splade-textarea name="message" label="Message" />
 
-        <x-splade-submit spinner label="Send" class="bg-main-600 border-main-400 text-gray-900" />
+        <x-splade-submit spinner label="Send" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
 </x-splade-modal>

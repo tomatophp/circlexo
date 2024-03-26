@@ -14,10 +14,10 @@
                     <input
                            type="checkbox"
                            :checked="form.permissions.length? true : false"
-                           class="dark:bg-gray-700 dark:border-gray-600 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50"
+                           class="dark:bg-zinc-700 dark:border-zinc-600 rounded border-zinc-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50"
                            @change="form.permissions = form.permissions.length? [] : data.permissions"
                     >
-                    <span class="ml-2 rtl:mr-2 rtl:ml-0 dark:text-gray-200">{{__('Select All')}}</span>
+                    <span class="ml-2 rtl:mr-2 rtl:ml-0 dark:text-zinc-200">{{__('Select All')}}</span>
                 </label>
             </div>
             <div class="grid grid-cols-1 gap-4">
@@ -37,7 +37,7 @@
                                         type="checkbox"
                                         v-model="data.table['{{$permissionTable[0]['table']}}']"
                                         :checked="form.permissions.includes({{ str_replace(']', '', str_replace('[','', json_encode($collectPermissionTableName))) }}) ? true : false"
-                                        class="dark:bg-gray-700 dark:border-gray-600 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50"
+                                        class="dark:bg-zinc-700 dark:border-zinc-600 rounded border-zinc-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50"
                                         @change="
                                             let perm = @js($collectPermissionTable);
 

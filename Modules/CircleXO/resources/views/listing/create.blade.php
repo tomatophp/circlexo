@@ -43,6 +43,6 @@
         </div>
 
         <x-splade-checkbox name="is_active" label="Active" />
-        <x-splade-submit spinner label="Save" class="bg-main-600 border-main-400 text-gray-900" />
+        <x-splade-submit spinner label="Save" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
 </x-splade-modal>

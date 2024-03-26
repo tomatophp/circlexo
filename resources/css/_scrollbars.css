@@ -10,15 +10,15 @@
   }
   
   body::-webkit-scrollbar-track {
-    @apply bg-gray-50;
+    @apply bg-zinc-50;
   }
   
   body::-webkit-scrollbar-thumb {
-    @apply bg-gray-400 rounded;
+    @apply bg-zinc-400 rounded;
   }
   
   body::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500;
+    @apply bg-zinc-500;
   }
 }
 

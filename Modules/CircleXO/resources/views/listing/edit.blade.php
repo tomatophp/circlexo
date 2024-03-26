@@ -44,7 +44,7 @@
 
 
         <div class="flex justify-start gap-4">
-            <x-tomato-admin-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-gray-900" />
+            <x-tomato-admin-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-zinc-900" />
             <x-tomato-admin-button danger confirm-danger method="DELETE" :href="route('profile.listing.destroy', $listing)" :label="__('Delete Listing')" />
         </div>
     </x-splade-form>

@@ -1,4 +1,4 @@
-<header class="p-4 border-b-2 border-gray-800">
+<header class="p-4 border-b-2 border-zinc-800">
     <nav class="flex justify-between">
         <div class="text-white flex justify-start w-full ">
             <x-splade-link slideover :href="route('home.menu')">
@@ -22,7 +22,7 @@
                                 ->count();
                         @endphp
                         @if($notifications)
-                            <div class="absolute top-0 font-bold left-6 bg-gray-700 border border-gray-500 shadow-sm text-gray-200 rounded-full text-[10px] w-4 h-4 text-center">
+                            <div class="absolute top-0 font-bold left-6 bg-zinc-700 border border-zinc-500 shadow-sm text-zinc-200 rounded-full text-[10px] w-4 h-4 text-center">
                                 {{ $notifications }}
                             </div>
                         @endif

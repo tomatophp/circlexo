@@ -25,7 +25,7 @@
         <x-splade-input type="number" name="size" label="Size" />
         <x-splade-input type="number" name="margin" label="Margin" />
         <div class="col-span-2">
-            <x-splade-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-gray-900" />
+            <x-splade-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-zinc-900" />
         </div>
     </x-splade-form>
 </x-splade-modal>

@@ -1,7 +1,7 @@
 <x-circle-xo-profile-layout>
   <div class="my-4">
       <div class="mx-8 md:mx-16 flex justify-center">
-          <div class="rounded-full border overflow-hidden border-gray-700 bg-gray-800 flex justify-start">
+          <div class="rounded-full border overflow-hidden border-zinc-700 bg-zinc-800 flex justify-start">
               <x-circle-xo-listing-filter-item
                   filter="all"
                   icon="bx bx-category"
@@ -53,7 +53,7 @@
           </div>
       </div>
       @if(!$listing->count())
-          <div class="bg-gray-800 border border-gray-700 mx-16 my-4 rounded-lg shadow-sm flex justify-center">
+          <div class="bg-zinc-800 border border-zinc-700 mx-16 my-4 rounded-lg shadow-sm flex justify-center">
               <div class="p-8 md:p-16 text-center">
                   <i class="bx bx-x-circle bx-lg text-danger-500"></i>
                   <h1>{{__('Your Profile is empty try add some listing')}}</h1>

@@ -15,6 +15,6 @@
         <x-splade-input name="username" label="username" />
         <x-splade-textarea autosize name="bio" label="Bio" />
 
-        <x-splade-submit spinner label="Update" class="bg-main-600 border-main-400 text-gray-900" />
+        <x-splade-submit spinner label="Update" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
 </x-splade-modal>

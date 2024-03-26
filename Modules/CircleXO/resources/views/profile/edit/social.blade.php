@@ -22,6 +22,6 @@
             </div>
         </x-tomato-admin-repeater>
 
-        <x-splade-button label="Update" class="bg-main-600 border-main-400 text-gray-900" />
+        <x-splade-button label="Update" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
 </x-splade-modal>

@@ -1,19 +1,19 @@
 @if($edit)
-<x-splade-link modal :href="route('profile.listing.edit', $item)" class="w-full bg-gray-800 border border-gray-700 overflow-hidden rounded-lg shadow-sm">
-    <div class=" flex justify-center border-b border-gray-700">
+<x-splade-link modal :href="route('profile.listing.edit', $item)" class="w-full bg-zinc-800 border border-zinc-700 overflow-hidden rounded-lg shadow-sm">
+    <div class=" flex justify-center border-b border-zinc-700">
         @if($item->type === 'review')
-            <div class="w-full h-64 bg-gray-800" style="background-color: {{ $item->color }}">
-                <i class="bx bxs-quote-single-left text-6xl text-gray-700 mt-4"></i>
+            <div class="w-full h-64 bg-zinc-800" style="background-color: {{ $item->color }}">
+                <i class="bx bxs-quote-single-left text-6xl text-zinc-700 mt-4"></i>
                 <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
                     {{ $item->description }}
                 </div>
             </div>
         @elseif($item->getMedia('image')->first())
-            <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-gray-800 bg-cover bg-center ">
+            <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-zinc-800 bg-cover bg-center ">
 
             </div>
         @else
-            <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-gray-800 flex flex-col items-center justify-center ">
+            <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-zinc-800 flex flex-col items-center justify-center ">
                 <i class="{{ $item->icon }} text-6xl"></i>
             </div>
         @endif
@@ -43,32 +43,32 @@
         <div class="flex flex-col justify-center">
             <h1 class="font-bold text-xl truncate ... w-full">{{ $item->title }}</h1>
             @if($item->description && $item->type !== 'review' && $item->type !== 'product' && $item->type !== 'service')
-                <p class="text-gray-400 text-sm truncate ... w-80">{{ $item->description }}</p>
+                <p class="text-zinc-400 text-sm truncate ... w-80">{{ $item->description }}</p>
             @elseif($item->type == 'product' || $item->type === 'service')
-                <p class="text-gray-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
+                <p class="text-zinc-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
             @endif
         </div>
     </div>
 </x-splade-link>
 @elseif($item->type === 'post' && $link)
-    <x-splade-link href="{{ $link }}" modal class="w-full bg-gray-800 border border-gray-700 overflow-hidden rounded-lg shadow-sm">
-        <div class=" flex justify-center border-b border-gray-700">
+    <x-splade-link href="{{ $link }}" modal class="w-full bg-zinc-800 border border-zinc-700 overflow-hidden rounded-lg shadow-sm">
+        <div class=" flex justify-center border-b border-zinc-700">
             @if($item->type === 'review')
-                <div class="w-full h-64 bg-gray-800" style="background-color: {{ $item->color }}">
-                    <i class="bx bxs-quote-single-left text-6xl text-gray-700 mt-4"></i>
+                <div class="w-full h-64 bg-zinc-800" style="background-color: {{ $item->color }}">
+                    <i class="bx bxs-quote-single-left text-6xl text-zinc-700 mt-4"></i>
                     <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
                         {{ $item->description }}
                     </div>
                     <div class="flex justify-end mb-4">
-                        <i class="bx bxs-quote-single-right text-6xl text-gray-700"></i>
+                        <i class="bx bxs-quote-single-right text-6xl text-zinc-700"></i>
                     </div>
                 </div>
             @elseif($item->getMedia('image')->first())
-                <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-gray-800 bg-cover bg-center ">
+                <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-zinc-800 bg-cover bg-center ">
 
                 </div>
             @else
-                <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-gray-800 flex flex-col items-center justify-center ">
+                <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-zinc-800 flex flex-col items-center justify-center ">
                     <i class="{{ $item->icon }} text-6xl"></i>
                 </div>
             @endif
@@ -98,31 +98,31 @@
             <div class="flex flex-col justify-center">
                 <h1 class="font-bold text-xl truncate ... w-full">{{ $item->title }}</h1>
                 @if($item->description && $item->type !== 'review' && $item->type !== 'product' && $item->type !== 'service')
-                    <p class="text-gray-400 text-sm truncate ... w-80">{{ $item->description }}</p>
+                    <p class="text-zinc-400 text-sm truncate ... w-80">{{ $item->description }}</p>
                 @elseif($item->type == 'product' || $item->type === 'service')
-                    <p class="text-gray-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
+                    <p class="text-zinc-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
                 @endif
             </div>
         </div>
     </x-splade-link>
 @else
-<a href="{{ $item->url ?? '#' }}" @if($item->url) target="_blank" @endif class="w-full bg-gray-800 border border-gray-700 overflow-hidden rounded-lg shadow-sm">
-    <div class=" flex justify-center border-b border-gray-700">
+<a href="{{ $item->url ?? '#' }}" @if($item->url) target="_blank" @endif class="w-full bg-zinc-800 border border-zinc-700 overflow-hidden rounded-lg shadow-sm">
+    <div class=" flex justify-center border-b border-zinc-700">
         @if($item->type === 'review')
-            <div class="w-full h-64 bg-gray-800" style="background-color: {{ $item->color }}">
+            <div class="w-full h-64 bg-zinc-800" style="background-color: {{ $item->color }}">
                 <div>
-                    <i class="bx bxs-quote-single-left text-6xl text-gray-700"></i>
+                    <i class="bx bxs-quote-single-left text-6xl text-zinc-700"></i>
                 </div>
                 <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
                     {{ $item->description }}
                 </div>
             </div>
         @elseif($item->getMedia('image')->first())
-            <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-gray-800 bg-cover bg-center ">
+            <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-64 bg-zinc-800 bg-cover bg-center ">
 
             </div>
         @else
-            <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-gray-800 flex flex-col items-center justify-center ">
+            <div style="background-color: {{ $item->color }}" class="w-full h-64 bg-zinc-800 flex flex-col items-center justify-center ">
                 <i class="{{ $item->icon }} text-6xl"></i>
             </div>
         @endif
@@ -152,9 +152,9 @@
         <div class="flex flex-col justify-center">
             <h1 class="font-bold text-xl truncate ... w-full">{{ $item->title }}</h1>
             @if($item->description && $item->type !== 'review' && $item->type !== 'product' && $item->type !== 'service')
-                <p class="text-gray-400 text-sm truncate ... w-80">{{ $item->description }}</p>
+                <p class="text-zinc-400 text-sm truncate ... w-80">{{ $item->description }}</p>
             @elseif($item->type == 'product' || $item->type === 'service')
-                <p class="text-gray-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
+                <p class="text-zinc-400 text-sm truncate ... w-80">{{ number_format($item->price-$item->discount, 2) }}<small>{{ $item->currency }}</small> @if($item->discount)<del class="text-sm text-danger-500">{{ number_format($item->price, 2) }}<small>{{ $item->currency }}</small></del>@endif</p>
             @endif
         </div>
     </div>
