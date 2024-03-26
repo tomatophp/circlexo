@@ -7,7 +7,7 @@
         <div class="mx-auto">
             <div class="relative text-center">
                 <div class="flex items-center justify-center">
-                    <div class="flex flex-col items-center justify-center flex-1 p-6 mx-auto space-y-6 text-center bg-white filament-tables-empty-state dark:bg-zinc-800 rounded-lg shadow-sm">
+                    <div class="flex flex-col items-center justify-center flex-1 p-6 mx-auto space-y-6 text-center bg-white filament-tables-empty-state dark:bg-gray-800 rounded-lg shadow-sm">
                         <div>
                             <i class="bx bx-block bx-lg text-red-600"></i>
                             <h1 class="text-red-600">{{__('Please input your developer password to access this feature')}}</h1>

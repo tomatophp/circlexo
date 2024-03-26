@@ -36,11 +36,6 @@ class CircleXOController extends Controller
         return redirect()->back();
     }
 
-    public function menu()
-    {
-        return view('circle-xo::menu');
-    }
-
     public function contact($username)
     {
         $account = Account::where('username', $username)->first();

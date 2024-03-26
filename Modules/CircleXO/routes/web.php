@@ -25,7 +25,6 @@ Route::middleware(['splade', 'auth', 'web'])->group(function (){
 
 Route::middleware(['splade'])->group(function (){
     Route::get('/', [CircleXOController::class, 'index'])->name('home');
-    Route::get('/menu', [CircleXOController::class, 'menu'])->name('home.menu');
 });
 
 Route::middleware(['splade', 'throttle:10'])->name('account.')->prefix('auth')->group(function (){

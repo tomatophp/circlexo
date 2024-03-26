@@ -13,6 +13,7 @@
 @import 'tippy.js/themes/light.css';
 
 @import 'boxicons/css/boxicons.min.css';
+@import '@meilisearch/instant-meilisearch/templates/basic_search.css';
 
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
 

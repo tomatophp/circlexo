@@ -27,13 +27,16 @@ import TomatoItems from "../../vendor/tomatophp/tomato-admin/resources/js/compon
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
+import InstantSearch from 'vue-instantsearch/vue3/es';
+
 
 import { MdEditor, MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
+import Search from "./components/Search.vue";
 
 
 createApp({
-    render: renderSpladeApp({ el }),
+    render: renderSpladeApp({ el })
 })
     .use(SpladePlugin, {
         max_keep_alive: 10,
@@ -41,6 +44,8 @@ createApp({
         progress_bar: true,
         view_transitions: false
     })
+    .use(InstantSearch)
+    .component("Search", Search)
     .component("Swiper", Swiper)
     .component("SwiperSlide", SwiperSlide)
     .component('TomatoTable', TomatoTable)
