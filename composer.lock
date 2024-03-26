@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3dbaaa994ec1388c5b1c28c5fad6895",
+    "content-hash": "4c21114ed7b245d2c2b8cbeebeb1b9f3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7848,6 +7848,65 @@
                 }
             ],
             "time": "2023-06-16T10:52:11+00:00"
+        },
+        {
+            "name": "revolution/socialite-discord",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kawax/socialite-discord.git",
+                "reference": "02be7ce8d693fcf8b341ab2b7782b5f1893da311"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kawax/socialite-discord/zipball/02be7ce8d693fcf8b341ab2b7782b5f1893da311",
+                "reference": "02be7ce8d693fcf8b341ab2b7782b5f1893da311",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/socialite": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "orchestra/testbench": "^9.0",
+                "phpunit/phpunit": "^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Revolution\\Socialite\\Discord\\DiscordServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Revolution\\Socialite\\Discord\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "Socialite for Discord",
+            "keywords": [
+                "discord",
+                "laravel",
+                "socialite"
+            ],
+            "support": {
+                "issues": "https://github.com/kawax/socialite-discord/issues",
+                "source": "https://github.com/kawax/socialite-discord/tree/1.4.1"
+            },
+            "time": "2024-03-15T11:21:03+00:00"
         },
         {
             "name": "rize/uri-template",

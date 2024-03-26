@@ -8,6 +8,7 @@ use ProtoneMedia\Splade\Facades\Splade;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */

@@ -47,6 +47,29 @@
 
 
                 </x-circle-xo-card>
+
+                <div class="my-4 text-center">
+                    <div>
+                        {{__('Or Register with Social Media')}}
+                    </div>
+                </div>
+                <div class="flex justify-center gap-2">
+                    <x-tomato-admin-tooltip :text="__('Register With GitHub')">
+                        <a href="{{ url('login/github') }}">
+                            <i class="bx bxl-github text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                    <x-tomato-admin-tooltip :text="__('Register With Twitter')">
+                        <a href="{{ url('login/twitter') }}">
+                            <i class="bx bxl-twitter text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                    <x-tomato-admin-tooltip :text="__('Register With Discord')">
+                        <a href="{{ url('login/discord') }}">
+                            <i class="bx bxl-discord text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                </div>
             </div>
         </div>
 

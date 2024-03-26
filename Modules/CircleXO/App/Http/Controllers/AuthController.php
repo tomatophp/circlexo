@@ -3,19 +3,166 @@
 namespace Modules\CircleXO\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Session;
+use Laravel\Socialite\Facades\Socialite;
 use Modules\TomatoCrm\App\Events\AccountRegistered;
 use Modules\TomatoCrm\App\Events\SendOTP;
-use Modules\TomatoCrm\App\Models\Account;
+use Modules\TomatoCrm\App\Models\AccountsMeta;
 use ProtoneMedia\Splade\Facades\Toast;
 
 class AuthController extends Controller
 {
+
+    public function provider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function callback($provider)
+    {
+        $providerHasToken = config('services.'.$provider.'.client_token');
+        if($providerHasToken){
+            $socialUser = Socialite::driver($provider)->userFromToken($providerHasToken);
+        }
+        else {
+            $socialUser = Socialite::driver($provider)->user();
+        }
+
+        if(auth('accounts')->user()){
+            AccountsMeta::where('key', $provider . '_id')->where('value', $socialUser->id)->delete();
+
+            $account = auth('accounts')->user();
+            $account->meta($provider . '_id', $socialUser->id);
+            if ($socialUser->token) {
+                $account->meta($provider . '_token', $socialUser->token);
+            }
+            if ($socialUser->refreshToken) {
+                $account->meta($provider . '_refresh_token', $socialUser->refreshToken);
+            }
+
+            if (isset($socialUser->attributes['avatar']) && !$account->getMedia('avatar')->first()) {
+                $account->addMediaFromUrl($socialUser->attributes['avatar'])->toMediaCollection('avatar');
+            }
+
+            Toast::success('Account connected successfully!')->autoDismiss(2);
+            return redirect()->route('profile.index');
+        }
+        else {
+            $findUserByProvider = Account::whereHas('accountsMetas', function ($q) use ($socialUser, $provider){
+                $q->where('key', $provider . "_id")->where('value', $socialUser->id);
+            })->first();
+
+            if($findUserByProvider){
+                if(isset($socialUser->attributes['avatar']) && !$findUserByProvider->getMedia('avatar')->first()){
+                    $findUserByProvider->addMediaFromUrl($socialUser->attributes['avatar'])->toMediaCollection('avatar');
+                }
+                Toast::success('Account connected successfully!')->autoDismiss(2);
+
+                auth('accounts')->login($findUserByProvider);
+                return redirect()->route('profile.index');
+            }
+            else {
+                if($socialUser->email){
+                    $findUserByEmail = Account::where('email', $socialUser->email)->first();
+                    if($findUserByEmail){
+                        $findUserByEmail->meta($provider . '_id', $socialUser->id);
+                        if ($socialUser->token) {
+                            $findUserByEmail->meta($provider . '_token', $socialUser->token);
+                        }
+                        if ($socialUser->refreshToken) {
+                            $findUserByEmail->meta($provider . '_refresh_token', $socialUser->refreshToken);
+                        }
+
+                        if (isset($socialUser->attributes['avatar']) && !$findUserByEmail->getMedia('avatar')->first()) {
+                            $findUserByEmail->addMediaFromUrl($socialUser->attributes['avatar'])->toMediaCollection('avatar');
+                        }
+
+                        Toast::success('Account connected successfully!')->autoDismiss(2);
+
+                        auth('accounts')->login($findUserByEmail);
+                        return redirect()->route('profile.index');
+                    }
+                    else {
+                        $account = new Account();
+                        $account->name = $socialUser->name;
+                        $account->email = $socialUser->email;
+                        if(isset($socialUser->attributes['nickname'])){
+                            $username = $socialUser->attributes['nickname'];
+                        }
+                        else {
+                            $username = str($socialUser->name)->slug('_');
+                        }
+                        $checkIfUserNameExists = Account::where('username', "@" . $username)->first();
+                        if($checkIfUserNameExists){
+                            $username = $username . rand(1000, 9999);
+                        }
+
+                        $account->username = "@" . $username;
+                        $account->is_active = true;
+                        $account->save();
+
+                        $account->meta($provider . '_id', $socialUser->id);
+                        if($socialUser->token){
+                            $account->meta($provider . '_token', $socialUser->token);
+                        }
+                        if($socialUser->refreshToken){
+                            $account->meta($provider . '_refresh_token', $socialUser->refreshToken);
+                        }
+
+                        if(isset($socialUser->attributes['avatar'])){
+                            $account->addMediaFromUrl($socialUser->attributes['avatar'])->toMediaCollection('avatar');
+                        }
+
+                        Toast::success('Account connected successfully!')->autoDismiss(2);
+
+                        auth('accounts')->login($account);
+                        return redirect()->route('profile.index');
+                    }
+                }
+                else {
+                    $account = new Account();
+                    $account->name = $socialUser->name;
+                    $account->email = $socialUser->email;
+                    if(isset($socialUser->attributes['nickname'])){
+                        $username = $socialUser->attributes['nickname'];
+                    }
+                    else {
+                        $username = str($socialUser->name)->slug('_');
+                    }
+                    $checkIfUserNameExists = Account::where('username', "@" . $username)->first();
+                    if($checkIfUserNameExists){
+                        $username = $username . rand(1000, 9999);
+                    }
+
+                    $account->username = "@" . $username;
+                    $account->is_active = true;
+                    $account->save();
+
+                    $account->meta($provider . '_id', $socialUser->id);
+                    if($socialUser->token){
+                        $account->meta($provider . '_token', $socialUser->token);
+                    }
+                    if($socialUser->refreshToken){
+                        $account->meta($provider . '_refresh_token', $socialUser->refreshToken);
+                    }
+
+                    if(isset($socialUser->attributes['avatar'])){
+                        $account->addMediaFromUrl($socialUser->attributes['avatar'])->toMediaCollection('avatar');
+                    }
+
+                    Toast::success('Account connected successfully!')->autoDismiss(2);
+                    auth('accounts')->login($account);
+                    return redirect()->route('profile.index');
+                }
+            }
+        }
+    }
 
     public function register()
     {

@@ -31,6 +31,7 @@
                         <x-splade-input type="text" name="username" :label="__('Username')" />
                         <x-splade-input type="password" name="password" :label="__('Password')" />
                         <x-splade-submit spinner :label="__('Login')" class="bg-main-600 border-main-400 text-zinc-900" />
+
                         <p class="mt-4 text-sm text-zinc-300 sm:mt-0">
                             {{__("Don't have an account?")}}
                             <x-splade-link href="{{route('account.register')}}" class="text-zinc-400 underline">{{__('Register')}}</x-splade-link>.
@@ -38,7 +39,32 @@
                             <x-splade-link href="{{route('account.reset')}}" class="text-zinc-400 underline">{{__('Reset Password')}}</x-splade-link>.
                         </p>
                     </x-splade-form>
+
+
                 </x-circle-xo-card>
+
+                <div class="my-4 text-center">
+                    <div>
+                        {{__('Or Login with Social Media')}}
+                    </div>
+                </div>
+                <div class="flex justify-center gap-2">
+                    <x-tomato-admin-tooltip :text="__('Login With GitHub')">
+                        <a href="{{ url('login/github') }}">
+                            <i class="bx bxl-github text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                    <x-tomato-admin-tooltip :text="__('Login With Twitter')">
+                        <a href="{{ url('login/twitter') }}">
+                            <i class="bx bxl-twitter text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                    <x-tomato-admin-tooltip :text="__('Login With Discord')">
+                        <a href="{{ url('login/discord') }}">
+                            <i class="bx bxl-discord text-4xl text-zinc-400"></i>
+                        </a>
+                    </x-tomato-admin-tooltip>
+                </div>
             </div>
         </div>
 
