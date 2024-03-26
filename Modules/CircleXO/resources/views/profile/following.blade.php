@@ -1,7 +1,7 @@
 <x-circle-xo-profile-layout>
     <div class="my-12 mx-8 lg:mx-16">
         @if(!auth('accounts')->user()->followings()->get()->count())
-            <div class="bg-gray-800 border border-gray-700 mx-16 my-4 rounded-lg shadow-sm flex justify-center">
+            <div class="bg-zinc-800 border border-zinc-700 mx-16 my-4 rounded-lg shadow-sm flex justify-center">
                 <div class="p-8 md:p-16 text-center">
                     <i class="bx bx-x-circle bx-lg text-danger-500"></i>
                     <h1>{{__("You still don't follow any user!")}}</h1>

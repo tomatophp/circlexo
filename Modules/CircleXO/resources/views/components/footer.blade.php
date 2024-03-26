@@ -1,4 +1,4 @@
-<footer class="p-4 border-t-2 border-gray-700 bg-gray-800">
+<footer class="p-4 border-t-2 border-zinc-700 bg-zinc-800">
     <nav class="grid grid-cols-1 lg:grid-cols-2">
         <div class="text-white flex justify-center w-full ">
             <x-splade-link href="{{ route('home') }}">

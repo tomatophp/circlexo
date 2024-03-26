@@ -46,7 +46,7 @@
         @else
             <div class="bg-white rounded-lg mt-4">
                 <div class="whitespace-nowrap">
-                    <p class="text-gray-700 px-6 py-12 font-medium text-sm text-center">
+                    <p class="text-zinc-700 px-6 py-12 font-medium text-sm text-center">
                         {{ __('There are no items to show.') }}
                     </p>
                 </div>

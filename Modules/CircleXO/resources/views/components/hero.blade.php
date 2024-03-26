@@ -4,7 +4,7 @@
             <div class="flex flex-col justify-center text-center gap-2 px-16 py-32">
                 <i class="bx bxs-user-circle text-9xl text-main-600"></i>
                 <h1  class="text-2xl md:text-4xl lg:text-6xl font-bold text-main-600">Start a web journey with a sharable profile link</h1>
-                <h6 class="text-md md:text-2xl lg:text-3xl font-light text-gray-300">share your social media <span class="text-thead-600 font-bold">links</span> and your <span class="font-bold text-second-600">skills</span> and more on one place</h6>
+                <h6 class="text-md md:text-2xl lg:text-3xl font-light text-zinc-300">share your social media <span class="text-thead-600 font-bold">links</span> and your <span class="font-bold text-second-600">skills</span> and more on one place</h6>
                 <div class="mt-8">
                     @if(auth('accounts')->user())
                         <x-circle-xo-button :label="__('Profile')" size="lg" href="{{ route('profile.index') }}" primary />
@@ -28,3 +28,4 @@
         </div>
     </div>
 </div>
+

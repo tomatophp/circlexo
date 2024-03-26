@@ -1542,19 +1542,19 @@ trix-editor .attachment__metadata .attachment__size {
   @apply mb-0 overflow-hidden;
 }
 .filepond--panel-root {
-  @apply bg-white border border-gray-300 rounded-lg shadow-sm;
+  @apply bg-white border border-zinc-300 rounded-lg shadow-sm;
 }
 .filepond--drip-blob {
-  @apply bg-gray-900;
+  @apply bg-zinc-900;
 }
 .dark .filepond--drop-label {
-  @apply text-gray-200;
+  @apply text-zinc-200;
 }
 .dark .filepond--panel-root {
-  @apply border-gray-600 text-white bg-gray-700;
+  @apply border-zinc-600 text-white bg-zinc-700;
 }
 .dark .filepond--drip-blob {
-  @apply bg-gray-100;
+  @apply bg-zinc-100;
 }
 .filepond--root[data-style-panel-layout=compact] .filepond--item {
   @apply mb-0.5;
@@ -1599,10 +1599,10 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* packages/forms/resources/css/components/rich-editor.css */
 .dark .trix-button {
-  @apply bg-gray-700 border-gray-600 text-gray-200;
+  @apply bg-zinc-700 border-zinc-600 text-zinc-200;
 }
 .dark .trix-button-group {
-  @apply border-gray-600;
+  @apply border-zinc-600;
 }
 
 /* packages/forms/resources/css/components/select.css */
@@ -1635,19 +1635,19 @@ trix-editor .attachment__metadata .attachment__size {
   @apply block w-full p-2 border-b m-0;
 }
 .dark .choices[data-type*=select-one] .choices__input {
-  @apply bg-gray-700;
+  @apply bg-zinc-700;
 }
 .choices[data-type*=select-multiple] .choices__inner {
   @apply cursor-text;
 }
 .choices__inner {
-  @apply py-2 px-3 inline-block align-top w-full bg-white bg-no-repeat border border-gray-300 transition duration-75 rounded-lg shadow-sm;
+  @apply py-2 px-3 inline-block align-top w-full bg-white bg-no-repeat border border-zinc-300 transition duration-75 rounded-lg shadow-sm;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
   background-position: right 0.5rem center;
   background-size: 1.5em 1.5em;
 }
 .dark .choices__inner {
-  @apply border-gray-600 bg-gray-700 text-white;
+  @apply border-zinc-600 bg-zinc-700 text-white;
 }
 [dir=rtl] .choices__inner {
   background-position: left 0.5rem center;
@@ -1688,11 +1688,11 @@ trix-editor .attachment__metadata .attachment__size {
 }
 .choices__list--dropdown,
 .choices__list[aria-expanded] {
-  @apply mt-2 rounded-lg invisible z-[1] absolute w-full bg-white border border-gray-300 shadow-sm top-full overflow-hidden break-words will-change-[visibility];
+  @apply mt-2 rounded-lg invisible z-[1] absolute w-full bg-white border border-zinc-300 shadow-sm top-full overflow-hidden break-words will-change-[visibility];
 }
 .dark .choices__list--dropdown,
 .dark .choices__list[aria-expanded] {
-  @apply bg-gray-700 border-gray-600;
+  @apply bg-zinc-700 border-zinc-600;
 }
 .is-active.choices__list--dropdown,
 .is-active.choices__list[aria-expanded] {
@@ -1787,7 +1787,7 @@ trix-editor .attachment__metadata .attachment__size {
   border-color: rgb(209 213 219) !important;
 }
 .dark .choices__list--dropdown .choices__input {
-  @apply placeholder-gray-300;
+  @apply placeholder-zinc-300;
   border-color: rgb(75 85 99) !important;
 }
 .choices__input {

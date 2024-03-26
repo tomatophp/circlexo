@@ -8,15 +8,15 @@ use function Pest\Laravel\swap;
 
 class Button extends Component
 {
-    public array $primaryClass = ['bg-main-600 hover:bg-main-400', 'text-gray-800', 'border', 'border-gray-700'];
-    public array $secondaryClass = ['bg-second-600 hover:bg-second-400', 'text-white' , 'border', 'border-gray-700'];
-    public array $theadClass = ['bg-thead-600 hover:bg-thead-400', 'text-white' , 'border', 'border-gray-700'];
+    public array $primaryClass = ['bg-main-600 hover:bg-main-400', 'text-zinc-800', 'border', 'border-zinc-700'];
+    public array $secondaryClass = ['bg-second-600 hover:bg-second-400', 'text-white' , 'border', 'border-zinc-700'];
+    public array $theadClass = ['bg-thead-600 hover:bg-thead-400', 'text-white' , 'border', 'border-zinc-700'];
     public array $successClass = ['bg-success-600', 'text-white'];
     public array $dangerClass = ['bg-danger-600', 'text-white'];
     public array $warningClass = ['bg-warning-600', 'text-white'];
     public array $infoClass = ['bg-info-600', 'text-white'];
     public array $lightClass = ['bg-gary-200', 'text-black'];
-    public array $darkClass = ['bg-gray-800', 'text-white'];
+    public array $darkClass = ['bg-zinc-800', 'text-white'];
 
     /**
      * Create a new component instance.

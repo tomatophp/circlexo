@@ -29,10 +29,10 @@
                 >
                     <x-splade-form method="POST" :action="route('account.otp.check')" class="flex flex-col gap-4 w-full">
                         <x-splade-input type="number" name="otp_code" :label="__('OTP Code')" />
-                        <x-splade-submit spinner :label="__('Verify')" class="bg-main-600 border-main-400 text-gray-900" />
-                        <p class="mt-4 text-sm text-gray-300 sm:mt-0">
+                        <x-splade-submit spinner :label="__('Verify')" class="bg-main-600 border-main-400 text-zinc-900" />
+                        <p class="mt-4 text-sm text-zinc-300 sm:mt-0">
                             {{__("Don't get the code?")}}
-                            <x-splade-link method="POST" href="{{route('account.otp.resend')}}" class="text-gray-400 underline">{{__('Resend Email')}}</x-splade-link>.
+                            <x-splade-link method="POST" href="{{route('account.otp.resend')}}" class="text-zinc-400 underline">{{__('Resend Email')}}</x-splade-link>.
                         </p>
                     </x-splade-form>
                 </x-circle-xo-card>

@@ -29,7 +29,7 @@
                 >
                     <x-splade-form method="POST" :action="route('account.email')" class="flex flex-col gap-4 w-full">
                         <x-splade-input type="email" name="email" :label="__('Email')" />
-                        <x-splade-submit spinner :label="__('Send Reset Email')" class="bg-main-600 border-main-400 text-gray-900" />
+                        <x-splade-submit spinner :label="__('Send Reset Email')" class="bg-main-600 border-main-400 text-zinc-900" />
                     </x-splade-form>
                 </x-circle-xo-card>
             </div>

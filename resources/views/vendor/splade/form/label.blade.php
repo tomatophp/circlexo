@@ -1,0 +1,1 @@
+<span class="block text-sm font-medium leading-6 text-zinc-950 dark:text-white">{{ $label }}@if($attributes->has('required'))<sup class="text-danger-600 dark:text-danger-400 font-medium">*</sup>@endif</span>
