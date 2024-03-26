@@ -67,6 +67,13 @@
                         <x-circle-xo-button  href="{{route('profile.actions.unfollow', $account->username)}}" danger confirm-danger :label="__('UnFollow')" size="sm"/>
                     @endif
                 @endif
+                @if($account->meta('sponsoring_link'))
+                    <x-tomato-admin-tooltip :text="__('Sponsoring')">
+                        <x-splade-link href="{{ route('home.sponsoring', $account->username) }}" class="bg-danger-600 text-white rounded-md shadow-md font-bold text-sm px-4 py-2">
+                            <i class="bx bxs-heart text-white"></i>
+                        </x-splade-link>
+                    </x-tomato-admin-tooltip>
+                @endif
             </div>
             <div class="justify-center md:justify-start gap-4 my-8 mx-16 flex lg:hidden">
                <x-circle-xo-social-links :account="$account"/>
