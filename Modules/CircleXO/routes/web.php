@@ -63,6 +63,10 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/edit/info', [ProfileController::class, 'info'])->name('info.show');
     Route::post('/edit/info', [ProfileController::class, 'updateInfo'])->name('info.update');
     Route::get('/edit/social', [ProfileController::class, 'social'])->name('social.show');
+    Route::post('/edit/social', [ProfileController::class, 'socialStore'])->name('social.store');
+    Route::get('/edit/social/{network}', [ProfileController::class, 'socialEdit'])->name('social.edit');
+    Route::post('/edit/social/{network}', [ProfileController::class, 'socialUpdate'])->name('social.update');
+    Route::delete('/edit/social/{network}', [ProfileController::class, 'socialDestroy'])->name('social.destroy');
     Route::post('/edit/meta', [ProfileController::class, 'updateMeta'])->name('meta.update');
     Route::post('/edit/media', [ProfileController::class, 'updateMedia'])->name('media.update');
     Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');

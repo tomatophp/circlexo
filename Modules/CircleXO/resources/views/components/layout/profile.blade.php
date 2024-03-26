@@ -19,17 +19,7 @@
                     <i class="bx bx-plus-circle text-2xl text-main-600 hover:text-white"></i>
                 </x-splade-link>
                 @if(auth('accounts')->user()->meta('social'))
-                    @foreach(auth('accounts')->user()->meta('social') as $social)
-                        <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name']">
-                                @if($social['name'] !== 'website')
-                                    <i class="bx bxl-{{ $social['name'] }} text-2xl text-zinc-200 hover:text-white"></i>
-                                @else
-                                    <i class="bx bx-link text-2xl text-zinc-200 hover:text-white"></i>
-                                @endif
-                            </x-tomato-admin-tooltip>
-                        </a>
-                    @endforeach
+                    <x-circle-xo-social-links edit :account="auth('accounts')->user()"/>
                 @endif
             </div>
             <div>
@@ -110,17 +100,7 @@
                     <i class="bx bx-plus-circle text-2xl text-main-600 hover:text-white"></i>
                 </x-splade-link>
                 @if(auth('accounts')->user()->meta('social'))
-                    @foreach(auth('accounts')->user()->meta('social') as $social)
-                        <a href="{{ $social['link'] }}" target="_blank">
-                            <x-tomato-admin-tooltip :text="isset($social['label']) ? $social['label'] : $social['name']">
-                                @if($social['name'] !== 'website')
-                                    <i class="bx bxl-{{ $social['name'] }} text-2xl text-zinc-200 hover:text-white"></i>
-                                @else
-                                    <i class="bx bx-link text-2xl text-zinc-200 hover:text-white"></i>
-                                @endif
-                            </x-tomato-admin-tooltip>
-                        </a>
-                    @endforeach
+                    <x-circle-xo-social-links edit :account="auth('accounts')->user()"/>
                 @endif
             </div>
         </div>
