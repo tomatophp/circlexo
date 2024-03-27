@@ -8,7 +8,7 @@
         <div class="mt-14">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bx-category text-main-600 text-5xl"></i>
 
@@ -21,7 +21,7 @@
                 {{-- End Card --}}
 
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bx-qr text-main-600 text-5xl"></i>
                         <div>
@@ -33,7 +33,7 @@
                 {{-- End Card --}}
 
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bxs-planet text-main-600 text-5xl"></i>
                         <div>
@@ -45,7 +45,7 @@
                 {{-- End Card --}}
 
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bxl-github text-main-600 text-5xl"></i>
                         <div>
@@ -57,7 +57,7 @@
                 {{-- End Card --}}
 
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bxs-chat text-main-600 text-5xl"></i>
                         <div>
@@ -69,7 +69,7 @@
                 {{-- End Card --}}
 
                 {{-- Card --}}
-                <div class="border border-main-400/50 p-8 rounded-lg">
+                <div class="border border-zinc-700 p-8 rounded-lg bg-zinc-900">
                     <div class="flex items-center gap-6">
                         <i class="bx bxs-heart text-main-600 text-5xl"></i>
                         <div>

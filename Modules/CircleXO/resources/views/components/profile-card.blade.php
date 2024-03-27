@@ -14,9 +14,9 @@
             @endif
         </div>
         <x-splade-link href="{{ route('profile', $account->username) }}" class="flex justify-center gap-2  font-bold">
-            <h1 class="text-2xl">{{ $account->name }}</h1>
+            <h1 class="text-xl">{{ $account->name }}</h1>
             @if($account->type === 'verified')
-                <div class="flex flex-col justify-center items-center mt-2">
+                <div class="flex flex-col justify-center items-center mt-1">
                     <x-tomato-admin-tooltip :text="__('Verified Account')">
                         <i class="bx bxs-badge-check text-blue-400 text-xl"></i>
                     </x-tomato-admin-tooltip>

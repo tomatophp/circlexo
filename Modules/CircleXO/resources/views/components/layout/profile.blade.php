@@ -7,7 +7,7 @@
     <div class="h-full min-h-screen">
         <x-circle-xo-profile-cover edit :account="$account" />
 
-        <div class="grid grid-cols-1 lg:grid-cols-3">
+        <div class="grid grid-cols-1 md:grid-cols-3">
             <div class="justify-start gap-4 mt-8 mx-16 hidden lg:flex">
                 <x-splade-link modal :href="route('profile.social.show')">
                     <i class="bx bx-plus-circle text-2xl text-main-600 hover:text-white"></i>
