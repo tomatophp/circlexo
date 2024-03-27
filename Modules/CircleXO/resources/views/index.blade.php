@@ -18,4 +18,6 @@
 @seoKeywords(setting('site_keywords'))
 <x-circle-xo-app-layout>
     <x-circle-xo-hero />
+    <x-circle-xo-features />
+    <x-circle-xo-listing />
 </x-circle-xo-app-layout>
