@@ -4,7 +4,11 @@
             <div class="flex justify-center gap-2">
                 <div class="flex flex-col justify-center text-lg">
                     <div class="flex justify-center items-center flex-col">
-                        <i class="{{ $item->icon }} text-5xl"></i>
+                        @if($item->getMedia('image')->first())
+                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-24">
+                        @else
+                            <i class="{{ $item->icon }} text-5xl"></i>
+                        @endif
                     </div>
                     <div class=" rounded-full h-2.5 bg-zinc-800  my-4 w-80 ">
                         <div class="bg-success-600 h-2.5 rounded-full" style="width: {{$item->description}}"></div>
@@ -13,7 +17,21 @@
                         <p>{{ $item->description }}</p>
                     </div>
                 </div>
-
+            </div>
+        @elseif($item->type === 'game')
+            <div class="flex justify-center gap-2">
+                <div class="flex flex-col justify-center text-lg">
+                    <div class="flex justify-center items-center flex-col my-2">
+                        @if($item->getMedia('image')->first())
+                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-24">
+                        @else
+                            <i class="{{ $item->icon }} text-5xl"></i>
+                        @endif
+                    </div>
+                    <div class="flex justify-center items-center flex-col">
+                        <p>{{ $item->description }}</p>
+                    </div>
+                </div>
             </div>
         @elseif(str($item->description)->contains('#'))
             @php
