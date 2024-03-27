@@ -21,22 +21,28 @@
     <div class="px-4 py-2 h-16 flex justify-start gap-2">
         <div class="flex flex-col justify-center items-center">
             @if($item->type === 'link')
-                <i class="bx bx-link text-4xl text-amber-500"></i>
+                <i class="bx bx-link text-4xl" style="color: #FF3D64"></i>
             @elseif($item->type === 'post')
-                <i class="bx bx-news text-4xl text-purple-500"></i>
+                <i class="bx bx-news text-4xl" style="color: #00E0B2"></i>
             @elseif($item->type === 'service')
-                <i class="bx bxs-briefcase-alt-2 text-4xl text-pink-500"></i>
+                <i class="bx bxs-briefcase-alt-2 text-4xl" style="color: #F8CF00"></i>
             @elseif($item->type === 'product')
-                <i class="bx bxs-cart text-4xl text-green-500"></i>
+                <i class="bx bxs-cart text-4xl"  style="color: green"></i>
             @elseif($item->type === 'skill')
-                <i class="bx bxs-face-mask text-4xl text-red-500"></i>
+                <i class="bx bxs-face-mask text-4xl" style="color: red"></i>
+            @elseif($item->type === 'game')
+                <i class="bx bxs-game text-4xl" style="color: #008469"></i>
+            @elseif($item->type === 'video')
+                <i class="bx bxs-video text-4xl" style="color: #8A7407"></i>
+            @elseif($item->type === 'music')
+                <i class="bx bxs-music text-4xl" style="color: #FF3D64"></i>
             @elseif($item->type === 'portfolio')
-                <i class="bx bx-image text-4xl text-blue-400"></i>
+                <i class="bx bx-image text-4xl" style="color: blue"></i>
             @elseif($item->type === 'review')
                 @if($item->getMedia('image')->first())
                     <img src="{{$item->getMedia('image')->first()?->getUrl()}}" class="w-12 h-12 bg-cover bg-center rounded-full">
                 @else
-                    <i class="bx bxs-star text-4xl text-orange-400"></i>
+                    <i class="bx bxs-star text-4xl" style="color: orange"></i>
                 @endif
             @endif
         </div>
@@ -113,7 +119,7 @@
                 <div>
                     <i class="bx bxs-quote-single-left text-6xl text-zinc-700"></i>
                 </div>
-                <div class="p-4 font-bold text-center flex flex-col items-center justify-center ">
+                <div class="p-4 font-bold text-center flex flex-col items-center justify-center">
                     {{ $item->description }}
                 </div>
             </div>
@@ -130,22 +136,28 @@
     <div class="px-4 py-2 h-16 flex justify-start gap-2">
         <div class="flex flex-col justify-center items-center">
             @if($item->type === 'link')
-                <i class="bx bx-link text-4xl text-amber-500"></i>
+                <i class="bx bx-link text-4xl" style="color: #FF3D64"></i>
             @elseif($item->type === 'post')
-                <i class="bx bx-news text-4xl text-purple-500"></i>
+                <i class="bx bx-news text-4xl" style="color: #00E0B2"></i>
             @elseif($item->type === 'service')
-                <i class="bx bxs-briefcase-alt-2 text-4xl text-pink-500"></i>
+                <i class="bx bxs-briefcase-alt-2 text-4xl" style="color: #F8CF00"></i>
             @elseif($item->type === 'product')
-                <i class="bx bxs-cart text-4xl text-green-500"></i>
+                <i class="bx bxs-cart text-4xl"  style="color: green"></i>
             @elseif($item->type === 'skill')
-                <i class="bx bxs-face-mask text-4xl text-red-500"></i>
+                <i class="bx bxs-face-mask text-4xl" style="color: red"></i>
+            @elseif($item->type === 'game')
+                <i class="bx bxs-game text-4xl" style="color: #008469"></i>
+            @elseif($item->type === 'video')
+                <i class="bx bxs-video text-4xl" style="color: #8A7407"></i>
+            @elseif($item->type === 'music')
+                <i class="bx bxs-music text-4xl" style="color: #FF3D64"></i>
             @elseif($item->type === 'portfolio')
-                <i class="bx bx-image text-4xl text-blue-400"></i>
+                <i class="bx bx-image text-4xl" style="color: blue"></i>
             @elseif($item->type === 'review')
                 @if($item->getMedia('image')->first())
                     <img src="{{$item->getMedia('image')->first()?->getUrl()}}" class="w-12 h-12 bg-cover bg-center rounded-full">
                 @else
-                    <i class="bx bxs-star text-4xl text-orange-400"></i>
+                    <i class="bx bxs-star text-4xl" style="color: orange"></i>
                 @endif
             @endif
         </div>

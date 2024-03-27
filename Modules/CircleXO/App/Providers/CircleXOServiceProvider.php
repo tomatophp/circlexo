@@ -41,17 +41,21 @@ class CircleXOServiceProvider extends ServiceProvider
             \Modules\CircleXO\App\View\Components\PublicProfileLayout::class,
             \Modules\CircleXO\App\View\Components\Header::class,
             \Modules\CircleXO\App\View\Components\Footer::class,
-            \Modules\CircleXO\App\View\Components\Menu::class,
-            \Modules\CircleXO\App\View\Components\MenuItem::class,
             \Modules\CircleXO\App\View\Components\Hero::class,
             \Modules\CircleXO\App\View\Components\Button::class,
             \Modules\CircleXO\App\View\Components\Card::class,
             \Modules\CircleXO\App\View\Components\ProfileCard::class,
             \Modules\CircleXO\App\View\Components\Logo::class,
             \Modules\CircleXO\App\View\Components\ListingCard::class,
+            \Modules\CircleXO\App\View\Components\ListingFilters::class,
             \Modules\CircleXO\App\View\Components\ListingFilterItem::class,
             \Modules\CircleXO\App\View\Components\SocialItem::class,
             \Modules\CircleXO\App\View\Components\SocialLinks::class,
+            \Modules\CircleXO\App\View\Components\ProfileAvatar::class,
+            \Modules\CircleXO\App\View\Components\ProfileCover::class,
+            \Modules\CircleXO\App\View\Components\ProfileButtons::class,
+            \Modules\CircleXO\App\View\Components\ProfileInfo::class,
+            \Modules\CircleXO\App\View\Components\ListingType::class,
         ]);
     }
 

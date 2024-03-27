@@ -2,15 +2,19 @@
 
 namespace Modules\CircleXO\App\View\Components;
 
+use App\Models\Account;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class Menu extends Component
+class ProfileCover extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        public Account $account,
+        public bool $edit = false
+    )
     {
         //
     }
@@ -20,6 +24,6 @@ class Menu extends Component
      */
     public function render(): View|string
     {
-        return view('circle-xo::components.menu');
+        return view('circle-xo::components.profile-cover');
     }
 }

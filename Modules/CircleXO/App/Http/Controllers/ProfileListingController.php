@@ -36,7 +36,7 @@ class ProfileListingController extends Controller
         $request->validate([
             "title" => "required|string|max:255",
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
-            "type" => "required|string|in:link,product,service,skill,portfolio,review,post",
+            "type" => "required|string|in:link,product,service,skill,portfolio,review,post,music,video,game",
         ]);
 
         if($request->get('type') === 'post'){
@@ -122,7 +122,7 @@ class ProfileListingController extends Controller
         $request->validate([
             "title" => "required|string|max:255",
             "image" => "nullable|mimes:jpeg,png,jpg,gif,svg|max:2048",
-            "type" => "required|string|in:link,product,service,skill,portfolio,review,post",
+            "type" => "required|string|in:link,product,service,skill,portfolio,review,post,music,video,game",
         ]);
 
         if($request->get('type') === 'post'){
