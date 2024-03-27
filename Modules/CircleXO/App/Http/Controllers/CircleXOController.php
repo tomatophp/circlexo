@@ -161,12 +161,13 @@ class CircleXOController extends Controller
                 ->first();
 
             if($post){
-
-                $post->account->notifyDB(
-                    message: __(auth('accounts')->user()->username . " " . __('is like your listing') .' '. $post->title),
-                    title: __('New Like'),
-                    url: url(auth('accounts')->user()->username)
-                );
+                if($post->account->id !== auth('accounts')->user()->id) {
+                    $post->account->notifyDB(
+                        message: __(auth('accounts')->user()->username . " " . __('is like your listing') . ' ' . $post->title),
+                        title: __('New Like'),
+                        url: url(auth('accounts')->user()->username)
+                    );
+                }
 
                 auth('accounts')->user()->like($post);
                 return back();
@@ -189,11 +190,13 @@ class CircleXOController extends Controller
                 ->first();
 
             if($post){
-                $post->account->notifyDB(
-                    message: __(auth('accounts')->user()->username . " " . __('is dislike your listing') .' '. $post->title),
-                    title: __('New Dislike'),
-                    url: url(auth('accounts')->user()->username)
-                );
+                if($post->account->id !== auth('accounts')->user()->id){
+                    $post->account->notifyDB(
+                        message: __(auth('accounts')->user()->username . " " . __('is dislike your listing') .' '. $post->title),
+                        title: __('New Dislike'),
+                        url: url(auth('accounts')->user()->username)
+                    );
+                }
 
                 auth('accounts')->user()->unlike($post);
                 return back();
