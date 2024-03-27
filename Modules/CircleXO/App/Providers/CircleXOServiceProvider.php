@@ -55,6 +55,7 @@ class CircleXOServiceProvider extends ServiceProvider
             \Modules\CircleXO\App\View\Components\ProfileAvatar::class,
             \Modules\CircleXO\App\View\Components\ProfileCover::class,
             \Modules\CircleXO\App\View\Components\ProfileButtons::class,
+            \Modules\CircleXO\App\View\Components\ProfileSide::class,
             \Modules\CircleXO\App\View\Components\ProfileInfo::class,
             \Modules\CircleXO\App\View\Components\ListingType::class,
             \Modules\CircleXO\App\View\Components\Recap::class,
