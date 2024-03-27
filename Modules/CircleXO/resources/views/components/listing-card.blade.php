@@ -56,6 +56,21 @@
                         </x-tomato-admin-tooltip>
                     @endif
                 </div>
+            @else
+                <x-tomato-admin-tooltip :text="__('Like')">
+                    <x-splade-link :href="route('account.register')" class="w-full">
+                        <div class="flex justify-start gap-2">
+                            <div class="bg-zinc-700 p-3 rounded-lg text-white flex flex-col justify-center items-center">
+                                <i class="bx bxs-like text-lg"></i>
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                <div>
+                                    <p>{{ $item->likers()->count() }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </x-splade-link>
+                </x-tomato-admin-tooltip>
             @endif
         </div>
         <div class="flex flex-col justify-center items-center mx-4">
