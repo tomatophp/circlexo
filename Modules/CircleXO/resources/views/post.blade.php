@@ -4,17 +4,17 @@
     SEO::openGraphTitle($post->title . ' | '. setting('site_name'));
     SEO::openGraphUrl(url()->current());
     SEO::openGraphImage($post->getMedia('image')->first()?->getUrl() ?: setting('site_profile'));
-    SEO::metaByProperty('og:description',$post->descriotion ?: setting('site_description'));
+    SEO::metaByProperty('og:description',$post->description ?: setting('site_description'));
 
     SEO::twitterCard('summary_large_image');
     SEO::twitterTitle($post->title . ' | '. setting('site_name'));
-    SEO::twitterDescription($post->descriotion ?: setting('site_description'));
+    SEO::twitterDescription($post->description ?: setting('site_description'));
     SEO::twitterImage($post->getMedia('image')->first()?->getUrl() ?: setting('site_profile'));
 
     SEO::canonical(url()->current());
 @endphp
 @seoTitle($post->title . ' | '. setting('site_name'))
-@seoDescription($post->descriotion ?: setting('site_description'))
+@seoDescription($post->description ?: setting('site_description'))
 @seoKeywords(setting('site_keywords'))
 
 <x-circle-xo-public-profile-layout :account="$account">
