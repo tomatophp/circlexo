@@ -6,5 +6,7 @@
     "TomatoLocations": true,
     "TomatoCategory": true,
     "TomatoCrm": true,
-    "CircleXO": true
+    "CircleXO": true,
+    "TomatoForms": true,
+    "TomatoCms": true
 }

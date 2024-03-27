@@ -59,3 +59,8 @@
         top: -1px;
     }
 }
+
+
+.md-editor-dark, .md-editor-modal-container[data-theme='dark'] {
+    --md-bk-color: #27272A !important;
+}

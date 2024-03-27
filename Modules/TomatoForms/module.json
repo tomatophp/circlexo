@@ -1,0 +1,30 @@
+{
+    "name": "TomatoForms",
+    "alias": "tomato-forms",
+    "description": {
+        "ar": "Build a full Forms with Fields on Database and save it to user meta",
+        "en": "Build a full Forms with Fields on Database and save it to user meta",
+        "gr": "Build a full Forms with Fields on Database and save it to user meta",
+        "sp": "Build a full Forms with Fields on Database and save it to user meta"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoForms\\App\\Providers\\TomatoFormsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Forms",
+        "en": "Tomato Forms",
+        "gr": "Tomato Forms",
+        "sp": "Tomato Forms"
+    },
+    "color": "#F2C511",
+    "icon": "bx bxs-save",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-forms-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-forms",
+    "required": ["TomatoTranslations","TomatoRoles"]
+}
