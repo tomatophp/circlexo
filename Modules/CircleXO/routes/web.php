@@ -52,6 +52,7 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/qr', [ProfileController::class, 'qr'])->name('qr');
     Route::post('/qr', [ProfileController::class, 'qrUpdate'])->name('qr.update');
     Route::get('/following', [ProfileController::class, 'following'])->name('following');
+    Route::get('/followers', [ProfileController::class, 'followers'])->name('followers');
     Route::get('/messages', [ProfileController::class, 'messages'])->name('messages');
     Route::get('/messages/{message}', [ProfileController::class, 'message'])->name('messages.show');
     Route::get('/edit/social-accounts', [ProfileController::class, 'socialAccounts'])->name('social-accounts.show');
@@ -103,4 +104,10 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/{username}/contact', [CircleXOController::class, 'contact'])->name('home.contact');
     Route::post('/{username}/contact', [CircleXOController::class, 'send'])->name('home.contact.send');
     Route::get('/{username}/posts/{post}', [CircleXOController::class, 'post'])->name('home.posts');
+});
+
+Route::middleware(['splade', 'auth:accounts'])->group(function (){
+    Route::post('/{username}/posts/{post}/like', [CircleXOController::class, 'like'])->name('home.posts.like');
+    Route::post('/{username}/posts/{post}/unlike', [CircleXOController::class, 'unlike'])->name('home.posts.unlike');
+    Route::post('/{username}/posts/{post}/rate', [CircleXOController::class, 'rate'])->name('home.posts.rate');
 });

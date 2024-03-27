@@ -9,6 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
 use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
+use Multicaret\Acquaintances\Traits\CanBeLiked;
+use Multicaret\Acquaintances\Traits\CanBeRated;
+use Multicaret\Acquaintances\Traits\CanLike;
+use Multicaret\Acquaintances\Traits\CanRate;
+use Multicaret\Acquaintances\Traits\CanView;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
@@ -47,7 +52,10 @@ class Account extends Authenticatable implements HasMedia
     use InteractsWithMedia;
     use HasApiTokens, HasFactory, Notifiable;
     use InteractWithNotifications;
-    use CanFollow, CanBeFollowed;
+    use CanFollow;
+    use CanBeFollowed;
+    use CanLike;
+    use CanView;
     use Searchable;
     /**
      * @var array

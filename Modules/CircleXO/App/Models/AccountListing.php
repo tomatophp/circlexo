@@ -6,6 +6,7 @@ use App\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 use Multicaret\Acquaintances\Traits\CanBeLiked;
 use Multicaret\Acquaintances\Traits\CanBeRated;
+use Multicaret\Acquaintances\Traits\CanBeViewed;
 use Multicaret\Acquaintances\Traits\CanLike;
 use Multicaret\Acquaintances\Traits\CanRate;
 use Spatie\MediaLibrary\HasMedia;
@@ -14,8 +15,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class AccountListing extends Model implements HasMedia
 {
     use InteractsWithMedia;
-    use CanLike, CanBeLiked;
-    use CanRate, CanBeRated;
+    use CanBeLiked;
+    use CanBeViewed;
 
     /**
      * The attributes that are mass assignable.
