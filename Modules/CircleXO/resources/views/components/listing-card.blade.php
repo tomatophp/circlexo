@@ -1,13 +1,13 @@
 <div class="w-full bg-zinc-800 border border-zinc-700 rounded-lg shadow-sm mt-4  overflow-hidden">
     <div class="flex justify-between w-full border-b border-zinc-700 p-4">
         <div class="w-full flex justify-between gap-2">
-            <div  class="w-full flex justify-start">
+            <div  class="w-full flex justify-start gap-2">
+                @include('circle-xo::components.parts.avatar')
                 @include('circle-xo::components.parts.title')
             </div>
             <div>
                 @include('circle-xo::components.parts.icons')
             </div>
-
         </div>
     </div>
     @if($item->description)
