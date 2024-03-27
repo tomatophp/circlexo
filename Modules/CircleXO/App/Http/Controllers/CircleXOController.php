@@ -36,8 +36,6 @@ class CircleXOController extends Controller
         return redirect()->back();
     }
 
-
-
     public function sponsoring($username)
     {
         $account = Account::where('username', $username)->first();
@@ -70,6 +68,9 @@ class CircleXOController extends Controller
                 ->first();
 
             if($post){
+                if(auth('accounts')->user()){
+                    auth('accounts')->user()->view($post);
+                }
                 return view('circle-xo::post', compact('account', 'post'));
             }
             else {
@@ -142,6 +143,52 @@ class CircleXOController extends Controller
                 ->paginate(12);
 
             return view('circle-xo::profile', compact('account', 'listing'));
+        }
+        else {
+            abort(404);
+        }
+    }
+
+    public function like($username, $post)
+    {
+        $account = Account::where('username', $username)->first();
+        if($account){
+            $post = AccountListing::where('account_id', $account->id)
+                ->where('type', 'post')
+                ->where('id', $post)
+                ->first();
+
+            if($post){
+                auth('accounts')->user()->like($post);
+
+                return back();
+            }
+            else {
+                abort(404);
+            }
+        }
+        else {
+            abort(404);
+        }
+    }
+
+    public function unlike($username, $post)
+    {
+        $account = Account::where('username', $username)->first();
+        if($account){
+            $post = AccountListing::where('account_id', $account->id)
+                ->where('type', 'post')
+                ->where('id', $post)
+                ->first();
+
+            if($post){
+                auth('accounts')->user()->unlike($post);
+
+                return back();
+            }
+            else {
+                abort(404);
+            }
         }
         else {
             abort(404);

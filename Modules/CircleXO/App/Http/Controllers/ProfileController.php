@@ -61,6 +61,11 @@ class ProfileController extends Controller
         return view('circle-xo::profile.following');
     }
 
+    public function followers(Request $request)
+    {
+        return view('circle-xo::profile.followers');
+    }
+
     public function messages(Request $request)
     {
         return view('circle-xo::profile.messages', [

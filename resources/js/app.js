@@ -33,7 +33,10 @@ import InstantSearch from 'vue-instantsearch/vue3/es';
 import { MdEditor, MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
 import Search from "./components/Search.vue";
+import vue3StarRatings from "vue3-star-ratings";
 
+import VueSocialSharing from 'vue-social-sharing';
+import Recap from "./components/Recap.vue";
 
 createApp({
     render: renderSpladeApp({ el })
@@ -45,6 +48,9 @@ createApp({
         view_transitions: false
     })
     .use(InstantSearch)
+    .use(VueSocialSharing)
+    .component("Recap", Recap)
+    .component("Rating", vue3StarRatings)
     .component("Search", Search)
     .component("Swiper", Swiper)
     .component("SwiperSlide", SwiperSlide)

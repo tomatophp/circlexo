@@ -20,6 +20,7 @@
             <x-circle-xo-social-item network="dribbble" :label="__('Dribbble')" />
             <x-circle-xo-social-item network="github" :label="__('GitHub')" />
             <x-circle-xo-social-item network="linkedin" :label="__('LinkedIn')" />
+            <x-circle-xo-social-item network="telegram" :label="__('Telegram')" />
             <x-circle-xo-social-item network="twitch" :label="__('Twitch')" />
             <x-circle-xo-social-item network="discord" :label="__('Discord')" />
             <x-circle-xo-social-item network="figma" :label="__('Figma')" />
