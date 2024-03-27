@@ -38,6 +38,12 @@
                 @endif
             @endif
         </div>
-        <h6 class="my-2 text-sm text-zinc-300">Joined {{ $account->created_at->diffForHumans() }}</h6>
+        <h6 class="mt-2 text-sm text-zinc-300">
+            <span>{{  $account->followers()->count() .' ' . __('Followers')}}</span> .
+            <span>{{  $account->followings()->count() .' ' . __('Following') }}</span>
+        </h6>
+        <h6 class="my-2 text-sm text-zinc-300">
+            {{__('Joined')}} {{ $account->created_at->diffForHumans() }}
+        </h6>
     </div>
 </div>

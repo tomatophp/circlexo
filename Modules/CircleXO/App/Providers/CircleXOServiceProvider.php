@@ -2,6 +2,7 @@
 
 namespace Modules\CircleXO\App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -56,6 +57,8 @@ class CircleXOServiceProvider extends ServiceProvider
             \Modules\CircleXO\App\View\Components\ProfileButtons::class,
             \Modules\CircleXO\App\View\Components\ProfileInfo::class,
             \Modules\CircleXO\App\View\Components\ListingType::class,
+            \Modules\CircleXO\App\View\Components\Recap::class,
+            \Modules\CircleXO\App\View\Components\Share::class,
         ]);
     }
 

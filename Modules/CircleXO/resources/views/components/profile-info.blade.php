@@ -40,5 +40,14 @@
             </h1>
         </div>
     @endif
-    <h6 class="my-2 text-sm text-zinc-300">{{__('Joined')}} {{ $account->created_at->diffForHumans() }}</h6>
+    <h6 class="my-2 text-sm text-zinc-300">
+        @if($edit)
+            <x-splade-link :href="route('profile.followers')">{{  $account->followers()->count() .' ' . __('Followers')}}</x-splade-link> .
+            <x-splade-link :href="route('profile.following')">{{  $account->followings()->count() .' ' . __('Following') }}</x-splade-link> .
+        @else
+            <span>{{  $account->followers()->count() .' ' . __('Followers')}}</span> .
+            <span>{{  $account->followings()->count() .' ' . __('Following') }}</span> .
+        @endif
+        {{__('Joined')}} {{ $account->created_at->diffForHumans() }}
+    </h6>
 </div>
