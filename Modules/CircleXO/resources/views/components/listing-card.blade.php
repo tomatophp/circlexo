@@ -24,37 +24,39 @@
     @endif
     <div class="flex justify-between w-full">
         <div class="flex flex-col justify-center items-center mx-4 my-3">
-            <div>
-                @if(!auth('accounts')->user()->hasLiked($item))
-                    <x-tomato-admin-tooltip :text="__('Like')">
-                        <x-splade-link :href="route('home.posts.like', ['username' => $item->account->username, 'post' => $item])" method="POST" class="w-full">
-                            <div class="flex justify-start gap-2">
-                                <div class="bg-zinc-700 p-3 rounded-lg text-white flex flex-col justify-center items-center">
-                                    <i class="bx bxs-like text-lg"></i>
+            @if(auth('accounts')->user())
+                <div>
+                    @if(!auth('accounts')->user()->hasLiked($item))
+                        <x-tomato-admin-tooltip :text="__('Like')">
+                            <x-splade-link :href="route('home.posts.like', ['username' => $item->account->username, 'post' => $item])" method="POST" class="w-full">
+                                <div class="flex justify-start gap-2">
+                                    <div class="bg-zinc-700 p-3 rounded-lg text-white flex flex-col justify-center items-center">
+                                        <i class="bx bxs-like text-lg"></i>
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center">
+                                        <div>
+                                            <p>{{ $item->likers()->count() }}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col justify-center items-center">
-                                    <div>
+                            </x-splade-link>
+                        </x-tomato-admin-tooltip>
+                    @else
+                        <x-tomato-admin-tooltip :text="__('Dislike')">
+                            <x-splade-link :href="route('home.posts.unlike', ['username' => $item->account->username, 'post' => $item])" method="POST" class="w-full flex justify-start gap-2">
+                                <div class="flex justify-start gap-2">
+                                    <div class=" bg-primary-600 p-3 rounded-lg text-white flex flex-col justify-center items-center">
+                                        <i class="bx bxs-like text-lg"></i>
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center">
                                         <p>{{ $item->likers()->count() }}</p>
                                     </div>
                                 </div>
-                            </div>
-                        </x-splade-link>
-                    </x-tomato-admin-tooltip>
-                @else
-                    <x-tomato-admin-tooltip :text="__('Dislike')">
-                        <x-splade-link :href="route('home.posts.unlike', ['username' => $item->account->username, 'post' => $item])" method="POST" class="w-full flex justify-start gap-2">
-                            <div class="flex justify-start gap-2">
-                                <div class=" bg-primary-600 p-3 rounded-lg text-white flex flex-col justify-center items-center">
-                                    <i class="bx bxs-like text-lg"></i>
-                                </div>
-                                <div class="flex flex-col justify-center items-center">
-                                    <p>{{ $item->likers()->count() }}</p>
-                                </div>
-                            </div>
-                        </x-splade-link>
-                    </x-tomato-admin-tooltip>
-                @endif
-            </div>
+                            </x-splade-link>
+                        </x-tomato-admin-tooltip>
+                    @endif
+                </div>
+            @endif
         </div>
         <div class="flex flex-col justify-center items-center mx-4">
             @if($item->type == 'product' || $item->type === 'service')
