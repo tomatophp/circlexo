@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\CircleXO\App\Http\Controllers\CircleXOController;
 use Modules\CircleXO\App\Http\Controllers\AuthController;
+use Modules\CircleXO\App\Http\Controllers\PagesController;
 use Modules\CircleXO\App\Http\Controllers\ProfileController;
 use Modules\CircleXO\App\Http\Controllers\ProfileListingController;
 use Modules\CircleXO\App\Http\Controllers\ProfileNotificationsController;
@@ -110,4 +111,8 @@ Route::middleware(['splade', 'auth:accounts'])->group(function (){
     Route::post('/{username}/posts/{post}/like', [CircleXOController::class, 'like'])->name('home.posts.like');
     Route::post('/{username}/posts/{post}/unlike', [CircleXOController::class, 'unlike'])->name('home.posts.unlike');
     Route::post('/{username}/posts/{post}/rate', [CircleXOController::class, 'rate'])->name('home.posts.rate');
+});
+
+Route::middleware(['splade'])->group(function () {
+    Route::get('/p/{slug}', [PagesController::class, 'show'])->name('pages.show');
 });

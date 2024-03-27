@@ -1,0 +1,47 @@
+{
+    "name": "tomatophp/tomato-forms-module",
+    "type": "laravel-module",
+    "description": "Build a full Forms with Fields on Database and save it to user meta",
+    "keywords": [
+        "php",
+        "laravel",
+        "forms",
+        "form builder",
+        "database-forms",
+        "form-component",
+        "splade",
+        "tomatophp"
+    ],
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoForms\\": "",
+            "Modules\\TomatoForms\\App\\": "app/",
+            "Modules\\TomatoForms\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoForms\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoForms\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/console-helpers": "^v1.1",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/tomato-roles-module": "^1.0",
+        "tomatophp/tomato-translations-module": "^1.0",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

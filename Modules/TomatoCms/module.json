@@ -1,0 +1,30 @@
+{
+    "name": "TomatoCms",
+    "alias": "tomato-cms",
+    "description": {
+        "ar": "full CMS System to manage your content build for Tomato PHP",
+        "en": "full CMS System to manage your content build for Tomato PHP",
+        "gr": "full CMS System to manage your content build for Tomato PHP",
+        "sp": "full CMS System to manage your content build for Tomato PHP"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoCms\\App\\Providers\\TomatoCmsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Cms",
+        "en": "Tomato Cms",
+        "gr": "Tomato Cms",
+        "sp": "Tomato Cms"
+    },
+    "color": "#3398DB",
+    "icon": "bx bxs-pencil",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-cms-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-cms",
+    "required": ["TomatoTranslations", "TomatoCategory", "TomatoForms"]
+}
