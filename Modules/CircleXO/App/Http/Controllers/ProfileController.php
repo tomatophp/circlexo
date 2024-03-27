@@ -26,7 +26,7 @@ class ProfileController extends Controller
             $query->where('type', $request->get('type'));
         }
         $listing = $query->where('account_id', auth('accounts')->id())
-            ->orderBy('order','desc')
+            ->inRandomOrder()
             ->paginate(12);
         return view('circle-xo::profile.index', compact('listing'));
     }
