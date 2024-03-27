@@ -23,6 +23,7 @@ import TomatoTooltip from "../../vendor/tomatophp/tomato-admin/resources/js/comp
 import TomatoSlider from "../../vendor/tomatophp/tomato-admin/resources/js/components/TomatoSlider.vue";
 import TomatoSearch from "../../vendor/tomatophp/tomato-admin/resources/js/components/TomatoSearch.vue";
 import TomatoItems from "../../vendor/tomatophp/tomato-admin/resources/js/components/TomatoItems.vue";
+import CardsSlider from "./components/CardsSlider.vue";
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -68,6 +69,7 @@ createApp({
     .component("TomatoSlider", TomatoSlider)
     .component("TomatoSearch", TomatoSearch)
     .component("TomatoItems", TomatoItems)
+    .component("CardsSlider", CardsSlider)
     .component("MdEditor", MdEditor)
     .component("MdPreview", MdPreview)
     .mount(el);
