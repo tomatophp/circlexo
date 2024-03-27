@@ -1,4 +1,3 @@
-
 @if($item->getMedia('image')->first())
     <div class="flex justify-center border-b border-zinc-700 w-full">
         <div style="background-image: url('{{$item->getMedia('image')->first()?->getUrl()}}')" class="w-full h-80 min-h-32 min-w-80 bg-cover bg-center ">

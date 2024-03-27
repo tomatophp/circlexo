@@ -161,8 +161,15 @@ class CircleXOController extends Controller
                 ->first();
 
             if($post){
-                auth('accounts')->user()->like($post);
+                if($post->account->id !== auth('accounts')->user()->id) {
+                    $post->account->notifyDB(
+                        message: __(auth('accounts')->user()->username . " " . __('is like your listing') . ' ' . $post->title),
+                        title: __('New Like'),
+                        url: url(auth('accounts')->user()->username)
+                    );
+                }
 
+                auth('accounts')->user()->like($post);
                 return back();
             }
             else {
@@ -183,8 +190,15 @@ class CircleXOController extends Controller
                 ->first();
 
             if($post){
-                auth('accounts')->user()->unlike($post);
+                if($post->account->id !== auth('accounts')->user()->id){
+                    $post->account->notifyDB(
+                        message: __(auth('accounts')->user()->username . " " . __('is dislike your listing') .' '. $post->title),
+                        title: __('New Dislike'),
+                        url: url(auth('accounts')->user()->username)
+                    );
+                }
 
+                auth('accounts')->user()->unlike($post);
                 return back();
             }
             else {
