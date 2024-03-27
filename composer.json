@@ -19,6 +19,7 @@
         "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-sitemap": "^7.2",
         "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-cms-module": "^1.0",
         "tomatophp/tomato-crm-module": "^1.0",
         "tomatophp/tomato-notifications-module": "^1.0",
         "tomatophp/tomato-roles-module": "^1.0",
