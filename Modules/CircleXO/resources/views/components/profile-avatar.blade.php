@@ -1,4 +1,4 @@
-<div class="flex justify-center flex-col items-center -mt-12 ">
+<div class="flex justify-center flex-col items-center -mt-24 ">
     @if($account->avatar)
         @if($edit)
             <x-splade-link modal href="{{ route('profile.avatar.show') }}" class="w-32 h-32 rounded-full bg-zinc-800 border border-zinc-700">

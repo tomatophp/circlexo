@@ -137,6 +137,9 @@ class CircleXOController extends Controller
             if($request->has('type') && $request->get('type') && $request->get('type') !== 'all'){
                 $query->where('type', $request->get('type'));
             }
+            if($request->has('hashtag') && $request->get('hashtag')){
+                $query->where('description','LIKE', '%'.$request->get('hashtag').'%');
+            }
             $listing = $query->where('account_id', $account->id)
                 ->where('is_active', true)
                 ->inRandomOrder()
@@ -154,7 +157,6 @@ class CircleXOController extends Controller
         $account = Account::where('username', $username)->first();
         if($account){
             $post = AccountListing::where('account_id', $account->id)
-                ->where('type', 'post')
                 ->where('id', $post)
                 ->first();
 
@@ -177,7 +179,6 @@ class CircleXOController extends Controller
         $account = Account::where('username', $username)->first();
         if($account){
             $post = AccountListing::where('account_id', $account->id)
-                ->where('type', 'post')
                 ->where('id', $post)
                 ->first();
 

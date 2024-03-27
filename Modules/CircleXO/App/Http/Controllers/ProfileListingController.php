@@ -114,6 +114,7 @@ class ProfileListingController extends Controller
      */
     public function edit(AccountListing $listing)
     {
+        $listing->image = $listing->getFirstMediaUrl('image');
         return view('circle-xo::listing.edit', compact('listing'));
     }
 

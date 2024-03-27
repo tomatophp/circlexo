@@ -25,8 +25,11 @@ class ProfileController extends Controller
         if($request->has('type') && $request->get('type') && $request->get('type') !== 'all'){
             $query->where('type', $request->get('type'));
         }
+        if($request->has('hashtag') && $request->get('hashtag')){
+            $query->where('description','LIKE', '%'.$request->get('hashtag').'%');
+        }
         $listing = $query->where('account_id', auth('accounts')->id())
-            ->inRandomOrder()
+            ->orderBy('id', 'desc')
             ->paginate(12);
         return view('circle-xo::profile.index', compact('listing'));
     }
