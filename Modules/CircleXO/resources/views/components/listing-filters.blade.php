@@ -1,4 +1,4 @@
-<div @preserveScroll>
+<div @preserveScroll class="mx-8 lg:mx-0">
     <Swiper
         :breakpoints="{
           '350': {
@@ -17,7 +17,7 @@
         :space-between="10"
         :loop="true"
         :centeredSlides="true"
-        class="w-[350px] md:w-[600px]"
+        class="w-full lg:w-1/2 xl:w-1/3"
     >
         <x-circle-xo-listing-filter-item
             filter="all"

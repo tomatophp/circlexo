@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @spladeHead
         @vite('resources/js/app.js')
+        <style>
+            .md-editor-preview {
+                word-break: unset !important;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased dark">
         @splade
