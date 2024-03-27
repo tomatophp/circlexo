@@ -10,6 +10,13 @@
                 <i class="bx bxs-heart"></i>
             </x-splade-link>
         </x-tomato-admin-tooltip>
+        <x-circle-xo-share :title="$account->username" :description="$account->bio" :url="$account->username">
+            <x-tomato-admin-tooltip :text="__('Share')">
+            <span class="bg-success-600 flex flex-col justify-center items-center text-white rounded-md shadow-md font-bold text-sm px-4 py-2 -mt-1">
+                <i class="bx bxs-share text-lg text-white"></i>
+            </span>
+            </x-tomato-admin-tooltip>
+        </x-circle-xo-share>
         <x-tomato-admin-tooltip :text="__('Settings')">
             <x-tomato-admin-dropdown>
                 <x-slot:button>
@@ -42,13 +49,13 @@
                 </x-splade-link>
             </x-tomato-admin-tooltip>
         @endif
-    @endif
-    <x-circle-xo-share :title="$account->username" :description="$account->bio">
-        <x-tomato-admin-tooltip :text="__('Share')">
+        <x-circle-xo-share :title="$account->username" :description="$account->bio" :url="$account->username">
+            <x-tomato-admin-tooltip :text="__('Share')">
             <span class="bg-success-600 flex flex-col justify-center items-center text-white rounded-md shadow-md font-bold text-sm px-4 py-2 -mt-1">
                 <i class="bx bxs-share text-lg text-white"></i>
             </span>
-        </x-tomato-admin-tooltip>
-    </x-circle-xo-share>
+            </x-tomato-admin-tooltip>
+        </x-circle-xo-share>
+    @endif
 </div>
 
