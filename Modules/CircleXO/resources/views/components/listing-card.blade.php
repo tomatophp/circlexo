@@ -11,7 +11,7 @@
         </div>
     </div>
     @if($item->description)
-        @if($item->type !== 'skill' && $item->type !== 'review')
+        @if($item->type !== 'skill' && $item->type !== 'review' && $item->type !== 'game')
             @include('circle-xo::components.parts.image')
         @endif
         <div class="flex justify-center border-b border-zinc-700">
