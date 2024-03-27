@@ -294,7 +294,7 @@ class ProfileController extends Controller
 
         if($request->hasFile('avatar') && $request->file('avatar')->getClientOriginalName() !== 'blob'){
             $request->validate([
-                'avatar' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'avatar' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             ]);
 
             $account->clearMediaCollection('avatar');
@@ -306,7 +306,7 @@ class ProfileController extends Controller
 
         if($request->hasFile('cover') && $request->file('cover')->getClientOriginalName() !== 'blob'){
             $request->validate([
-                'cover' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'cover' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             ]);
 
             $account->clearMediaCollection('cover');
