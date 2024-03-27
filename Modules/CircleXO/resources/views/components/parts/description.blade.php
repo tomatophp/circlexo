@@ -5,7 +5,7 @@
                 <div class="flex flex-col justify-center text-lg">
                     <div class="flex justify-center items-center flex-col">
                         @if($item->getMedia('image')->first())
-                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-24">
+                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-32">
                         @else
                             <i class="{{ $item->icon }} text-5xl"></i>
                         @endif
@@ -23,7 +23,7 @@
                 <div class="flex flex-col justify-center text-lg">
                     <div class="flex justify-center items-center flex-col my-2">
                         @if($item->getMedia('image')->first())
-                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-24">
+                            <img src="{{$item->getMedia('image')->first()?->getUrl()}}" alt="{{$item->name}}" class="w-32">
                         @else
                             <i class="{{ $item->icon }} text-5xl"></i>
                         @endif
