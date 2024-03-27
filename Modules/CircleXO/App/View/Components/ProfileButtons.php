@@ -4,18 +4,16 @@ namespace Modules\CircleXO\App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use App\Models\Account;
 
-class ListingFilterItem extends Component
+class ProfileButtons extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $label,
-        public string $filter='link',
-        public string $color='text-white',
-        public string $icon='bx bx-link',
-        public bool $link=false,
+        public Account $account,
+        public bool $edit = false
     )
     {
         //
@@ -26,6 +24,6 @@ class ListingFilterItem extends Component
      */
     public function render(): View|string
     {
-        return view('circle-xo::components.listing-filter-item');
+        return view('circle-xo::components.profile-buttons');
     }
 }

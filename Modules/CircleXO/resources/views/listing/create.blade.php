@@ -5,21 +5,74 @@
     <x-splade-form :default="[
         'type' => 'link',
     ]" class="flex flex-col gap-4" method="POST" action="{{route('profile.listing.store')}}">
-        <x-splade-select choices name="type" label="Type" required>
-            <option value="link">{{__('Link')}}</option>
-            <option value="skill">{{__('Skill')}}</option>
-            <option value="review">{{__('Review')}}</option>
-            <option value="portfolio">{{__('Portfolio')}}</option>
-            <option value="post">{{__('Post')}}</option>
-            <option value="product">{{__('Product')}}</option>
-            <option value="service">{{__('Service')}}</option>
-        </x-splade-select>
-        <x-splade-file filepond preview name="image" label="Image"/>
-        <x-splade-input name="title" label="Title" required/>
-        <x-splade-textarea name="description" label="Description" />
+        <div class="grid grid-cols-3 lg:grid-cols-5 gap-4">
+            <x-circle-xo-listing-filter-item
+                filter="link"
+                icon="bx bx-link"
+                label="{{__('Link')}}"
+                color="#FF3D64"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="post"
+                icon="bx bx-news"
+                label="{{__('Posts')}}"
+                color="#00E0B2"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="skill"
+                icon="bx bxs-face-mask"
+                label="{{__('Skills')}}"
+                color="red"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="portfolio"
+                icon="bx bx-image"
+                label="{{__('Portfolios')}}"
+                color="blue"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="review"
+                icon="bx bxs-star"
+                label="{{__('Reviews')}}"
+                color="orange"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="service"
+                icon="bx bxs-briefcase-alt-2"
+                label="{{__('Services')}}"
+                color="#F8CF00"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="product"
+                icon="bx bxs-cart"
+                label="{{__('Products')}}"
+                color="green"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="game"
+                icon="bx bxs-game"
+                label="{{__('Game')}}"
+                color="#008469"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="music"
+                icon="bx bxs-music"
+                label="{{__('Music')}}"
+                color="#FF3D64"
+            />
+            <x-circle-xo-listing-filter-item
+                filter="video"
+                icon="bx bxs-video"
+                label="{{__('Video')}}"
+                color="#8A7407"
+            />
+        </div>
+        <x-splade-file filepond preview name="image" :label="__('Image')"/>
+        <x-splade-input name="title" :label="__('Title')" required/>
+        <x-splade-textarea name="description" :label="__('Description')" />
         <div v-if="form.type === 'product' || form.type === 'service'" class="flex justify-between gap-2">
-            <x-splade-input type="number" name="price" label="Price" class="w-full" required/>
-            <x-splade-input type="number" name="discount" label="Discount" class="w-full" required/>
+            <x-splade-input type="number" name="price" :label="__('Price')" class="w-full" required/>
+            <x-splade-input type="number" name="discount" :label="__('Discount')" class="w-full" required/>
             <x-splade-select choices name="currency" :label="__('Currency')" class="w-full" >
                 @foreach(\Modules\TomatoLocations\App\Models\Currency::all() as $currency)
                     <option value="{{$currency->symbol}}">{{$currency->name}}</option>
@@ -27,10 +80,10 @@
             </x-splade-select>
         </div>
         <div v-if="form.type === 'post'">
-            <x-tomato-markdown-editor name="body" label="Body" />
+            <x-tomato-markdown-editor name="body" :label="__('Body')" />
         </div>
-        <div v-else-if="form.type === 'link' || form.type === 'portfolio' || form.type === 'product' || form.type === 'service'">
-            <x-splade-input name="url" label="URL" />
+        <div v-if="form.type === 'game' || form.type === 'music' || form.type === 'video' || form.type === 'link' || form.type === 'portfolio' || form.type === 'product' || form.type === 'service'">
+            <x-splade-input name="url" :label="__('URL')" />
         </div>
 
         <div class="flex justify-between gap-2">

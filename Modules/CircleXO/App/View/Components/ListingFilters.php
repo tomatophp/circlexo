@@ -5,12 +5,14 @@ namespace Modules\CircleXO\App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class MenuItem extends Component
+class ListingFilters extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        public bool $link=false,
+    )
     {
         //
     }
@@ -20,6 +22,6 @@ class MenuItem extends Component
      */
     public function render(): View|string
     {
-        return view('circle-xo::components.menu-item');
+        return view('circle-xo::components.listing-filters');
     }
 }

@@ -18,7 +18,7 @@
 @seoKeywords(setting('site_keywords'))
 
 <x-circle-xo-public-profile-layout :account="$account">
-    <div class="bg-zinc-800 border border-zinc-700 mx-16 my-4 rounded-lg shadow-sm">
+    <div class="bg-zinc-800 border border-zinc-700 mx-8 md:mx-16  my-4 rounded-lg shadow-sm">
         <div class="flex flex-col gap-4">
             <div class="mx-4">
                 <x-tomato-markdown-viewer style="background-color: rgb(39 39 42 / var(--tw-bg-opacity)) !important;" :content="$account->meta('sponsoring_message')" />
