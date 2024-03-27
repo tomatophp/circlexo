@@ -138,7 +138,7 @@ class CircleXOController extends Controller
             }
             $listing = $query->where('account_id', $account->id)
                 ->where('is_active', true)
-                ->orderBy('order','desc')
+                ->inRandomOrder()
                 ->paginate(12);
 
             return view('circle-xo::profile', compact('account', 'listing'));
