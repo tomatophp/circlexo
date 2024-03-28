@@ -1,0 +1,55 @@
+{
+    "name": "tomatophp/tomato-sections-module",
+    "type": "laravel-module",
+    "description": "Sections For Tomato Themes To build any app with Theme Builder",
+    "keywords": [
+        "php",
+        "laravel",
+        "themes",
+        "sections",
+        "tomato-themes",
+        "tomato-ecommerce",
+        "tomato-cms",
+        "tomato-crm",
+        "tomatophp"
+    ],
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoSections\\": "",
+            "Modules\\TomatoSections\\App\\": "app/",
+            "Modules\\TomatoSections\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoSections\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoSections\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/console-helpers": "^1.1",
+        "tomatophp/tomato-ecommerce-module": "^1.0",
+        "tomatophp/tomato-crm-module": "^1.0",
+        "tomatophp/tomato-cms-module": "^1.0",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

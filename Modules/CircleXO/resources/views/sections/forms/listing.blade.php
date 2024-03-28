@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-4">
+    <x-splade-input class="w-full" label="{{__('Title')}}" name="title" placeholder="{{__('Title')}}" />
+    <x-splade-textarea label="{{__('Subtitle')}}" name="subtitle" placeholder="{{__('Subtitle')}}" />
+    <x-tomato-admin-color label="{{__('Background Color')}}" name="bg_color" placeholder="{{__('Background Color')}}" />
+    <x-tomato-admin-color label="{{__('Font Color')}}" name="font_color" placeholder="{{__('Font Color')}}" />
+    <x-splade-input class="w-full" type="number" label="{{__('Listing Count')}}" name="listing_count" placeholder="{{__('Listing Count')}}" />
+</div>

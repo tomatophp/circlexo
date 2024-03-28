@@ -1,0 +1,29 @@
+{
+    "name": "TomatoMenus",
+    "alias": "tomato-menus",
+    "description": {
+        "ar": "Menus manager to build your menus with json file or database provider",
+        "en": "Menus manager to build your menus with json file or database provider",
+        "gr": "Menus manager to build your menus with json file or database provider",
+        "sp": "Menus manager to build your menus with json file or database provider"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoMenus\\App\\Providers\\TomatoMenusServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Menus",
+        "en": "Tomato Menus",
+        "gr": "Tomato Menus",
+        "sp": "Tomato Menus"
+    },
+    "color": "#2ECC70",
+    "icon": "bx bx-menu",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github" : "https://github.com/tomatophp/tomato-menus-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-menus"
+}

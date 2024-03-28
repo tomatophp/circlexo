@@ -24,7 +24,10 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-settings-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-settings",
-    "required": ["TomatoRoles"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-settings-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-settings",
+    "required": [
+        "TomatoRoles"
+    ],
+    "active": false
 }

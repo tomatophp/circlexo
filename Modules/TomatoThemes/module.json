@@ -1,0 +1,33 @@
+{
+    "name": "TomatoThemes",
+    "alias": "tomato-themes",
+    "description": {
+        "ar": "A Theme System Like Wordpress on your Tomato Admin",
+        "en": "A Theme System Like Wordpress on your Tomato Admin",
+        "gr": "A Theme System Like Wordpress on your Tomato Admin",
+        "sp": "A Theme System Like Wordpress on your Tomato Admin"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoThemes\\App\\Providers\\TomatoThemesServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Themes",
+        "en": "Tomato Themes",
+        "gr": "Tomato Themes",
+        "sp": "Tomato Themes"
+    },
+    "color": "#A463BF",
+    "icon": "bx bxs-brush",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github": "https:\/\/github.com\/tomatophp\/tomato-themes-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-themes",
+    "required": [
+        "TomatoSettings"
+    ],
+    "active": false
+}

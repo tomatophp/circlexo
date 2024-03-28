@@ -8,5 +8,10 @@
     "TomatoCrm": true,
     "CircleXO": true,
     "TomatoForms": true,
-    "TomatoCms": true
+    "TomatoCms": true,
+    "CircleApps": true,
+    "TomatoThemes": true,
+    "TomatoSupport": true,
+    "TomatoSections": true,
+    "TomatoMenus": true
 }

@@ -1,0 +1,43 @@
+{
+    "name": "tomatophp/tomato-ecommerce-module",
+    "type": "laravel-module",
+    "description": "a full frontend/backend e-commerce system built on top of TomatoPHP, with Cart functions and ordering functions",
+    "keywords": [
+        "php",
+        "laravel",
+        "ecommerce",
+        "frontend",
+        "tomatophp",
+        "ordering",
+        "cart",
+        "checkout"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoEcommerce\\": "",
+            "Modules\\TomatoEcommerce\\App\\": "app/",
+            "Modules\\TomatoEcommerce\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoEcommerce\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoEcommerce\\Tests\\": "tests/"
+        }
+    }
+}

@@ -24,6 +24,7 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-translations-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-translations"
+    "github": "https:\/\/github.com\/tomatophp\/tomato-translations-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-translations",
+    "active": false
 }

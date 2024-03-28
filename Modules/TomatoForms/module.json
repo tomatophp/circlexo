@@ -24,7 +24,11 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-forms-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-forms",
-    "required": ["TomatoTranslations","TomatoRoles"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-forms-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-forms",
+    "required": [
+        "TomatoTranslations",
+        "TomatoRoles"
+    ],
+    "active": false
 }

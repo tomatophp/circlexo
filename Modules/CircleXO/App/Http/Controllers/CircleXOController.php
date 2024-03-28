@@ -9,6 +9,8 @@ use Illuminate\Http\Response;
 use App\Models\Account;
 use Modules\CircleXO\App\Models\AccountContact;
 use Modules\CircleXO\App\Models\AccountListing;
+use Modules\TomatoCms\App\Models\Page;
+use Modules\TomatoSupport\App\Models\Question;
 use ProtoneMedia\Splade\Facades\Toast;
 
 class CircleXOController extends Controller
@@ -18,7 +20,15 @@ class CircleXOController extends Controller
      */
     public function index()
     {
-        return view('circle-xo::index');
+        $page = Page::where('slug', '/')->first();
+        if(!$page){
+            $page = new Page();
+            $page->title = 'Home Page';
+            $page->slug = '/';
+            $page->is_active = true;
+            $page->save();
+        }
+        return view('circle-xo::index', compact('page'));
     }
 
     public function verify(Account $account)
@@ -208,5 +218,58 @@ class CircleXOController extends Controller
         else {
             abort(404);
         }
+    }
+
+    public function faq(Request $request)
+    {
+        if(class_exists(\Modules\TomatoSupport\App\Models\Question::class)){
+            $page = Page::where('slug', '/faq')->first();
+            if(!$page){
+                $page = new Page();
+                $page->title = 'FAQ';
+                $page->slug = '/faq';
+                $page->is_active = true;
+                $page->save();
+            }
+            $questions = Question::query();
+
+            if($request->has('search')){
+                $questions->where('qa', 'like', "%{$request->get('search')}%");
+            }
+
+            $questions = $questions->paginate(12);
+
+            return view('circle-xo::builder', compact('questions', 'page'));
+        }
+        else {
+            return redirect()->to('/');
+        }
+
+    }
+
+    public function terms()
+    {
+        $page = Page::where('slug', '/terms')->first();
+        if(!$page){
+            $page = new Page();
+            $page->title = 'Terms';
+            $page->slug = '/terms';
+            $page->is_active = true;
+            $page->save();
+        }
+        return view('circle-xo::builder', compact('page'));
+    }
+
+    public function privacy()
+    {
+        $page = Page::where('slug', '/privacy')->first();
+        if(!$page){
+            $page = new Page();
+            $page->title = 'Privacy';
+            $page->slug = '/privacy';
+            $page->is_active = true;
+            $page->save();
+        }
+        return view('circle-xo::builder', compact('page'));
     }
 }

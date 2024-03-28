@@ -26,6 +26,9 @@ Route::middleware(['splade', 'auth', 'web'])->group(function (){
 
 Route::middleware(['splade'])->group(function (){
     Route::get('/', [CircleXOController::class, 'index'])->name('home');
+    Route::get('/faq', [CircleXOController::class, 'faq'])->name('home.faq');
+    Route::get('/terms', [CircleXOController::class, 'terms'])->name('home.terms');
+    Route::get('/privacy', [CircleXOController::class, 'privacy'])->name('home.privacy');
 });
 
 Route::middleware('web')->group(function (){

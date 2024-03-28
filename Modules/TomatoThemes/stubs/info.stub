@@ -1,0 +1,23 @@
+{
+    "name": "{{ name }}",
+    "title": {
+        "ar": "",
+        "en": "{{ title }}"
+    },
+    "description": {
+        "ar": "",
+        "en": "{{ description }}"
+    },
+    "keywords": [
+        "laravel",
+        "themes",
+        "tomato",
+        "splade"
+    ],
+    "placeholder": "placeholder.png",
+    "alias": "{{ alias }}",
+    "settings": {},
+    "menus": [],
+    "required": {},
+    "active": false
+}

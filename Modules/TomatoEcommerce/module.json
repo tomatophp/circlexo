@@ -1,0 +1,40 @@
+{
+    "name": "TomatoEcommerce",
+    "alias": "tomato-ecommerce",
+    "description": {
+        "ar": "نظام تجارة إلكترونية كامل مبني على فرونت اند وباك اند مع وظائف سلة التسوق ووظائف الطلبات.",
+        "en": "a full frontend backend e-commerce system built on top of TomatoPHP, with Cart functions and ordering functions",
+        "gr": "a full frontend backend e-commerce system built on top of TomatoPHP, with Cart functions and ordering functions",
+        "sp": "a full frontend backend e-commerce system built on top of TomatoPHP, with Cart functions and ordering functions"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoEcommerce\\App\\Providers\\TomatoEcommerceServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "تجارة إلكترونية",
+        "en": "Tomato E-commerce",
+        "gr": "Tomato E-commerce",
+        "sp": "Tomato E-commerce"
+    },
+    "color": "#8E43AD",
+    "icon": "bx bxs-shopping-bag-alt",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github": "https:\/\/github.com\/tomatophp\/tomato-ecommerce-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-ecommerce",
+    "required": [
+        "TomatoProducts",
+        "TomatoOrders",
+        "TomatoCrm",
+        "TomatoMenus",
+        "TomatoCoupons",
+        "TomatoTranslations",
+        "TomatoWallet",
+        "TomatoCategory"
+    ],
+    "active": false
+}
