@@ -13,11 +13,19 @@
         @if(count(menu('footer')))
             <ul class="flex flex-wrap justify-center gap-4 ">
                 @foreach(menu('footer') as $item)
-                    <li>
-                        <x-splade-link :href="$item->url" class="text-zinc-200 transition hover:text-zinc-300">
-                            {{$item->name}}
-                        </x-splade-link>
-                    </li>
+                    @if($item->target === '_blank')
+                        <li>
+                            <a href="{{ $item->url }}" target="_blank" class="text-zinc-200 transition hover:text-zinc-300">
+                                {{$item->name}}
+                            </a>
+                        </li>
+                    @else
+                        <li>
+                            <x-splade-link :href="$item->url" class="text-zinc-200 transition hover:text-zinc-300">
+                                {{$item->name}}
+                            </x-splade-link>
+                        </li>
+                    @endif
                 @endforeach
             </ul>
         @endif
@@ -30,7 +38,7 @@
                             href="{{$item['url']}}"
                             rel="noreferrer"
                             target="_blank"
-                            class="text-gray-700 transition hover:text-gray-700/75"
+                            class="text-white transition hover:text-zinc-300"
                         >
                             <span class="sr-only">{{$item['network']}}</span>
                             <i class="bx bxl-{{$item['network']}} bx-sm"></i>

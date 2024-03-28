@@ -5,15 +5,29 @@
 
 @foreach(menu('main') as $item)
     @if(str($item->url)->contains('profile') && auth('accounts')->user())
-        <x-splade-link :href="$item->url" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
-            <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
-            <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
-        </x-splade-link>
+        @if($item->target === '_blank')
+            <a href="{{ $item->url }}" target="_blank" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
+            </a>
+        @else
+            <x-splade-link :href="$item->url" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
+            </x-splade-link>
+        @endif
     @else
-        <x-splade-link :href="$item->url" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
-            <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
-            <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
-        </x-splade-link>
+        @if($item->target === '_blank')
+            <a href="{{ $item->url }}" target="_blank" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
+            </a>
+        @else
+            <x-splade-link :href="$item->url" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->name}}</span>
+            </x-splade-link>
+        @endif
     @endif
 @endforeach
 
