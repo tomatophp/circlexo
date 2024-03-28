@@ -31,6 +31,7 @@ class Ticket extends Model
     protected $casts = [
         'is_closed' => 'boolean'
     ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

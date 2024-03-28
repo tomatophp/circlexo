@@ -11,6 +11,18 @@
             </x-splade-link>
         </div>
         <div class="w-full flex justify-end text-main-600">
+            @php $providerMenus = \Modules\CircleApps\App\Facades\CircleApps::menus(); @endphp
+
+            @foreach($providerMenus as $item)
+                @if($item->group === 'header' && auth('accounts')->user())
+                    <x-splade-link :href="route($item->route)">
+                        <x-tomato-admin-tooltip :text="$item->label">
+                            <i class="{{ $item->icon }} bx-sm md:bx-lg px-2 my-2" ></i>
+                        </x-tomato-admin-tooltip>
+                    </x-splade-link>
+                @endif
+            @endforeach
+
             <Link href="#search" >
                 <x-tomato-admin-tooltip :text="__('Search')">
                     <i class="bx bx-search bx-sm md:bx-lg px-2 my-2" ></i>

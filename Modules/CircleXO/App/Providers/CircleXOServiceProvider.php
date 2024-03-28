@@ -5,7 +5,9 @@ namespace Modules\CircleXO\App\Providers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\CircleApps\App\Facades\CircleAppsMenu;
 use Modules\TomatoThemes\App\Facades\TomatoThemes;
+use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
 
 class CircleXOServiceProvider extends ServiceProvider
 {
