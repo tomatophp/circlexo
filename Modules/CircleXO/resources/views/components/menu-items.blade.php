@@ -3,6 +3,16 @@
     <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Home')}}</span>
 </x-splade-link>
 
+<x-splade-link :href="route('home.marketplace')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+    <i class="bx bx-store text-zinc-100 transition duration-75 group-hover:text-white"></i>
+    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Marketplace')}}</span>
+</x-splade-link>
+
+<x-splade-link :href="route('home.blog')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+    <i class="bx bxs-news text-zinc-100 transition duration-75 group-hover:text-white"></i>
+    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Blog')}}</span>
+</x-splade-link>
+
 @foreach(menu('main') as $item)
     @if(str($item->url)->contains('profile') && auth('accounts')->user())
         @if($item->target === '_blank')
