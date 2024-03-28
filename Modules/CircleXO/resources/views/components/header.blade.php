@@ -62,26 +62,39 @@
         </x-slot:title>
         <Search url="{{ url('/') }}" placeholder="{{__('Search By Username @')}}" />
     </x-splade-modal>
-    <x-splade-modal name="menu" position="left" slideover>
-        <div class="h-screen flex flex-col justify-center items-center gap-4">
-            <x-splade-link :href="route('home')" class="text-white hover:text-main-600 font-bold text-lg">
-                {{__('Home')}}
+    <x-splade-modal name="menu" position="left" max-width="sm" slideover>
+        <div>
+            <x-splade-link href="{{ route('home') }}">
+                <x-circle-xo-logo class="h-6 md:h-8 w-auto" />
             </x-splade-link>
-            @if(auth('accounts')->user())
-                <x-splade-link :href="route('profile.index')" class="text-white hover:text-main-600 font-bold text-lg">
-                    {{__('Profile')}}
+            
+            <nav class="flex flex-col justify-around space-y-2 mt-6">
+                <x-splade-link :href="route('home')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                    <i class="bx bx-home text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Home')}}</span>
                 </x-splade-link>
-                <x-splade-link method="POST" :href="route('profile.logout')" class="text-white hover:text-main-600 font-bold text-lg">
-                    {{__('Logout')}}
-                </x-splade-link>
-            @else
-                <x-splade-link :href="route('account.login')" class="text-white hover:text-main-600 font-bold text-lg">
-                    {{__('Login')}}
-                </x-splade-link>
-                <x-splade-link :href="route('account.register')" class="text-white hover:text-main-600 font-bold text-lg">
-                    {{__('Register')}}
-                </x-splade-link>
-            @endif
+
+                @if(auth('accounts')->user())
+                    <x-splade-link :href="route('profile.index')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                        <i class="bx bx-user-circle text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                        <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Profile')}}</span>
+                    </x-splade-link>
+                    <x-splade-link method="POST" :href="route('profile.logout')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                        <i class="bx bx-log-out text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                        <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Logout')}}</span>
+                    </x-splade-link>
+                @else
+                    <x-splade-link :href="route('account.login')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                        <i class="bx bx-log-in text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                        <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Login')}}</span>
+                    </x-splade-link>
+                    <x-splade-link :href="route('account.register')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                        <i class="bx bx-user-plus text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                        <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Register')}}</span>
+                    </x-splade-link>
+                @endif
+            </nav>
+
         </div>
     </x-splade-modal>
 </header>
