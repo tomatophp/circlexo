@@ -31,6 +31,32 @@ class CircleXOController extends Controller
         return view('circle-xo::index', compact('page'));
     }
 
+    public function marketplace(Request $request)
+    {
+        $query = AccountListing::query();
+        $query->with('account')->where('type', 'product')->orWhere('type', 'service')->where('is_active', true);
+        if($request->has('search') && !empty($request->get('search'))){
+            $query->where('title', 'LIKE', '%'.$request->get('search').'%');
+        }
+
+        $products = $query->orderBy('id', 'desc')->paginate(10);
+
+        return view('circle-xo::marketplace', compact('products'));
+    }
+
+    public function blog(Request $request)
+    {
+        $query = AccountListing::query();
+        $query->with('account')->where('type', 'post')->where('is_active', true);
+        if($request->has('search') && !empty($request->get('search'))){
+            $query->where('title', 'LIKE', '%'.$request->get('search').'%');
+        }
+
+        $posts = $query->orderBy('id', 'desc')->paginate(10);
+
+        return view('circle-xo::blog', compact('posts'));
+    }
+
     public function verify(Account $account)
     {
         if($account->type === 'verified'){

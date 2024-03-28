@@ -4,6 +4,7 @@
     </x-slot>
     <x-splade-form :default="[
         'type' => 'link',
+        'is_active' => true,
     ]" class="flex flex-col gap-4" method="POST" action="{{route('profile.listing.store')}}">
         <div class="grid grid-cols-3 lg:grid-cols-5 gap-4">
             <x-circle-xo-listing-filter-item
@@ -95,7 +96,7 @@
             </div>
         </div>
 
-        <x-splade-checkbox name="is_active" label="Active" />
-        <x-splade-submit spinner label="Save" class="bg-main-600 border-main-400 text-zinc-900" />
+        <x-splade-checkbox name="is_active" :label="__('Public')" />
+        <x-splade-submit spinner :label="__('Save')" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
 </x-splade-modal>

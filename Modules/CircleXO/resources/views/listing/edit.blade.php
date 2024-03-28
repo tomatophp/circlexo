@@ -94,11 +94,10 @@
             </div>
         </div>
 
-        <x-splade-checkbox name="is_active" label="Active" />
-
+        <x-splade-checkbox name="is_active" :label="__('Public')" />
 
         <div class="flex justify-start gap-4">
-            <x-tomato-admin-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-zinc-900" />
+            <x-tomato-admin-submit spinner :label="__('Update')" />
             <x-tomato-admin-button danger confirm-danger method="DELETE" :href="route('profile.listing.destroy', $listing)" :label="__('Delete Listing')" />
         </div>
     </x-splade-form>

@@ -29,6 +29,8 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/faq', [CircleXOController::class, 'faq'])->name('home.faq');
     Route::get('/terms', [CircleXOController::class, 'terms'])->name('home.terms');
     Route::get('/privacy', [CircleXOController::class, 'privacy'])->name('home.privacy');
+    Route::get('/marketplace', [CircleXOController::class, 'marketplace'])->name('home.marketplace');
+    Route::get('/blog', [CircleXOController::class, 'blog'])->name('home.blog');
 });
 
 Route::middleware('web')->group(function (){
