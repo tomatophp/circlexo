@@ -1,0 +1,37 @@
+{
+    "name": "TomatoSections",
+    "alias": "tomato-sections",
+    "description": {
+        "ar": "Sections For Tomato Themes To build any app with Theme Builder",
+        "en": "Sections For Tomato Themes To build any app with Theme Builder",
+        "gr": "Sections For Tomato Themes To build any app with Theme Builder",
+        "sp": "Sections For Tomato Themes To build any app with Theme Builder"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoSections\\App\\Providers\\TomatoSectionsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Tomato Sections",
+        "en": "Tomato Sections",
+        "gr": "Tomato Sections",
+        "sp": "Tomato Sections"
+    },
+    "color": "#222F3D",
+    "icon": "bx bx-code-block",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "active": false,
+    "github": "https:\/\/github.com\/tomatophp\/tomato-sections-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-sections",
+    "required": [
+        "TomatoCms",
+        "TomatoCrm",
+        "TomatoThemes",
+        "TomatoSupport",
+        "TomatoSettings"
+    ]
+}

@@ -1,0 +1,37 @@
+<?php
+
+{{ namespace }}
+
+use TomatoPHP\TomatoThemes\Facades\TomatoThemes;
+use TomatoPHP\TomatoForms\Facades\TomatoForms;
+use TomatoPHP\TomatoForms\Services\Contracts\Form;
+use TomatoPHP\TomatoForms\Services\Contracts\FormInput;
+use TomatoPHP\TomatoThemes\Services\Abstract\Section;
+
+class {{ name }}Section extends Section
+{
+    public ?string $label = null;
+    public ?string $group = "sections";
+    public ?string $icon = "bx bx-circle";
+    public ?string $description = "use it to get {{ title }} section";
+
+    public function label(): string
+    {
+        return __('{{ title }} Section Form');
+    }
+
+    public function form(): string
+    {
+        return '';
+    }
+
+    public function section(): string
+    {
+        return '{{ view }}';
+    }
+
+    public function config(): array
+    {
+        return [];
+    }
+}

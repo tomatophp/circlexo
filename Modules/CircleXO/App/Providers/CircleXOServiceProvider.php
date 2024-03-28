@@ -5,6 +5,7 @@ namespace Modules\CircleXO\App\Providers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\TomatoThemes\App\Facades\TomatoThemes;
 
 class CircleXOServiceProvider extends ServiceProvider
 {
@@ -62,7 +63,18 @@ class CircleXOServiceProvider extends ServiceProvider
             \Modules\CircleXO\App\View\Components\ListingType::class,
             \Modules\CircleXO\App\View\Components\Recap::class,
             \Modules\CircleXO\App\View\Components\Share::class,
+            \Modules\CircleXO\App\View\Components\MenuItems::class,
         ]);
+
+
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOHeader());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOFooter());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOFAQ());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOPageTitle());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOPageBody());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOHero());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOFeatures());
+        TomatoThemes::registerSection(new \Modules\CircleXO\App\Sections\CircleXOListing());
     }
 
     /**

@@ -1,0 +1,28 @@
+{
+    "name": "CircleApps",
+    "alias": "circleapps",
+    "description": {
+        "ar": "Manage Apps Inside CircleXO Profile",
+        "en": "Manage Apps Inside CircleXO Profile",
+        "gr": "Manage Apps Inside CircleXO Profile",
+        "sp": "Manage Apps Inside CircleXO Profile"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleApps\\App\\Providers\\CircleAppsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Circle Apps",
+        "en": "Circle Apps",
+        "gr": "Circle Apps",
+        "sp": "Circle Apps"
+    },
+    "color": "#1FBC9C",
+    "icon": "bx bx-card",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "active": false
+}

@@ -24,7 +24,10 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-category-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-category",
-    "required": ["TomatoTranslations"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-category-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-category",
+    "required": [
+        "TomatoTranslations"
+    ],
+    "active": false
 }

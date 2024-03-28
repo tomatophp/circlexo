@@ -24,7 +24,11 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-locations-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-locations",
-    "required": ["TomatoTranslations","TomatoSettings"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-locations-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-locations",
+    "required": [
+        "TomatoTranslations",
+        "TomatoSettings"
+    ],
+    "active": false
 }

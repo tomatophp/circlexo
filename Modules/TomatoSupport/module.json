@@ -1,0 +1,33 @@
+{
+    "name": "TomatoSupport",
+    "alias": "tomato-support",
+    "description": {
+        "ar": "نظام حجز التذاكر والدعم مع واجهة برمجة التطبيقات (API)",
+        "en": "Ticketing and support system with API for tomato admin",
+        "gr": "Ticketing and support system with API for tomato admin",
+        "sp": "Ticketing and support system with API for tomato admin"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TomatoSupport\\App\\Providers\\TomatoSupportServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "الدعم",
+        "en": "Tomato Support",
+        "gr": "Tomato Support",
+        "sp": "Tomato Support"
+    },
+    "color": "#3bada0",
+    "icon": "bx bx-support",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "github": "https:\/\/github.com\/tomatophp\/tomato-support-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-support",
+    "required": [
+        "TomatoCrm"
+    ],
+    "active": false
+}

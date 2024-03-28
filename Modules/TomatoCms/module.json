@@ -24,7 +24,12 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-cms-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-cms",
-    "required": ["TomatoTranslations", "TomatoCategory", "TomatoForms"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-cms-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-cms",
+    "required": [
+        "TomatoTranslations",
+        "TomatoCategory",
+        "TomatoForms"
+    ],
+    "active": false
 }

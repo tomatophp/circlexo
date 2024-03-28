@@ -24,7 +24,12 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-notifications-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-notifications",
-    "required": ["TomatoSettings", "TomatoTranslations", "TomatoRoles"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-notifications-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-notifications",
+    "required": [
+        "TomatoSettings",
+        "TomatoTranslations",
+        "TomatoRoles"
+    ],
+    "active": false
 }

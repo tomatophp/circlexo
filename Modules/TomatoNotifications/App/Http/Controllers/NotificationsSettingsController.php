@@ -6,7 +6,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Modules\TomatoNotifications\App\Http\Requests\Settings\NotificationsSettingsRequest;
 use Modules\TomatoNotifications\App\Settings\NotificationsSettings;
-use TomatoPHP\TomatoSettings\Services\Setting;
+use Modules\TomatoSettings\App\Services\Setting;
+
 
 class NotificationsSettingsController extends Setting
 {

@@ -1,0 +1,50 @@
+{
+    "name": "tomatophp/tomato-themes-module",
+    "type": "laravel-module",
+    "description": "A Theme System Like Wordpress on your Tomato Admin",
+    "keywords": [
+        "php",
+        "laravel",
+        "themes",
+        "theme manager",
+        "multi theme manager"
+    ],
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoThemes\\": "",
+            "Modules\\TomatoThemes\\App\\": "app/",
+            "Modules\\TomatoThemes\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoThemes\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoThemes\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/console-helpers": "^1.1",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/tomato-sections-module": "^1.0",
+        "tomatophp/tomato-settings-module": "^1.0",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

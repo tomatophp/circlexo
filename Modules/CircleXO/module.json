@@ -21,7 +21,8 @@
     },
     "color": "#F2C511",
     "icon": "bx bxs-circle",
-    "placeholder": "placeholder.webp",
-    "type": "plugin",
-    "version": "v1.0"
+    "placeholder": "images/theme-placeholder.png",
+    "type": "theme",
+    "version": "v1.0",
+    "active": true
 }

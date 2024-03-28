@@ -1,0 +1,48 @@
+{
+    "name": "tomatophp/tomato-menus-module",
+    "type": "laravel-module",
+    "description": "Menus manager to build your menus with json file or database provider",
+    "keywords": [
+        "php",
+        "laravel",
+        "menus",
+        "menu manager",
+        "menu builder",
+        "tomato-php"
+    ],
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "EngFadyMondy@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\TomatoMenus\\": "",
+            "Modules\\TomatoMenus\\App\\": "app/",
+            "Modules\\TomatoMenus\\Database\\Factories\\": "database/factories/",
+            "Modules\\TomatoMenus\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\TomatoMenus\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/console-helpers": "^1.1",
+        "tomatophp/tomato-admin": "^1.2",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

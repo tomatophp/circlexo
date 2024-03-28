@@ -24,7 +24,14 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github" : "https://github.com/tomatophp/tomato-crm-module",
-    "docs" : "https://docs.tomatophp.com/plugins/tomato-crm",
-    "required": ["TomatoTranslations","TomatoCategory","TomatoNotifications", "TomatoRoles", "TomatoLocations"]
+    "github": "https:\/\/github.com\/tomatophp\/tomato-crm-module",
+    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-crm",
+    "required": [
+        "TomatoTranslations",
+        "TomatoCategory",
+        "TomatoNotifications",
+        "TomatoRoles",
+        "TomatoLocations"
+    ],
+    "active": false
 }

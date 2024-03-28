@@ -21,9 +21,13 @@
         "tomatophp/tomato-admin": "^1.2",
         "tomatophp/tomato-cms-module": "^1.0",
         "tomatophp/tomato-crm-module": "^1.0",
+        "tomatophp/tomato-menus-module": "^1.0",
         "tomatophp/tomato-notifications-module": "^1.0",
         "tomatophp/tomato-roles-module": "^1.0",
+        "tomatophp/tomato-sections-module": "^1.0",
         "tomatophp/tomato-settings-module": "^1.0",
+        "tomatophp/tomato-support-module": "^1.0",
+        "tomatophp/tomato-themes-module": "^1.0",
         "tomatophp/tomato-translations-module": "^1.0"
     },
     "require-dev": {
