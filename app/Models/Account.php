@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Modules\CircleApps\App\Models\App;
 use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
 use Multicaret\Acquaintances\Traits\CanBeLiked;
 use Multicaret\Acquaintances\Traits\CanBeRated;
@@ -54,6 +55,7 @@ class Account extends Authenticatable implements HasMedia
     use InteractWithNotifications;
     use CanFollow;
     use CanBeFollowed;
+    use CanRate;
     use CanLike;
     use CanView;
     use Searchable;
@@ -104,6 +106,12 @@ class Account extends Authenticatable implements HasMedia
         'social',
         'bio',
     ];
+
+
+    public function apps()
+    {
+        return $this->belongsToMany(App::class, 'account_has_apps','account_id', 'app_id');
+    }
 
     /**
      * Get the name of the index associated with the model.

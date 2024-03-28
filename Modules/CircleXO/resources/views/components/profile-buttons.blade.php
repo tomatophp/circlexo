@@ -30,6 +30,13 @@
                 <x-tomato-admin-dropdown-item modal type="link" icon="bx bx-plus-circle" :label="__('List Item')" href="{{ route('profile.listing.create') }}" />
                 <x-tomato-admin-dropdown-item type="link" icon="bx bx-message" :label="__('Messages')" href="{{ route('profile.messages') }}" />
                 <x-tomato-admin-dropdown-item type="link" icon="bx bxs-user-plus" :label="__('Following')" href="{{ route('profile.following') }}" />
+                @php $providerMenus = \Modules\CircleApps\App\Facades\CircleApps::menus(); @endphp
+
+                @foreach($providerMenus as $item)
+                    @if($item->group === 'profile-dropdown' && auth('accounts')->user())
+                        <x-tomato-admin-dropdown-item type="link" :icon="$item->icon" :label="$item->label" href="{{ route($item->route) }}" />
+                    @endif
+                @endforeach
                 <x-tomato-admin-dropdown-item type="link" method="DELETE" confirm-danger icon="bx bxs-trash" danger :label="__('Delete Account')" href="{{ route('profile.destroy') }}" />
             </x-tomato-admin-dropdown>
         </x-tomato-admin-tooltip>

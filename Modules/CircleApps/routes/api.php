@@ -13,7 +13,3 @@ use Illuminate\Support\Facades\Route;
     | is assigned the "api" middleware group. Enjoy building your API!
     |
 */
-
-Route::middleware(['auth:sanctum'])->prefix('v1')->name('api.')->group(function () {
-    Route::get('circleapps', fn (Request $request) => $request->user())->name('circleapps');
-});

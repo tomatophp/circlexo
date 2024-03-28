@@ -6,62 +6,53 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\CircleApps\App\Models\App;
+use ProtoneMedia\Splade\Facades\Toast;
 
 class CircleAppsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('circleapps::index');
-    }
+        $apps= App::query();
+        if($request->has('search')) {
+            $apps->where('name', 'like', '%'.$request->search.'%');
+        }
+        if($request->has('category')) {
+            $apps->whereHas('categories', function ($query) use ($request) {
+                $query->where('id', $request->category);
+            });
+        }
+        $apps->where('is_active', true);
+        $apps->orderBy('id', 'desc');
+        $apps = $apps->paginate(12);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('circleapps::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        //
+        return view('circle-apps::index', compact('apps'));
     }
 
     /**
      * Show the specified resource.
      */
-    public function show($id)
+    public function show(App $app)
     {
-        return view('circleapps::show');
+        return view('circle-apps::show', compact('app'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
+    public function install(App $app)
     {
-        return view('circleapps::edit');
+        auth('accounts')->user()->apps()->attach($app->id);
+
+        Toast::success(__('App installed successfully!'))->autoDismiss(2);
+        return back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): RedirectResponse
+    public function uninstall(App $app)
     {
-        //
-    }
+        auth('accounts')->user()->apps()->detach($app->id);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
+        Toast::success(__('App installed successfully!'))->autoDismiss(2);
+        return back();
     }
 }
