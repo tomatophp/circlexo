@@ -5,6 +5,7 @@ namespace Modules\CircleContacts\App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\CircleApps\App\Facades\CircleAppsMenu;
+use Modules\CircleContacts\App\Console\CircleContactsInstall;
 use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
 
 class CircleContactsServiceProvider extends ServiceProvider
@@ -48,7 +49,9 @@ class CircleContactsServiceProvider extends ServiceProvider
      */
     protected function registerCommands(): void
     {
-        // $this->commands([]);
+         $this->commands([
+             CircleContactsInstall::class
+         ]);
     }
 
     /**
