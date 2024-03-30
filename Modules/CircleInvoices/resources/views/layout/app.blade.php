@@ -53,6 +53,38 @@
                         </Link>
                     </div>
                 </swiper-slide>
+                <swiper-slide class="club-swiper-slide" >
+                    <div class="swiper-slide">
+                        <Link preserve-scroll href="{{ route('profile.invoices.index') .'?status=active'}}"
+                              class="@if(request()->has('status') && request()->get('status') == 'active') font-bold bg-zinc-800 @endif px-4 md:px-6 py-2 flex flex-col text-center justify-center gap-2 border border-zinc-700 rounded-lg shadow-sm"
+                        >
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="rounded-full bg-primary-600 h-10 w-10 flex flex-col justify-center items-center">
+                                <i class="bx bxs-rocket text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            {{ __('Active') }}
+                        </div>
+                        </Link>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="club-swiper-slide" >
+                    <div class="swiper-slide">
+                        <Link preserve-scroll href="{{ route('profile.invoices.index') .'?status=paid'}}"
+                              class="@if(request()->has('status') && request()->get('status') == 'paid') font-bold bg-zinc-800 @endif px-4 md:px-6 py-2 flex flex-col text-center justify-center gap-2 border border-zinc-700 rounded-lg shadow-sm"
+                        >
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="rounded-full bg-success-600 h-10 w-10 flex flex-col justify-center items-center">
+                                <i class="bx bxs-check-circle text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            {{ __('Paid') }}
+                        </div>
+                        </Link>
+                    </div>
+                </swiper-slide>
             </Swiper>
         </div>
         <div class="mx-8 lg:mx-16">

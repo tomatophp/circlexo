@@ -28,6 +28,9 @@ class CircleXoInvoiceController extends Controller
     {
         $query = CircleXoInvoice::query();
         $query->where('account_id', auth('accounts')->user()->id);
+        if($request->has('status') && !empty($request->get('status'))){
+            $query->where('status', $request->status);
+        }
 
         return Tomato::index(
             request: $request,
@@ -46,6 +49,10 @@ class CircleXoInvoiceController extends Controller
     {
         $query = CircleXoInvoice::query();
         $query->where('account_id', auth('accounts')->user()->id);
+        if($request->has('status') && !empty($request->get('status'))){
+            $query->where('status', $request->status);
+        }
+
         return Tomato::json(
             request: $request,
             model: \Modules\CircleInvoices\App\Models\CircleXoInvoice::class,

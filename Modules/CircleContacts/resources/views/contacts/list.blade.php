@@ -85,8 +85,8 @@
                                     <i class="bx bx-edit bx-sm text-warning-400"></i>
                                 </x-tomato-admin-tooltip>
                             </x-splade-link>
-                            <x-splade-link modal href="{{route('profile.contacts.edit', $item)}}">
-                                <x-tomato-admin-tooltip :text="__('Delete')" href="{{route('profile.contacts.destroy', $item)}}" method="DELETE" danger confirm-danger>
+                            <x-splade-link href="{{route('profile.contacts.destroy', $item)}}" method="DELETE" danger confirm-danger>
+                                <x-tomato-admin-tooltip :text="__('Delete')" >
                                     <i class="bx bx-trash bx-sm  text-danger-500"></i>
                                 </x-tomato-admin-tooltip>
                             </x-splade-link>
