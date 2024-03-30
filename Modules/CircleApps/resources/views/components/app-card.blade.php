@@ -1,16 +1,27 @@
 <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-4 min-w-64 min-h-56 flex flex-col gap-3">
-    <div class="flex justify-start gap-4">
-        <div style="background-image: url('{{$item->getMedia('logo')->first()?->getUrl()}}')" class="bg-cover bg-center w-16 h-16 rounded-lg">
+    <div class="flex justify-between gap-4">
+       <div class="flex justify-start gap-4">
+           <div style="background-image: url('{{$item->getMedia('logo')->first()?->getUrl()}}')" class="bg-cover bg-center w-16 h-16 rounded-lg border border-gray-700">
 
-        </div>
-        <x-splade-link :href="route('apps.show', $item)" class="flex justify-center flex-col items-center">
-            <div>
-                <h1 class="font-bold">{{$item->name}}</h1>
-                @if($item->account)
-                    <x-splade-link class="text-zinc-400" href="{{url($item->account->username)}}">{{$item->account->name}}</x-splade-link>
+           </div>
+           <x-splade-link :href="route('apps.show', $item)" class="flex justify-center flex-col items-center">
+               <div>
+                   <h1 class="font-bold">{{$item->name}}</h1>
+                   @if($item->account)
+                       <x-splade-link class="text-zinc-400" href="{{url($item->account->username)}}">{{$item->account->name}}</x-splade-link>
+                   @endif
+               </div>
+           </x-splade-link>
+       </div>
+        <div>
+            @if(auth('accounts')->user())
+                @if(!has_app($item->key))
+                    <x-splade-link :href="route('apps.install', $item)" method="POST" class="bg-success-600 text-zinc-100 rounded-full px-2 py-1 text-xs">{{__('Install')}}</x-splade-link>
+                @else
+                    <x-splade-link :href="route('apps.uninstall', $item)" method="POST" confirm-danger class="bg-danger-600 text-zinc-100 rounded-full px-2 py-1 text-xs">{{__('Uninstall')}}</x-splade-link>
                 @endif
-            </div>
-        </x-splade-link>
+            @endif
+        </div>
     </div>
     <div>
         @if($item->is_free)

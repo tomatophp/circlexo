@@ -14,5 +14,6 @@
     "TomatoSupport": true,
     "TomatoSections": true,
     "TomatoMenus": true,
-    "CircleContacts": true
+    "CircleContacts": true,
+    "CircleInvoices": true
 }

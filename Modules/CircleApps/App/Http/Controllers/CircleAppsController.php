@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\CircleApps\App\Models\App;
+use Nwidart\Modules\Facades\Module;
 use ProtoneMedia\Splade\Facades\Toast;
 
 class CircleAppsController extends Controller
@@ -100,6 +101,16 @@ class CircleAppsController extends Controller
 
     public function install(App $app)
     {
+        if($app->required){
+            $checkRequiredApps = auth('accounts')->user()->apps()->whereIn('id', $app->required)->count();
+            if($checkRequiredApps !== count($app->required)){
+                $appRequired = App::whereIn('id', $app->required)->first();
+
+                auth('accounts')->user()->apps()->attach($appRequired->id);
+            }
+        }
+
+
         if($app->account_id && $app->account_id !== auth('accounts')->id()){
             $app->account->notifyDB(
                 message: __(auth('accounts')->user()->username . " " . __('is install your app') .' '. $app->name),
@@ -115,6 +126,21 @@ class CircleAppsController extends Controller
 
     public function uninstall(App $app)
     {
+        $appRequiredThisApp = App::whereJsonContains('required', (string)$app->id)->get();
+        if($appRequiredThisApp->count() > 0){
+            $getRequiredApp = null;
+            foreach ($appRequiredThisApp as $requiredApp){
+                if(has_app($requiredApp->key)){
+                    $getRequiredApp = $requiredApp;
+                }
+            }
+
+            if($getRequiredApp){
+                Toast::danger(__('You need to uninstall required apps first!'))->autoDismiss(2);
+                return redirect()->to(url('apps/'.$getRequiredApp->id));
+            }
+        }
+
         if($app->account_id && $app->account_id !== auth('accounts')->id()){
             $app->account->notifyDB(
                 message: __(auth('accounts')->user()->username . " " . __('is Uninstall your app') .' '. $app->name),

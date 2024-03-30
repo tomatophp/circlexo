@@ -1,0 +1,33 @@
+{
+    "name": "tomatophp/circle-invoices-module",
+    "type": "laravel-module",
+    "description": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CircleInvoices\\": "",
+            "Modules\\CircleInvoices\\App\\": "app/",
+            "Modules\\CircleInvoices\\Database\\Factories\\": "database/factories/",
+            "Modules\\CircleInvoices\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\CircleInvoices\\Tests\\": "tests/"
+        }
+    }
+}

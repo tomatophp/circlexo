@@ -52,12 +52,14 @@ class App extends Model implements HasMedia
         'price_per',
         'discount',
         'discount_to',
+        'required',
         'is_free'
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'is_free' => 'boolean'
+        'is_free' => 'boolean',
+        'required' => 'json',
     ];
 
     public function account()
