@@ -1,0 +1,29 @@
+{
+    "name": "CircleInvoices",
+    "alias": "circle-invoices",
+    "description": {
+        "ar": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+        "en": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+        "gr": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+        "sp": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleInvoices\\App\\Providers\\CircleInvoicesServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Circle Invoices",
+        "en": "Circle Invoices",
+        "gr": "Circle Invoices",
+        "sp": "Circle Invoices"
+    },
+    "color": "#2980B9",
+    "icon": "bx bxs-receipt",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0",
+    "required": ["CircleContacts"],
+    "apps": ["circle-contacts"]
+}

@@ -1,19 +1,17 @@
 <?php
 
-namespace Modules\CircleContacts\App\Providers;
+namespace Modules\CircleInvoices\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\CircleApps\App\Facades\CircleAppsMenu;
-use Modules\CircleContacts\App\Console\CircleContactsInstall;
-use Modules\CircleContacts\App\Console\CircleInovicesInstall;
-use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
+use Modules\CircleInvoices\App\Console\CircleInvoicesInstall;
 
-class CircleContactsServiceProvider extends ServiceProvider
+class CircleInvoicesServiceProvider extends ServiceProvider
 {
-    protected string $moduleName = 'CircleContacts';
+    protected string $moduleName = 'CircleInvoices';
 
-    protected string $moduleNameLower = 'circle-contacts';
+    protected string $moduleNameLower = 'circle-invoices';
 
     /**
      * Boot the application events.
@@ -27,14 +25,15 @@ class CircleContactsServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/migrations'));
 
-
         CircleAppsMenu::register([
-            Menu::make()
-                ->group('circle-contacts')
-                ->label(__('Contacts'))
-                ->icon('bx bxs-group')
-                ->route('profile.contacts.index')
+            \TomatoPHP\TomatoAdmin\Services\Contracts\Menu::make()
+                ->group('circle-invoices')
+                ->label(__('Invoices'))
+                ->icon('bx bxs-receipt')
+                ->route('profile.invoices.index'),
         ]);
+
+
     }
 
     /**
@@ -51,7 +50,7 @@ class CircleContactsServiceProvider extends ServiceProvider
     protected function registerCommands(): void
     {
          $this->commands([
-             CircleContactsInstall::class
+             CircleInvoicesInstall::class
          ]);
     }
 

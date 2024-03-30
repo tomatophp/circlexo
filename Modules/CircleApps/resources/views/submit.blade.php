@@ -25,6 +25,12 @@
         <x-splade-input :label="__('Github')" name="github" type="text"  :placeholder="__('Github')" />
         <x-splade-input :label="__('Privacy')" name="privacy" type="text"  :placeholder="__('Privacy')" />
         <x-splade-input :label="__('Faq')" name="faq" type="text"  :placeholder="__('Faq')" />
+        <x-splade-select class="col-span-2" :label="__('App Required Other Apps?')" :placeholder="__('App Required Other Apps?')" name="required" multiple choices>
+            @php $apps = \Modules\CircleApps\App\Models\App::where('is_active', true)->get(); @endphp
+            @foreach($apps as $app)
+                <option value="{{$app->id}}">{{$app->name}}</option>
+            @endforeach
+        </x-splade-select>
 
         <div class="flex justify-start gap-2 pt-3 col-span-2">
             <x-tomato-admin-submit  label="{{__('Save')}}" :spinner="true" />

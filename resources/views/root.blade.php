@@ -11,7 +11,7 @@
             }
         </style>
     </head>
-    <body class="font-sans antialiased dark">
+    <body class="font-main antialiased dark bg-white">
         @splade
     </body>
 </html>
