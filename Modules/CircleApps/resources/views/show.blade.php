@@ -161,5 +161,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </x-circle-xo-app-layout>

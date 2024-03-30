@@ -14,15 +14,15 @@ use Modules\CircleApps\App\Http\Controllers\CircleAppsController;
 |
 */
 
-//Route::middleware(['web', 'splade'])->prefix('apps')->name('apps.')->group(function () {
-//    Route::get('/', [CircleAppsController::class, 'index'])->name('index');
-//    Route::get('/{app}', [CircleAppsController::class, 'show'])->name('show');
-//});
-//
-//Route::middleware(['web', 'splade', 'auth:accounts'])->prefix('apps')->name('apps.')->group(function () {
-//    Route::post('/{app}/install', [CircleAppsController::class, 'install'])->name('install');
-//    Route::post('/{app}/uninstall', [CircleAppsController::class, 'uninstall'])->name('uninstall');
-//});
+Route::middleware(['web', 'splade'])->prefix('apps')->name('apps.')->group(function () {
+    Route::get('/', [CircleAppsController::class, 'index'])->name('index');
+    Route::get('/{app}', [CircleAppsController::class, 'show'])->name('show');
+});
+
+Route::middleware(['web', 'splade', 'auth:accounts'])->prefix('apps')->name('apps.')->group(function () {
+    Route::post('/{app}/install', [CircleAppsController::class, 'install'])->name('install');
+    Route::post('/{app}/uninstall', [CircleAppsController::class, 'uninstall'])->name('uninstall');
+});
 
 Route::middleware(['auth', 'splade', 'verified'])->name('admin.')->group(function () {
     Route::get('admin/apps', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'index'])->name('apps.index');

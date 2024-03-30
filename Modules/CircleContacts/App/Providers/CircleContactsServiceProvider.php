@@ -1,20 +1,17 @@
 <?php
 
-namespace Modules\CircleApps\App\Providers;
+namespace Modules\CircleContacts\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Modules\CircleApps\App\Http\Middleware\CheckAccountAppAccess;
-use Modules\TomatoCategory\App\Facades\TomatoCategory;
-use Modules\TomatoCategory\App\Models\Category;
+use Modules\CircleApps\App\Facades\CircleAppsMenu;
+use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
 
-include  __DIR__ .'/helpers.php';
-
-class CircleAppsServiceProvider extends ServiceProvider
+class CircleContactsServiceProvider extends ServiceProvider
 {
-    protected string $moduleName = 'CircleApps';
+    protected string $moduleName = 'CircleContacts';
 
-    protected string $moduleNameLower = 'circle-apps';
+    protected string $moduleNameLower = 'circle-contacts';
 
     /**
      * Boot the application events.
@@ -26,35 +23,19 @@ class CircleAppsServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
-        $this->registerComponents();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/migrations'));
 
-        \TomatoPHP\TomatoAdmin\Facade\TomatoMenu::register([
-            \TomatoPHP\TomatoAdmin\Services\Contracts\Menu::make()
-                ->group(__('Settings'))
-                ->label('App')
-                ->icon('bx bxs-plug')
-                ->route('admin.apps.index'),
+
+        CircleAppsMenu::register([
+            Menu::make()
+                ->group('circle-contacts')
+                ->label(__('Contacts'))
+                ->icon('bx bxs-group')
+                ->route('profile.contacts.index')
         ]);
-
-        $this->app->bind('circle-apps', function () {
-            return new \Modules\CircleApps\App\Services\CircleAppsServices();
-        });
-
-        $this->app->bind('circle-apps-menu', function () {
-            return new \Modules\CircleApps\App\Services\CircleAppsMenuServices();
-        });
-
-        $this->app['router']->aliasMiddleware('app', CheckAccountAppAccess::class);
     }
 
-    public function registerComponents(): void
-    {
-        $this->loadViewComponentsAs($this->moduleNameLower, [
-            \Modules\CircleApps\App\View\Components\AppCard::class,
-        ]);
-
-    }    /**
+    /**
      * Register the service provider.
      */
     public function register(): void
