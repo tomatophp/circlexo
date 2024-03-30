@@ -14,6 +14,11 @@ use Modules\CircleApps\App\Http\Controllers\CircleAppsController;
 |
 */
 
+Route::middleware(['web', 'splade', 'auth:accounts'])->prefix('apps')->name('apps.')->group(function () {
+    Route::get('/submit', [CircleAppsController::class, 'submit'])->name('submit');
+    Route::post('/submit', [CircleAppsController::class, 'store'])->name('store');
+});
+
 Route::middleware(['web', 'splade'])->prefix('apps')->name('apps.')->group(function () {
     Route::get('/', [CircleAppsController::class, 'index'])->name('index');
     Route::get('/{app}', [CircleAppsController::class, 'show'])->name('show');
@@ -31,6 +36,7 @@ Route::middleware(['auth', 'splade', 'verified'])->name('admin.')->group(functio
     Route::post('admin/apps', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'store'])->name('apps.store');
     Route::get('admin/apps/{model}', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'show'])->name('apps.show');
     Route::get('admin/apps/{model}/edit', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'edit'])->name('apps.edit');
+    Route::get('admin/apps/{model}/download', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'download'])->name('apps.download');
     Route::post('admin/apps/{model}', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'update'])->name('apps.update');
     Route::delete('admin/apps/{model}', [\Modules\CircleApps\App\Http\Controllers\AppController::class, 'destroy'])->name('apps.destroy');
 });

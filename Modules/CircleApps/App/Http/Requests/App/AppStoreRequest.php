@@ -27,7 +27,7 @@ class AppStoreRequest extends FormRequest
             'account_id' => 'nullable|exists:accounts,id',
             'name' => 'required|max:255|string',
             'description' => 'nullable|max:255|string',
-            'key' => 'required|string',
+            'key' => 'required|string|unique:apps,key',
             'readme' => 'nullable',
             'homepage' => 'nullable|max:255|string',
             'email' => 'nullable|max:255|string|email',

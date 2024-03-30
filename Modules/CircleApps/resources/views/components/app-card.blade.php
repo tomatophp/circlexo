@@ -1,4 +1,4 @@
-<div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-4 min-w-64 flex flex-col gap-3">
+<div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-4 min-w-64 min-h-56 flex flex-col gap-3">
     <div class="flex justify-start gap-4">
         <div style="background-image: url('{{$item->getMedia('logo')->first()?->getUrl()}}')" class="bg-cover bg-center w-16 h-16 rounded-lg">
 

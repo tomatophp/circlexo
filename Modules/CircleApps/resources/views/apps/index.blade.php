@@ -29,6 +29,9 @@
 
                 <x-splade-cell actions>
                     <div class="flex justify-start">
+                        <a href="{{ route('admin.apps.download', $item->id) }}"  class="px-2 cursor-pointer transition-colors ease-in-out duration-20 text-success-500 hover:text-success-400">
+                            <x-heroicon-s-arrow-down-circle class="h-6 w-6"/>
+                        </a>
                         <x-tomato-admin-button success type="icon" title="{{trans('tomato-admin::global.crud.view')}}" modal :href="route('admin.apps.show', $item->id)">
                             <x-heroicon-s-eye class="h-6 w-6"/>
                         </x-tomato-admin-button>
