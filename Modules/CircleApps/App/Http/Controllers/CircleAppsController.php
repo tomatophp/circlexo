@@ -3,6 +3,7 @@
 namespace Modules\CircleApps\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -71,10 +72,19 @@ class CircleAppsController extends Controller
         $app->is_free = true;
         $app->save();
 
-
         $app->addMedia($request->file('logo'))->toMediaCollection('logo');
         $app->addMedia($request->file('cover'))->toMediaCollection('cover');
         $app->addMedia($request->file('module'))->toMediaCollection('module');
+
+        try {
+            $user = User::first();
+            $user->notifyDiscord(
+                title: "=========== New CircleXO App Submit =========== \n".' NAME: '.$app->name . " \n DESCRIPTION: " . $app->description . " \n BY: " . $app->account->username . " \n MODULE: " . $app->getMedia('module')->first()?->getUrl() ,
+                webhook: config('services.discord.notification-webhook')
+            );
+        }catch (\Exception $exception){
+            // do nothing
+        }
 
         Toast::success(__('App submitted successfully!'))->autoDismiss(2);
         return back();
