@@ -33,7 +33,7 @@ Route::middleware(['splade'])->group(function (){
     Route::get('/blog', [CircleXOController::class, 'blog'])->name('home.blog');
 });
 
-Route::middleware('web')->group(function (){
+Route::middleware(['web', 'throttle:10'])->group(function (){
     Route::get('/login/{provider}', [AuthController::class, 'provider'])->name('provider');
     Route::get('/login/{provider}/callback', [AuthController::class, 'callback'])->name('provider.callback');
 });
