@@ -3,13 +3,13 @@
     SEO::openGraphSiteName($app->name . ' | '. setting('site_name'));
     SEO::openGraphTitle($app->name . ' | '. setting('site_name'));
     SEO::openGraphUrl(url()->current());
-    SEO::openGraphImage($app->getMedia('logo')->first()?->getUrl ?? setting('site_profile'));
+    SEO::openGraphImage($app->getMedia('logo')->first()?->getUrl() ?? setting('site_profile'));
     SEO::metaByProperty('og:description',$app->description ?? setting('site_description'));
 
     SEO::twitterCard('summary_large_image');
     SEO::twitterTitle($app->name . ' | '. setting('site_name'));
     SEO::twitterDescription($app->description ?? setting('site_description'));
-    SEO::twitterImage($app->getMedia('logo')->first()?->getUrl ??  setting('site_profile'));
+    SEO::twitterImage($app->getMedia('logo')->first()?->getUrl() ??  setting('site_profile'));
 
     SEO::canonical(url()->current());
 @endphp
