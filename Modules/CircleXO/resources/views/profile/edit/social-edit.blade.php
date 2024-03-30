@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Update Social Network') }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
+
+@section('title', __('Update Social Network'))
+
+@section('content')
     <x-splade-form :default="$network" class="flex flex-col gap-4" method="POST" action="{{route('profile.social.update', $network['name'])}}">
         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             <x-circle-xo-social-item network="facebook" :label="__('Facebook')" />
@@ -42,4 +43,4 @@
             <x-tomato-admin-button method="DELETE" confirm-danger danger href="{{ route('profile.social.destroy', $network['name']) }}" :label="__('Remove')" />
         </div>
     </x-splade-form>
-</x-splade-modal>
+@endsection

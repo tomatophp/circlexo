@@ -1,8 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{__('Show Notification')}}
-    </x-slot:title>
+@extends('circle-xo::layouts.app')
 
+@section('title', __('Show Notification'))
+
+@section('content')
     <a href="{{$model->url}}" target="_blank">
         <div class="flex flex-col gap-4 rounded-lg @if(!$model->isRead()) bg-zinc-200 dark:bg-zinc-700 @else bg-zinc-50 dark:bg-zinc-900 @endif  px-4 py-4">
             <div
@@ -47,4 +47,4 @@
     <div class="flex justify-start gap-2 pt-3">
         <x-tomato-admin-button secondary type="button" @click.prevent="modal.close" label="{{__('Cancel')}}"/>
     </div>
-</x-splade-modal>
+@endsection

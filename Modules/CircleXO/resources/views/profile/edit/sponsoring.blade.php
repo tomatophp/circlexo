@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Sponsoring Link') }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
+
+@section('title', __('Sponsoring Link'))
+
+@section('content')
     <x-splade-form :default="[
         'sponsoring_link' => auth('accounts')->user()->meta('sponsoring_link'),
         'sponsoring_message' => auth('accounts')->user()->meta('sponsoring_message'),
@@ -11,4 +12,4 @@
 
         <x-splade-submit spinner :label="__('Save')" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
-</x-splade-modal>
+@endsection

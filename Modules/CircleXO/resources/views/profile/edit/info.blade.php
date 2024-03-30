@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Update Info') }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
+
+@section('title', __('Update Info'))
+
+@section('content')
     <x-splade-form :default="[
         'name' => auth('accounts')->user()->name,
         'email' => auth('accounts')->user()->email,
@@ -17,4 +18,4 @@
 
         <x-splade-submit spinner label="Update" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
-</x-splade-modal>
+@endsection
