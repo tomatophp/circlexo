@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Update Listing') . "#" . $listing->id }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
+
+@section('title', __('Update Listing') . "#" . $listing->id)
+
+@section('content')
     <x-splade-form :default="$listing->toArray()" class="flex flex-col gap-4"  method="POST" action="{{route('profile.listing.update', $listing)}}">
         <h1 class="font-bold text-lg text-center text-white">{{__('Select Listing Type')}}</h1>
         <div class="grid grid-cols-3 lg:grid-cols-5 gap-4">
@@ -101,4 +102,4 @@
             <x-tomato-admin-button danger confirm-danger method="DELETE" :href="route('profile.listing.destroy', $listing)" :label="__('Delete Listing')" />
         </div>
     </x-splade-form>
-</x-splade-modal>
+@endsection

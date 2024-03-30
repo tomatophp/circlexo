@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Send Message To') . " " . $account->username }}
-    </x-slot>
+@extends('circle-xo::layouts.public')
+
+@section('title', __('Send Message To') . " " . $account->username )
+
+@section('content')
     <x-splade-form :default="[
         'anonymous_message' => false,
         'name' => auth('accounts')->user() ? auth('accounts')->user()->name : null,
@@ -16,4 +17,4 @@
 
         <x-splade-submit spinner label="Send" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
-</x-splade-modal>
+@endsection

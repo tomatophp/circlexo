@@ -1,7 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Select Social Network') }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
+
+@section('title', __('Select Social Network'))
+
+@section('content')
     <x-splade-form class="flex flex-col gap-4" method="POST" action="{{route('profile.social.store')}}">
         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             <x-circle-xo-social-item network="facebook" :label="__('Facebook')" />
@@ -39,4 +40,4 @@
 
         <x-splade-submit spinner :label="__('Save')" class="bg-main-600 border-main-400 text-zinc-900" />
     </x-splade-form>
-</x-splade-modal>
+@endsection

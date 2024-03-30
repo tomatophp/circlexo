@@ -1,8 +1,8 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{ __('Profile QR') }}
-    </x-slot>
+@extends('circle-xo::layouts.app')
 
+@section('title', __('Profile QR'))
+
+@section('content')
     <x-splade-form :default="[
         'background' => auth('accounts')->user()->meta('qr.background') ?: '#F8CF00',
         'color' => auth('accounts')->user()->meta('qr.color') ?: '#000000',
@@ -28,4 +28,4 @@
             <x-splade-submit spinner :label="__('Update')" class="bg-main-600 border-main-400 text-zinc-900" />
         </div>
     </x-splade-form>
-</x-splade-modal>
+@endsection

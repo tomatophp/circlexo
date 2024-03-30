@@ -1,9 +1,9 @@
-<x-splade-modal>
-    <x-slot:title>
-        {{__('Message Details')}}
-    </x-slot:title>
+@extends('circle-xo::layouts.app')
 
+@section('title', __('Message Details'))
+
+@section('content')
     <div class="my-4 text-white">
         {{ $message->message }}
     </div>
-</x-splade-modal>
+@endsection
