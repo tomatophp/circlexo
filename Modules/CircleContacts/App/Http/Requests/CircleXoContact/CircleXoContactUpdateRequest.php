@@ -27,7 +27,7 @@ class CircleXoContactUpdateRequest extends FormRequest
         return [
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'email' => 'nullable|max:255|string|email',
-            'phone' => 'sometimes|max:255|string|min:12',
+            'phone' => 'sometimes|max:255|string',
             'address' => 'nullable',
             'company' => 'nullable|max:255|string'
         ];

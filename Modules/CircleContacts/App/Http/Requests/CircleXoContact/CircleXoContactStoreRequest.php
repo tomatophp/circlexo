@@ -27,7 +27,7 @@ class CircleXoContactStoreRequest extends FormRequest
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'name' => 'required|max:255|string',
             'email' => 'nullable|max:255|string|email',
-            'phone' => 'required|max:255|string|min:12',
+            'phone' => 'required|max:255|string',
             'address' => 'nullable',
             'company' => 'nullable|max:255|string'
         ];
