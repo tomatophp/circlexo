@@ -81,6 +81,11 @@ class ProfileController extends Controller
         return view('circle-xo::profile.message', compact('message'));
     }
 
+    public function messageInfoProfile(Request $request, $profile)
+    {
+        return view('circle-xo::profile.message-profile-info');
+    }
+
     public function qr()
     {
         $qr = QrCode::format('png')
