@@ -32,6 +32,54 @@ class CircleAppsController extends Controller
         return view('circle-apps::index', compact('apps'));
     }
 
+    public function submit()
+    {
+        return view('circle-apps::submit');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255|string',
+            'module' => 'required|file|mimes:zip|max:50000',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'description' => 'nullable|max:255|string',
+            'key' => 'required|string|unique:apps,key',
+            'readme' => 'nullable',
+            'homepage' => 'nullable|url|max:255|string',
+            'email' => 'nullable|max:255|string|email',
+            'docs' => 'nullable|url|max:255|string',
+            'github' => 'nullable|url|max:255|string',
+            'privacy' => 'nullable|url|max:255|string',
+            'faq' => 'nullable|url|max:255|string',
+            'is_free' => 'nullable'
+        ]);
+
+        $app = new App();
+        $app->account_id = auth('accounts')->user()->id;
+        $app->name = $request->name;
+        $app->description = $request->description;
+        $app->key = $request->key;
+        $app->readme = $request->readme;
+        $app->homepage = $request->homepage;
+        $app->email = $request->email;
+        $app->docs = $request->docs;
+        $app->github = $request->github;
+        $app->privacy = $request->privacy;
+        $app->faq = $request->faq;
+        $app->is_free = true;
+        $app->save();
+
+
+        $app->addMedia($request->file('logo'))->toMediaCollection('logo');
+        $app->addMedia($request->file('cover'))->toMediaCollection('cover');
+        $app->addMedia($request->file('module'))->toMediaCollection('module');
+
+        Toast::success(__('App submitted successfully!'))->autoDismiss(2);
+        return back();
+    }
+
     /**
      * Show the specified resource.
      */

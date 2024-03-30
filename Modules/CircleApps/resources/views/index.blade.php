@@ -42,17 +42,15 @@
                         </div>
                     </div>
                 @else
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-                        <div class="grid grid-cols-1 gap-4 mx-8 md:mx-0 my-4">
-                            @foreach($apps as $item)
-                                <x-circle-apps-app-card :item="$item" />
-                            @endforeach
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                        @foreach($apps as $item)
+                        <div>
+                            <x-circle-apps-app-card :item="$item" />
                         </div>
-
-                        <div class="mx-8 lg:mx-0 my-4">
-                            {!! $apps->links('tomato-admin::components.pagination') !!}
-                        </div>
+                        @endforeach
+                    </div>
+                    <div class="mx-8 lg:mx-0 my-4">
+                        {!! $apps->links('tomato-admin::components.pagination') !!}
                     </div>
                 @endif
             </div>

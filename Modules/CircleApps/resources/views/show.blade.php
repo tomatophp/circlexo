@@ -74,7 +74,9 @@
 
                     </div>
 
-                    <x-tomato-markdown-viewer :content="$app->readme" />
+                    @if($app->readme)
+                        <x-tomato-markdown-viewer :content="$app->readme" />
+                    @endif
                 </div>
                 <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-6 col-span-3 flex flex-col gap-2 justify-start">
                     @if($app->homepage)

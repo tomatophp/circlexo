@@ -167,4 +167,11 @@ class AppController extends Controller
 
         return $response->redirect;
     }
+
+    public function download(Request $request, \Modules\CircleApps\App\Models\App $model)
+    {
+        $file = $model->getMedia('module')->first();
+
+        return response()->download($file->getPath());
+    }
 }

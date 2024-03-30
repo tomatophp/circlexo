@@ -13,6 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->redirectGuestsTo('/auth/login');
+        $middleware->redirectUsersTo('/profile');
         $middleware->group('splade', [
             \ProtoneMedia\Splade\Http\SpladeMiddleware::class
         ]);
