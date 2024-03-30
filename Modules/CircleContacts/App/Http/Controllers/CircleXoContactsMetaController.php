@@ -24,7 +24,7 @@ class CircleXoContactsMetaController extends Controller
      */
     public function create(CircleXoContact $account): View
     {
-        if(!has_app('circle-contacts', $account->id)){
+        if(!has_app('circle-contacts', $account->account_id)){
             abort(403);
         }
 
@@ -42,7 +42,7 @@ class CircleXoContactsMetaController extends Controller
      */
     public function store(Request $request, CircleXoContact $account): RedirectResponse|JsonResponse
     {
-        if(!has_app('circle-contacts', $account->id)){
+        if(!has_app('circle-contacts', $account->account_id)){
             abort(403);
         }
 
@@ -74,7 +74,7 @@ class CircleXoContactsMetaController extends Controller
      */
     public function edit(CircleXoContact $account, \Modules\CircleContacts\App\Models\CircleXoContactsMeta $model): View
     {
-        if(!has_app('circle-contacts', $account->id)){
+        if(!has_app('circle-contacts', $account->account_id)){
             abort(403);
         }
         return Tomato::get(
@@ -93,7 +93,7 @@ class CircleXoContactsMetaController extends Controller
      */
     public function update(CircleXoContact $account, Request $request, \Modules\CircleContacts\App\Models\CircleXoContactsMeta $model): RedirectResponse|JsonResponse
     {
-        if(!has_app('circle-contacts', $account->id)){
+        if(!has_app('circle-contacts', $account->account_id)){
             abort(403);
         }
 
@@ -121,7 +121,7 @@ class CircleXoContactsMetaController extends Controller
      */
     public function destroy(CircleXoContact $account, \Modules\CircleContacts\App\Models\CircleXoContactsMeta $model): RedirectResponse|JsonResponse
     {
-        if(!has_app('circle-contacts', $account->id)){
+        if(!has_app('circle-contacts', $account->account_id)){
             abort(403);
         }
 
