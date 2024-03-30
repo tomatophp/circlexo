@@ -42,6 +42,13 @@ class CircleAppsController extends Controller
 
     public function install(App $app)
     {
+        if($app->account_id && $app->account_id !== auth('accounts')->id()){
+            $app->account->notifyDB(
+                message: __(auth('accounts')->user()->username . " " . __('is install your app') .' '. $app->name),
+                title: __('New App Install'),
+                url: url(url('apps/'.$app->id))
+            );
+        }
         auth('accounts')->user()->apps()->attach($app->id);
 
         Toast::success(__('App installed successfully!'))->autoDismiss(2);
@@ -50,6 +57,14 @@ class CircleAppsController extends Controller
 
     public function uninstall(App $app)
     {
+        if($app->account_id && $app->account_id !== auth('accounts')->id()){
+            $app->account->notifyDB(
+                message: __(auth('accounts')->user()->username . " " . __('is Uninstall your app') .' '. $app->name),
+                title: __('New App Uninstall'),
+                url: url(url('apps/'.$app->id))
+            );
+        }
+
         auth('accounts')->user()->apps()->detach($app->id);
 
         Toast::success(__('App installed successfully!'))->autoDismiss(2);
