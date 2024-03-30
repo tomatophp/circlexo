@@ -13,10 +13,10 @@
     <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Blog')}}</span>
 </x-splade-link>
 
-{{--<x-splade-link :href="route('apps.index')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">--}}
-{{--    <i class="bx bxs-plug text-zinc-100 transition duration-75 group-hover:text-white"></i>--}}
-{{--    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Apps')}}</span>--}}
-{{--</x-splade-link>--}}
+<x-splade-link :href="route('apps.index')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+    <i class="bx bxs-plug text-zinc-100 transition duration-75 group-hover:text-white"></i>
+    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Apps')}}</span>
+</x-splade-link>
 
 
 @foreach(menu('main') as $item)
