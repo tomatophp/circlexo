@@ -1,0 +1,27 @@
+{
+    "name": "CircleContacts",
+    "alias": "circle-contacts",
+    "description": {
+        "ar": "Manage your contacts and customers from your profile",
+        "en": "Manage your contacts and customers from your profile",
+        "gr": "Manage your contacts and customers from your profile",
+        "sp": "Manage your contacts and customers from your profile"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleContacts\\App\\Providers\\CircleContactsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Circle Contacts",
+        "en": "Circle Contacts",
+        "gr": "Circle Contacts",
+        "sp": "Circle Contacts"
+    },
+    "color": "#E84B3C",
+    "icon": "bx bxs-user",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0"
+}

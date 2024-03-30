@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/circlecontacts",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CircleContacts\\": "",
+            "Modules\\CircleContacts\\App\\": "app/",
+            "Modules\\CircleContacts\\Database\\Factories\\": "database/factories/",
+            "Modules\\CircleContacts\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\CircleContacts\\Tests\\": "tests/"
+        }
+    }
+}

@@ -13,21 +13,10 @@
     <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Blog')}}</span>
 </x-splade-link>
 
-@php $providerMenus = \Modules\CircleApps\App\Facades\CircleApps::menus(); @endphp
-
-@foreach($providerMenus as $item)
-    @if($item->group === 'profile' && auth('accounts')->user())
-    <x-splade-link :href="route($item->route)" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
-        <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
-        <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->label}}</span>
-    </x-splade-link>
-    @elseif($item->group !== 'profile')
-        <x-splade-link :href="route($item->route)" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
-            <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
-            <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->label}}</span>
-        </x-splade-link>
-    @endif
-@endforeach
+{{--<x-splade-link :href="route('apps.index')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">--}}
+{{--    <i class="bx bxs-plug text-zinc-100 transition duration-75 group-hover:text-white"></i>--}}
+{{--    <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Apps')}}</span>--}}
+{{--</x-splade-link>--}}
 
 
 @foreach(menu('main') as $item)
@@ -59,6 +48,16 @@
 @endforeach
 
 @if(auth('accounts')->user())
+    @php $providerMenus = \Modules\CircleApps\App\Facades\CircleApps::menus(); @endphp
+
+    @foreach($providerMenus as $item)
+        @if(has_app($item->group))
+            <x-splade-link :href="route($item->route)" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
+                <i class="{{$item->icon}} text-zinc-100 transition duration-75 group-hover:text-white"></i>
+                <span class="ms-3 text-zinc-300 group-hover:text-white">{{$item->label}}</span>
+            </x-splade-link>
+        @endif
+    @endforeach
     <x-splade-link :href="route('profile.index')" class="flex items-center p-2 text-xl rounded-lg hover:bg-zinc-700 group transition-all">
         <i class="bx bx-user-circle text-zinc-100 transition duration-75 group-hover:text-white"></i>
         <span class="ms-3 text-zinc-300 group-hover:text-white">{{__('Profile')}}</span>
