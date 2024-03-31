@@ -61,6 +61,7 @@ Route::middleware(['splade', 'auth:accounts'])->prefix('profile')->name('profile
     Route::get('/followers', [ProfileController::class, 'followers'])->name('followers');
     Route::get('/messages', [ProfileController::class, 'messages'])->name('messages');
     Route::get('/messages/{message}', [ProfileController::class, 'message'])->name('messages.show');
+    Route::get('/messages/info/{profile}', [ProfileController::class, 'messageInfoProfile'])->name('messages.profile-info.show');
     Route::get('/edit/social-accounts', [ProfileController::class, 'socialAccounts'])->name('social-accounts.show');
     Route::post('/edit/social-accounts', [ProfileController::class, 'socialAccountsUpdate'])->name('social-accounts.update');
     Route::get('/edit/password', [ProfileController::class, 'password'])->name('password.show');
