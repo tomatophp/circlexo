@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/tomatophp/circle-contacts/blob/master/art/cover.png)
+![Screenshot](https://github.com/tomatophp/circle-contacts-module/blob/master/art/cover.png)
 
 # Circle Contacts
 

@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/tomatophp/circle-invoices-module/blob/master/art/cover.png)
+
 # Circle Invoices
 
 Invoices Generator With Custom Templates, to generate public invoices and your customer can download it
