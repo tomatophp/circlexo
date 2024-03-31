@@ -68,8 +68,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-12 w-full gap-4 my-4">
-                <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-4 col-span-9">
+            <div class="grid grid-cols-1 md:grid-cols-12 w-full gap-4 my-4">
+                <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-4 col-span-1 lg:col-span-9">
                     <div style="background-image: url('{{$app->getMedia('cover')->first()?->getUrl()}}')" class="bg-cover bg-center w-full h-80 rounded-lg">
 
                     </div>
@@ -78,7 +78,7 @@
                         <x-tomato-markdown-viewer :content="$app->readme" />
                     @endif
                 </div>
-                <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-6 col-span-3 flex flex-col gap-2 justify-start">
+                <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-md border border-zinc-700 p-6 col-span-1 lg:col-span-3 flex flex-col gap-2 justify-start">
                     @if($app->homepage)
                        <div>
                            <h1>{{__('Website')}}</h1>
