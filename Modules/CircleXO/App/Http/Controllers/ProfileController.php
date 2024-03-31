@@ -71,14 +71,37 @@ class ProfileController extends Controller
 
     public function messages(Request $request)
     {
-        return view('circle-xo::profile.messages', [
-            'table' => (new AccountContactTable(auth('accounts')->id()))
+
+        $messages = AccountContact::query();
+        $messages->where('account_id', auth('accounts')->id());
+        $messages->orderBy('id', 'desc');
+        $messages->groupBy('sender_id');
+        if($request->has('search') && $request->get('search')){
+            $messages->whereHas('sender', function($query) use ($request){
+                $query->where('name', 'LIKE', '%'.$request->get('search').'%');
+            });
+        }
+        $chats = $messages->paginate(20);
+
+        $getSelectedChat = null;
+        if($request->has('chat') && $request->get('chat')){
+            $getSelectedChat = AccountContact::find($request->get('chat'));
+        }
+
+        return view('circle-xo::profile.messages',[
+            'chats' => $chats,
+            'getSelectedChat' => $getSelectedChat
         ]);
     }
 
     public function message(Request $request, AccountContact $message)
     {
         return view('circle-xo::profile.message', compact('message'));
+    }
+
+    public function messageInfoProfile(Request $request, $profile)
+    {
+        return view('circle-xo::profile.message-profile-info');
     }
 
     public function qr()
