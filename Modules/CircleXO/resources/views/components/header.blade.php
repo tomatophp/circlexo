@@ -11,7 +11,7 @@
             </x-splade-link>
         </div>
         <div class="w-full flex justify-end text-main-600">
-            @php $headerMenuSlots = \Modules\CircleXo\App\Facades\CircleXo::slots('header-menu'); @endphp
+            @php $headerMenuSlots = \Modules\CircleXO\App\Facades\CircleXo::slots('header-menu'); @endphp
             @foreach($headerMenuSlots as $slot)
                 @if(view()->exists($slot))
                     @include($slot)

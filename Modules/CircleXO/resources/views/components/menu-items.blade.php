@@ -55,7 +55,7 @@
     @endif
 @endforeach
 
-@php $siteMenuSlots = \Modules\CircleXo\App\Facades\CircleXo::slots('side-menu'); @endphp
+@php $siteMenuSlots = \Modules\CircleXO\App\Facades\CircleXo::slots('side-menu'); @endphp
 @foreach($siteMenuSlots as $slot)
     @if(view()->exists($slot))
         @include($slot)

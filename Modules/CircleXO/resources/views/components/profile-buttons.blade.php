@@ -35,7 +35,7 @@
                 <x-tomato-admin-dropdown-item modal type="link" icon="bx bxl-twitter" :label="__('Link Social Account')"
                                               href="{{ route('profile.social-accounts.show') }}"/>
 
-                @php $profileDropdown = \Modules\CircleXo\App\Facades\CircleXo::slots('profile-dropdown'); @endphp
+                @php $profileDropdown = \Modules\CircleXO\App\Facades\CircleXo::slots('profile-dropdown'); @endphp
                 @foreach($profileDropdown as $slot)
                     @if(view()->exists($slot))
                         @include($slot)
@@ -73,7 +73,7 @@
             </x-tomato-admin-tooltip>
         </x-circle-xo-share>
 
-        @php $profileButtons = \Modules\CircleXo\App\Facades\CircleXo::slots('profile-buttons'); @endphp
+        @php $profileButtons = \Modules\CircleXO\App\Facades\CircleXo::slots('profile-buttons'); @endphp
         @foreach($profileButtons as $slot)
             @if(view()->exists($slot))
                 @include($slot)
