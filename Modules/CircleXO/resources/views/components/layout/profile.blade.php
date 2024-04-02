@@ -34,3 +34,8 @@
     </div>
     <x-circle-xo-footer />
 </div>
+
+@if(auth('accounts')->user())
+    <x-splade-event private :channel="'accounts.'.auth('accounts')->user()->id" listen="UserEvent"/>
+@endif
+

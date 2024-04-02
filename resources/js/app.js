@@ -34,6 +34,7 @@ import InstantSearch from 'vue-instantsearch/vue3/es';
 import { MdEditor, MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
 import Search from "./components/Search.vue";
+import SearchDocs from "../../Modules/CircleDocs/resources/assets/js/SearchDocs.vue";
 import vue3StarRatings from "vue3-star-ratings";
 
 import VueSocialSharing from 'vue-social-sharing';
@@ -53,6 +54,7 @@ createApp({
     .component("Recap", Recap)
     .component("Rating", vue3StarRatings)
     .component("Search", Search)
+    .component("SearchDocs", SearchDocs)
     .component("Swiper", Swiper)
     .component("SwiperSlide", SwiperSlide)
     .component('TomatoTable', TomatoTable)

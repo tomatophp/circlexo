@@ -1,0 +1,27 @@
+{
+    "name": "CircleNotes",
+    "alias": "circle-notes",
+    "description": {
+        "ar": "Capture Notes, organize tasks and ideas easily",
+        "en": "Capture Notes, organize tasks and ideas easily",
+        "gr": "Capture Notes, organize tasks and ideas easily",
+        "sp": "Capture Notes, organize tasks and ideas easily"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleNotes\\App\\Providers\\CircleNotesServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Circle Notes",
+        "en": "Circle Notes",
+        "gr": "Circle Notes",
+        "sp": "Circle Notes"
+    },
+    "color": "#fbbc04",
+    "icon": "bx bxs-note",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0"
+}

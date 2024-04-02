@@ -73,7 +73,7 @@ class ProfileNotificationsController extends Controller
         $notifications = UserNotification::where('model_type',config('tomato-crm.model'))
             ->where('model_id', auth('accounts')->user()->id)
             ->orderBy('id', 'desc')
-            ->take(10)->get();
+            ->get();
 
         foreach ($notifications as $notification){
             $notification->read();

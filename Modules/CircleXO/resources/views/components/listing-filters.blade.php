@@ -105,6 +105,13 @@
             color="#8A7407"
             :link="$link"
         />
+
+        @php $profileFilterSlider = \Modules\CircleXo\App\Facades\CircleXo::slots('profile-filter-slider'); @endphp
+        @foreach($profileFilterSlider as $slot)
+            @if(view()->exists($slot))
+                @include($slot)
+            @endif
+        @endforeach
     </Swiper>
 </div>
 

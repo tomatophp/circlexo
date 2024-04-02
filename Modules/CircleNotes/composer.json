@@ -1,0 +1,49 @@
+{
+    "name": "tomatophp/circle-notes-module",
+    "type": "laravel-module",
+    "description": "Capture Notes, organize tasks and ideas easily",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "module",
+        "notes",
+        "profile",
+        "circlexo",
+        "tomatophp"
+    ],
+    "authors": [
+        {
+            "name": "Abdelmjid Saber",
+            "email": "AbdelmjidDev@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CircleNotes\\": "",
+            "Modules\\CircleNotes\\App\\": "app/",
+            "Modules\\CircleNotes\\Database\\Factories\\": "database/factories/",
+            "Modules\\CircleNotes\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\CircleNotes\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/console-helpers": "^1.1",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

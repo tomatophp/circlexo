@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
 use Modules\TomatoCrm\App\Facades\TomatoCrm;
 use ProtoneMedia\Splade\Facades\Splade;

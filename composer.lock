@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b35513fae94b689d1d6bb42dfba0396c",
+    "content-hash": "ed831ca2792de3f2df323f5900d6d50c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -12005,6 +12005,253 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.2.7"
             },
             "time": "2023-12-08T13:03:43+00:00"
+        },
+        {
+            "name": "tomatophp/circle-contacts-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-contacts-module.git",
+                "reference": "0d3ca37f38e52c895097413c45ed6caacb60a3aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-contacts-module/zipball/0d3ca37f38e52c895097413c45ed6caacb60a3aa",
+                "reference": "0d3ca37f38e52c895097413c45ed6caacb60a3aa",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleContacts\\": "",
+                    "Modules\\CircleContacts\\App\\": "app/",
+                    "Modules\\CircleContacts\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleContacts\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Manage your contacts and customers from your profile",
+            "keywords": [
+                "circlexo",
+                "contacts",
+                "customers",
+                "laravel",
+                "module",
+                "profile",
+                "tomatophp"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-contacts-module/issues",
+                "source": "https://github.com/tomatophp/circle-contacts-module/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-02T19:36:00+00:00"
+        },
+        {
+            "name": "tomatophp/circle-docs-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-docs-module.git",
+                "reference": "547c8c097631ade184f30884c3114bf2870aa25f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-docs-module/zipball/547c8c097631ade184f30884c3114bf2870aa25f",
+                "reference": "547c8c097631ade184f30884c3114bf2870aa25f",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleDocs\\": "",
+                    "Modules\\CircleDocs\\App\\": "app/",
+                    "Modules\\CircleDocs\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleDocs\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Create and share, search in your docs using markdown editor and GitHub integration",
+            "keywords": [
+                "circle",
+                "docs",
+                "editor",
+                "github",
+                "integration",
+                "laravel",
+                "markdown",
+                "module"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-docs-module/issues",
+                "source": "https://github.com/tomatophp/circle-docs-module/tree/v1.0.0"
+            },
+            "time": "2024-04-02T19:35:24+00:00"
+        },
+        {
+            "name": "tomatophp/circle-invoices-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-invoices-module.git",
+                "reference": "5c6f55fb17db6bcbf1031c2bc026763e2b952c60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-invoices-module/zipball/5c6f55fb17db6bcbf1031c2bc026763e2b952c60",
+                "reference": "5c6f55fb17db6bcbf1031c2bc026763e2b952c60",
+                "shasum": ""
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleInvoices\\": "",
+                    "Modules\\CircleInvoices\\App\\": "app/",
+                    "Modules\\CircleInvoices\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleInvoices\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-invoices-module/issues",
+                "source": "https://github.com/tomatophp/circle-invoices-module/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-02T19:36:41+00:00"
+        },
+        {
+            "name": "tomatophp/circle-notes-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-notes-module.git",
+                "reference": "66fa5695a8022ee9a2bcf46d7cdd2aafab554d25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-notes-module/zipball/66fa5695a8022ee9a2bcf46d7cdd2aafab554d25",
+                "reference": "66fa5695a8022ee9a2bcf46d7cdd2aafab554d25",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleNotes\\": "",
+                    "Modules\\CircleNotes\\App\\": "app/",
+                    "Modules\\CircleNotes\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleNotes\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdelmjid Saber",
+                    "email": "AbdelmjidDev@gmail.com"
+                }
+            ],
+            "description": "Capture Notes, organize tasks and ideas easily",
+            "keywords": [
+                "circlexo",
+                "laravel",
+                "module",
+                "notes",
+                "profile",
+                "tomatophp"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-notes-module/issues",
+                "source": "https://github.com/tomatophp/circle-notes-module/tree/v1.0.0"
+            },
+            "time": "2024-04-02T19:32:07+00:00"
         },
         {
             "name": "tomatophp/console-helpers",
