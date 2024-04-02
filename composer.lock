@@ -12078,16 +12078,16 @@
         },
         {
             "name": "tomatophp/circle-docs-module",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tomatophp/circle-docs-module.git",
-                "reference": "21f272abe130ce502f6e83207dc17e0efa53432b"
+                "reference": "a62e527369db92439727d524fb0d951f0bcfcd4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomatophp/circle-docs-module/zipball/21f272abe130ce502f6e83207dc17e0efa53432b",
-                "reference": "21f272abe130ce502f6e83207dc17e0efa53432b",
+                "url": "https://api.github.com/repos/tomatophp/circle-docs-module/zipball/a62e527369db92439727d524fb0d951f0bcfcd4d",
+                "reference": "a62e527369db92439727d524fb0d951f0bcfcd4d",
                 "shasum": ""
             },
             "require": {
@@ -12136,7 +12136,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tomatophp/circle-docs-module/issues",
-                "source": "https://github.com/tomatophp/circle-docs-module/tree/v1.0.0"
+                "source": "https://github.com/tomatophp/circle-docs-module/tree/v1.0.1"
             },
             "funding": [
                 {
@@ -12144,7 +12144,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-02T19:47:03+00:00"
+            "time": "2024-04-02T20:08:27+00:00"
         },
         {
             "name": "tomatophp/circle-invoices-module",
