@@ -106,7 +106,7 @@
             :link="$link"
         />
 
-        @php $profileFilterSlider = \Modules\CircleXo\App\Facades\CircleXo::slots('profile-filter-slider'); @endphp
+        @php $profileFilterSlider = \Modules\CircleXO\App\Facades\CircleXo::slots('profile-filter-slider'); @endphp
         @foreach($profileFilterSlider as $slot)
             @if(view()->exists($slot))
                 @include($slot)
