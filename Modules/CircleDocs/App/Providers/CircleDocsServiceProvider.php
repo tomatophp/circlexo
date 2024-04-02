@@ -4,6 +4,7 @@ namespace Modules\CircleDocs\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\CircleApps\App\Facades\CircleAppsMenu;
 use Modules\CircleDocs\App\Console\CircleDocsInstall;
 use Modules\CircleXO\App\Facades\CircleXoSlots;
 

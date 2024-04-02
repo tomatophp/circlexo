@@ -1,18 +1,18 @@
 <?php
 
-namespace Modules\CircleXo\App\Facades;
+namespace Modules\CircleXO\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static array get()
- * @method static void profileSlider()
- * @method static void headerMenu()
- * @method static void sideMenu()
- * @method static void profileFilterSlider()
- * @method static void profileButtons()
- * @method static void profileDropdown()
- * @method static void register(string|array $menus)
+ * @method static static profileSlider()
+ * @method static static headerMenu()
+ * @method static static sideMenu()
+ * @method static static profileFilterSlider()
+ * @method static static profileButtons()
+ * @method static static profileDropdown()
+ * @method static static register(string|array $menus)
  */
 class CircleXoSlots extends Facade
 {

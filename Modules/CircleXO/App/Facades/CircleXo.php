@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\CircleXo\App\Facades;
+namespace Modules\CircleXO\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
