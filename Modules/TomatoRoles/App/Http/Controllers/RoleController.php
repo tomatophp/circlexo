@@ -179,7 +179,7 @@ class RoleController extends Controller
     {
         $prem = Permission::all()->makeHidden(['pivot', 'created_at', 'updated_at']);
 
-        $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
+        $tables = array_map('current', DB::select('SHOW TABLES'));
 
         $permGroup = [];
         foreach ($tables as $item) {
