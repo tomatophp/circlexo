@@ -103,7 +103,6 @@ export default {
     },
     methods:{
         goToProfile(item){
-            console.log(item);
             this.$splade.visit(this.$props.url +"/"+ item.username)
         }
     }

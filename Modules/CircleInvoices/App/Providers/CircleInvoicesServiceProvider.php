@@ -5,6 +5,7 @@ namespace Modules\CircleInvoices\App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\CircleApps\App\Facades\CircleAppsMenu;
+use Modules\CircleApps\App\Facades\CircleXoSlots;
 use Modules\CircleInvoices\App\Console\CircleInvoicesInstall;
 
 class CircleInvoicesServiceProvider extends ServiceProvider

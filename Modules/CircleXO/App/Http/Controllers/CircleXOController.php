@@ -2,11 +2,13 @@
 
 namespace Modules\CircleXO\App\Http\Controllers;
 
+use App\Events\UserEvent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Account;
+use Illuminate\Support\Facades\Event;
 use Modules\CircleXO\App\Models\AccountContact;
 use Modules\CircleXO\App\Models\AccountListing;
 use Modules\TomatoCms\App\Models\Page;
@@ -150,13 +152,22 @@ class CircleXOController extends Controller
             $contact->anonymous_message = $request->get('anonymous_message');
             $contact->save();
 
-            $account->notifyDB(
-                message: $contact->message,
-                title: __('You have a new message'),
-                url: url('profile/messages')
-            );
+            if($request->has('contact') && $request->get('contact')){
+                $account->notifyDB(
+                    message: $contact->message,
+                    title: __('You have a new message'),
+                    url: url('profile/messages')
+                );
+            }
 
-            Toast::success('Message Sent Successfully')->autoDismiss(2);
+            Event::dispatch(new UserEvent($account->id, [
+                'refresh' => true,
+                'data' => $contact->toArray()
+            ]));
+
+            if($request->has('contact') && $request->get('contact')) {
+                Toast::success('Message Sent Successfully')->autoDismiss(2);
+            }
             return redirect()->back();
 
         }
@@ -178,7 +189,7 @@ class CircleXOController extends Controller
             }
             $listing = $query->where('account_id', $account->id)
                 ->where('is_active', true)
-                ->inRandomOrder()
+                ->orderBy('order', 'asc')
                 ->paginate(12);
 
             return view('circle-xo::profile', compact('account', 'listing'));

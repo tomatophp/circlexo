@@ -4,7 +4,7 @@ namespace Modules\CircleApps\App\Services;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Modules\CircleApps\App\Facades\CircleApps;
+use Modules\CircleApps\App\Facades\CircleXo;
 use Spatie\Permission\Models\Role;
 use TomatoPHP\TomatoAdmin\Facade\TomatoMenu as TomatoMenuFacade;
 use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;

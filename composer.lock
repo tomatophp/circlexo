@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b35513fae94b689d1d6bb42dfba0396c",
+    "content-hash": "ed831ca2792de3f2df323f5900d6d50c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2875,16 +2875,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v8.1.0",
+            "version": "v8.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "6a19c4c73717bc81bae52e0718d3b3b3fc0b7e7f"
+                "reference": "037c8a8d4efba70106493eae9669de0244e9f9de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/6a19c4c73717bc81bae52e0718d3b3b3fc0b7e7f",
-                "reference": "6a19c4c73717bc81bae52e0718d3b3b3fc0b7e7f",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/037c8a8d4efba70106493eae9669de0244e9f9de",
+                "reference": "037c8a8d4efba70106493eae9669de0244e9f9de",
                 "shasum": ""
             },
             "require": {
@@ -2941,9 +2941,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/dusk/issues",
-                "source": "https://github.com/laravel/dusk/tree/v8.1.0"
+                "source": "https://github.com/laravel/dusk/tree/v8.1.1"
             },
-            "time": "2024-03-25T16:58:32+00:00"
+            "time": "2024-03-28T09:24:55+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -3012,16 +3012,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.1.1",
+            "version": "v11.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1437cea6d2b04cbc83743fbb208e1a01efccd9ec"
+                "reference": "a1750156b671f37cba702380107e2d22161c31e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1437cea6d2b04cbc83743fbb208e1a01efccd9ec",
-                "reference": "1437cea6d2b04cbc83743fbb208e1a01efccd9ec",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a1750156b671f37cba702380107e2d22161c31e3",
+                "reference": "a1750156b671f37cba702380107e2d22161c31e3",
                 "shasum": ""
             },
             "require": {
@@ -3213,20 +3213,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-03-28T15:07:18+00:00"
+            "time": "2024-04-02T14:01:33+00:00"
         },
         {
             "name": "laravel/jetstream",
-            "version": "v5.0.1",
+            "version": "v5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "33b3a7c2ac02391cbe5088b99d702f624b8746ad"
+                "reference": "152c89b14748ff210c19567c75b58a18742b1957"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/33b3a7c2ac02391cbe5088b99d702f624b8746ad",
-                "reference": "33b3a7c2ac02391cbe5088b99d702f624b8746ad",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/152c89b14748ff210c19567c75b58a18742b1957",
+                "reference": "152c89b14748ff210c19567c75b58a18742b1957",
                 "shasum": ""
             },
             "require": {
@@ -3280,7 +3280,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2024-03-19T20:10:08+00:00"
+            "time": "2024-03-29T14:29:53+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -3341,16 +3341,16 @@
         },
         {
             "name": "laravel/reverb",
-            "version": "v1.0.0-beta4",
+            "version": "v1.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/reverb.git",
-                "reference": "7237ff17a249128218c614a6e0f9cf0a8aca91a9"
+                "reference": "d1b72f46a0af42ca5e84d5c1d0f97b8013c6dac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/reverb/zipball/7237ff17a249128218c614a6e0f9cf0a8aca91a9",
-                "reference": "7237ff17a249128218c614a6e0f9cf0a8aca91a9",
+                "url": "https://api.github.com/repos/laravel/reverb/zipball/d1b72f46a0af42ca5e84d5c1d0f97b8013c6dac3",
+                "reference": "d1b72f46a0af42ca5e84d5c1d0f97b8013c6dac3",
                 "shasum": ""
             },
             "require": {
@@ -3366,6 +3366,7 @@
                 "ratchet/rfc6455": "^0.3.1",
                 "react/promise-timer": "^1.10",
                 "react/socket": "^1.14",
+                "symfony/console": "^6.0|^7.0",
                 "symfony/http-foundation": "^6.3|^7.0"
             },
             "require-dev": {
@@ -3416,9 +3417,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/reverb/issues",
-                "source": "https://github.com/laravel/reverb/tree/v1.0.0-beta4"
+                "source": "https://github.com/laravel/reverb/tree/v1.0.0-beta5"
             },
-            "time": "2024-03-18T17:36:49+00:00"
+            "time": "2024-03-27T17:03:33+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3486,16 +3487,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v10.8.4",
+            "version": "v10.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "de4000a0044c0c13d513132af82562397da70d52"
+                "reference": "db26233becb979d5e2104fa2a931440252a73200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/de4000a0044c0c13d513132af82562397da70d52",
-                "reference": "de4000a0044c0c13d513132af82562397da70d52",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/db26233becb979d5e2104fa2a931440252a73200",
+                "reference": "db26233becb979d5e2104fa2a931440252a73200",
                 "shasum": ""
             },
             "require": {
@@ -3560,7 +3561,7 @@
                 "issues": "https://github.com/laravel/scout/issues",
                 "source": "https://github.com/laravel/scout"
             },
-            "time": "2024-03-26T16:46:57+00:00"
+            "time": "2024-04-02T14:33:18+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -5136,16 +5137,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.2.2",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "2d69b6de67e2a3c0652d0c9dfcfda8b4563c4cee"
+                "reference": "4d599a6e2351d6b6bf21737accdfe1a4ce3fdbb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2d69b6de67e2a3c0652d0c9dfcfda8b4563c4cee",
-                "reference": "2d69b6de67e2a3c0652d0c9dfcfda8b4563c4cee",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4d599a6e2351d6b6bf21737accdfe1a4ce3fdbb1",
+                "reference": "4d599a6e2351d6b6bf21737accdfe1a4ce3fdbb1",
                 "shasum": ""
             },
             "require": {
@@ -5238,7 +5239,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-28T12:59:49+00:00"
+            "time": "2024-03-30T18:22:00+00:00"
         },
         {
             "name": "nette/schema",
@@ -7121,16 +7122,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.2",
+            "version": "v0.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "9185c66c2165bbf4d71de78a69dccf4974f9538d"
+                "reference": "b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/9185c66c2165bbf4d71de78a69dccf4974f9538d",
-                "reference": "9185c66c2165bbf4d71de78a69dccf4974f9538d",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73",
+                "reference": "b6b6cce7d3ee8fbf31843edce5e8f5a72eff4a73",
                 "shasum": ""
             },
             "require": {
@@ -7194,9 +7195,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.2"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.3"
             },
-            "time": "2024-03-17T01:53:00+00:00"
+            "time": "2024-04-02T15:57:53+00:00"
         },
         {
             "name": "pusher/pusher-php-server",
@@ -8304,16 +8305,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "04b3527022dc31daae425f22a328fed646dc3cac"
+                "reference": "b764ca1683facdc1833ea9ee7d735001606fce2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/04b3527022dc31daae425f22a328fed646dc3cac",
-                "reference": "04b3527022dc31daae425f22a328fed646dc3cac",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/b764ca1683facdc1833ea9ee7d735001606fce2b",
+                "reference": "b764ca1683facdc1833ea9ee7d735001606fce2b",
                 "shasum": ""
             },
             "require": {
@@ -8359,7 +8360,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.0.1"
+                "source": "https://github.com/spatie/browsershot/tree/4.0.2"
             },
             "funding": [
                 {
@@ -8367,7 +8368,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-02T17:36:56+00:00"
+            "time": "2024-04-01T08:19:46+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -12007,6 +12008,259 @@
             "time": "2023-12-08T13:03:43+00:00"
         },
         {
+            "name": "tomatophp/circle-contacts-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-contacts-module.git",
+                "reference": "0d3ca37f38e52c895097413c45ed6caacb60a3aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-contacts-module/zipball/0d3ca37f38e52c895097413c45ed6caacb60a3aa",
+                "reference": "0d3ca37f38e52c895097413c45ed6caacb60a3aa",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleContacts\\": "",
+                    "Modules\\CircleContacts\\App\\": "app/",
+                    "Modules\\CircleContacts\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleContacts\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Manage your contacts and customers from your profile",
+            "keywords": [
+                "circlexo",
+                "contacts",
+                "customers",
+                "laravel",
+                "module",
+                "profile",
+                "tomatophp"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-contacts-module/issues",
+                "source": "https://github.com/tomatophp/circle-contacts-module/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-02T19:36:00+00:00"
+        },
+        {
+            "name": "tomatophp/circle-docs-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-docs-module.git",
+                "reference": "21f272abe130ce502f6e83207dc17e0efa53432b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-docs-module/zipball/21f272abe130ce502f6e83207dc17e0efa53432b",
+                "reference": "21f272abe130ce502f6e83207dc17e0efa53432b",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleDocs\\": "",
+                    "Modules\\CircleDocs\\App\\": "app/",
+                    "Modules\\CircleDocs\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleDocs\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Create and share, search in your docs using markdown editor and GitHub integration",
+            "keywords": [
+                "circle",
+                "docs",
+                "editor",
+                "github",
+                "integration",
+                "laravel",
+                "markdown",
+                "module"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-docs-module/issues",
+                "source": "https://github.com/tomatophp/circle-docs-module/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-02T19:47:03+00:00"
+        },
+        {
+            "name": "tomatophp/circle-invoices-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-invoices-module.git",
+                "reference": "5c6f55fb17db6bcbf1031c2bc026763e2b952c60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-invoices-module/zipball/5c6f55fb17db6bcbf1031c2bc026763e2b952c60",
+                "reference": "5c6f55fb17db6bcbf1031c2bc026763e2b952c60",
+                "shasum": ""
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleInvoices\\": "",
+                    "Modules\\CircleInvoices\\App\\": "app/",
+                    "Modules\\CircleInvoices\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleInvoices\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Invoices Generator With Custom Templates, to generate public invoices and your customer can download it",
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-invoices-module/issues",
+                "source": "https://github.com/tomatophp/circle-invoices-module/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-02T19:36:41+00:00"
+        },
+        {
+            "name": "tomatophp/circle-notes-module",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/circle-notes-module.git",
+                "reference": "66fa5695a8022ee9a2bcf46d7cdd2aafab554d25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/circle-notes-module/zipball/66fa5695a8022ee9a2bcf46d7cdd2aafab554d25",
+                "reference": "66fa5695a8022ee9a2bcf46d7cdd2aafab554d25",
+                "shasum": ""
+            },
+            "require": {
+                "joshbrw/laravel-module-installer": "^2.0",
+                "nwidart/laravel-modules": "^10.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/tomato-admin": "^1.2",
+                "tomatophp/tomato-plugins": "^1.2"
+            },
+            "type": "laravel-module",
+            "extra": {
+                "laravel": {
+                    "providers": [],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\CircleNotes\\": "",
+                    "Modules\\CircleNotes\\App\\": "app/",
+                    "Modules\\CircleNotes\\Database\\Seeders\\": "database/seeders/",
+                    "Modules\\CircleNotes\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdelmjid Saber",
+                    "email": "AbdelmjidDev@gmail.com"
+                }
+            ],
+            "description": "Capture Notes, organize tasks and ideas easily",
+            "keywords": [
+                "circlexo",
+                "laravel",
+                "module",
+                "notes",
+                "profile",
+                "tomatophp"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/circle-notes-module/issues",
+                "source": "https://github.com/tomatophp/circle-notes-module/tree/v1.0.0"
+            },
+            "time": "2024-04-02T19:32:07+00:00"
+        },
+        {
             "name": "tomatophp/console-helpers",
             "version": "v1.1.0",
             "source": {
@@ -13096,16 +13350,16 @@
         },
         {
             "name": "tomatophp/tomato-roles-module",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tomatophp/tomato-roles-module.git",
-                "reference": "4dc4aa30d2c27b4dab43e1735ef53be87876791c"
+                "reference": "b66b5845dd6210b929e7242481e46b4dceaf13f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomatophp/tomato-roles-module/zipball/4dc4aa30d2c27b4dab43e1735ef53be87876791c",
-                "reference": "4dc4aa30d2c27b4dab43e1735ef53be87876791c",
+                "url": "https://api.github.com/repos/tomatophp/tomato-roles-module/zipball/b66b5845dd6210b929e7242481e46b4dceaf13f8",
+                "reference": "b66b5845dd6210b929e7242481e46b4dceaf13f8",
                 "shasum": ""
             },
             "require": {
@@ -13160,7 +13414,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tomatophp/tomato-roles-module/issues",
-                "source": "https://github.com/tomatophp/tomato-roles-module/tree/v1.0.2"
+                "source": "https://github.com/tomatophp/tomato-roles-module/tree/v1.0.3"
             },
             "funding": [
                 {
@@ -13168,7 +13422,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-20T13:13:15+00:00"
+            "time": "2024-04-02T15:24:52+00:00"
         },
         {
             "name": "tomatophp/tomato-sections-module",
@@ -14232,16 +14486,16 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.15.0",
+            "version": "v1.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "c52de679b3ac01207016c179d7ce173e4be128c4"
+                "reference": "5f288b5e79938cc72f5c298d384e639de87507c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/c52de679b3ac01207016c179d7ce173e4be128c4",
-                "reference": "c52de679b3ac01207016c179d7ce173e4be128c4",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/5f288b5e79938cc72f5c298d384e639de87507c6",
+                "reference": "5f288b5e79938cc72f5c298d384e639de87507c6",
                 "shasum": ""
             },
             "require": {
@@ -14252,13 +14506,13 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.49.0",
-                "illuminate/view": "^10.43.0",
-                "larastan/larastan": "^2.8.1",
+                "friendsofphp/php-cs-fixer": "^3.52.1",
+                "illuminate/view": "^10.48.4",
+                "larastan/larastan": "^2.9.2",
                 "laravel-zero/framework": "^10.3.0",
-                "mockery/mockery": "^1.6.7",
+                "mockery/mockery": "^1.6.11",
                 "nunomaduro/termwind": "^1.15.1",
-                "pestphp/pest": "^2.33.6"
+                "pestphp/pest": "^2.34.5"
             },
             "bin": [
                 "builds/pint"
@@ -14294,7 +14548,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2024-03-26T16:40:24+00:00"
+            "time": "2024-04-02T14:28:47+00:00"
         },
         {
             "name": "laravel/sail",
@@ -16650,16 +16904,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "e23f4e8ce6644dc3d68b9d8a0aed3beaca0d6ada"
+                "reference": "0c864b3cbd66ce67a2096c5f743e07ce8f1d6ab9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/e23f4e8ce6644dc3d68b9d8a0aed3beaca0d6ada",
-                "reference": "e23f4e8ce6644dc3d68b9d8a0aed3beaca0d6ada",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/0c864b3cbd66ce67a2096c5f743e07ce8f1d6ab9",
+                "reference": "0c864b3cbd66ce67a2096c5f743e07ce8f1d6ab9",
                 "shasum": ""
             },
             "require": {
@@ -16738,7 +16992,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-29T14:14:55+00:00"
+            "time": "2024-04-02T06:30:22+00:00"
         },
         {
             "name": "symfony/yaml",

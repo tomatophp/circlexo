@@ -19,6 +19,10 @@ use ProtoneMedia\Splade\Facades\Toast;
 class AuthController extends Controller
 {
 
+    public function broadcasting(Request $request)
+    {
+        dd($request->all());
+    }
     public function provider($provider)
     {
         try {
@@ -188,7 +192,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:accounts',
+            'username' => 'required|string|max:255|regex:/\w*$/|unique:accounts',
             'email' => 'required|string|email|max:255|unique:accounts',
             'password' => 'required|string|min:8|confirmed',
         ]);

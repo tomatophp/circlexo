@@ -19,7 +19,6 @@ use Modules\CircleXO\App\Http\Controllers\ProfileActionsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::middleware(['splade', 'auth', 'web'])->group(function (){
     Route::post('/account/{account}', [CircleXOController::class, 'verify'])->name('account.verify');
 });

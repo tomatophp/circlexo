@@ -24,7 +24,6 @@
     "placeholder": "placeholder.webp",
     "type": "plugin",
     "version": "v1.0",
-    "github": "https:\/\/github.com\/tomatophp\/tomato-roles-module",
-    "docs": "https:\/\/docs.tomatophp.com\/plugins\/tomato-roles",
-    "active": false
+    "github" : "https://github.com/tomatophp/tomato-roles-module",
+    "docs" : "https://docs.tomatophp.com/plugins/tomato-roles"
 }

@@ -42,7 +42,7 @@
                         <div class="flex flex-col justify-center items-center">
                             @if(!auth('accounts')->user()->hasLiked($post))
                                 <x-tomato-admin-tooltip :text="__('Like')">
-                                    <x-splade-link :href="route('home.posts.like', ['username' => $account->username, 'post' => $post])" method="POST" class="w-full">
+                                    <x-splade-link preserve-scroll :href="route('home.posts.like', ['username' => $account->username, 'post' => $post])" method="POST" class="w-full">
                                         <div class="flex justify-start gap-2">
                                             <div class="bg-zinc-700 p-3 rounded-lg text-white flex flex-col justify-center items-center">
                                                 <i class="bx bxs-like text-lg"></i>
@@ -57,7 +57,7 @@
                                 </x-tomato-admin-tooltip>
                             @else
                                 <x-tomato-admin-tooltip :text="__('Dislike')">
-                                    <x-splade-link :href="route('home.posts.unlike', ['username' => $account->username, 'post' => $post])" method="POST" class="w-full flex justify-start gap-2">
+                                    <x-splade-link preserve-scroll :href="route('home.posts.unlike', ['username' => $account->username, 'post' => $post])" method="POST" class="w-full flex justify-start gap-2">
                                         <div class="flex justify-start gap-2">
                                             <div class=" bg-primary-600 p-3 rounded-lg text-white flex flex-col justify-center items-center">
                                                 <i class="bx bxs-like text-lg"></i>

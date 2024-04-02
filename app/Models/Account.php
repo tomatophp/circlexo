@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use App\Events\UserEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Event;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
 use Modules\CircleApps\App\Models\App;
+use Modules\TomatoNotifications\App\Jobs\NotifyDatabaseJob;
 use Modules\TomatoNotifications\App\Traits\InteractWithNotifications;
 use Multicaret\Acquaintances\Traits\CanBeLiked;
 use Multicaret\Acquaintances\Traits\CanBeRated;
@@ -106,6 +109,22 @@ class Account extends Authenticatable implements HasMedia
         'social',
         'bio',
     ];
+
+    public function notifyDB(string $message, ?string $title=null, ?string $url =null)
+    {
+        Event::dispatch(new UserEvent($this->id, [
+            'flash' => $title . ' | ' .$message,
+            'flash_type' => 'success'
+        ]));
+
+        dispatch(new NotifyDatabaseJob([
+            'model_type' => get_called_class(),
+            'model_id' => $this->id,
+            'subject' => $title,
+            'message' => $message,
+            'url' => $url,
+        ]));
+    }
 
 
     public function apps()

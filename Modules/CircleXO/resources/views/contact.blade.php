@@ -4,6 +4,7 @@
 
 @section('content')
     <x-splade-form :default="[
+        'contact' => true,
         'anonymous_message' => false,
         'name' => auth('accounts')->user() ? auth('accounts')->user()->name : null,
         'email' => auth('accounts')->user() ? auth('accounts')->user()->email :null,

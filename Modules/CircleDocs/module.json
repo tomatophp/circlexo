@@ -1,0 +1,27 @@
+{
+    "name": "CircleDocs",
+    "alias": "circle-docs",
+    "description": {
+        "ar": "Create and share, search in your docs using markdown editor and GitHub integration",
+        "en": "Create and share, search in your docs using markdown editor and GitHub integration",
+        "gr": "Create and share, search in your docs using markdown editor and GitHub integration",
+        "sp": "Create and share, search in your docs using markdown editor and GitHub integration"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CircleDocs\\App\\Providers\\CircleDocsServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Circle Docs",
+        "en": "Circle Docs",
+        "gr": "Circle Docs",
+        "sp": "Circle Docs"
+    },
+    "color": "#E84B3C",
+    "icon": "bx bxl-github",
+    "placeholder": "placeholder.webp",
+    "type": "plugin",
+    "version": "v1.0"
+}

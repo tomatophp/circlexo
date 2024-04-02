@@ -1,0 +1,51 @@
+{
+    "name": "tomatophp/circle-docs-module",
+    "type": "laravel-module",
+    "description": "Create and share, search in your docs using markdown editor and GitHub integration",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "module",
+        "circle",
+        "docs",
+        "markdown",
+        "editor",
+        "github",
+        "integration"
+    ],
+    "authors": [
+        {
+            "name": "Fady Mondy",
+            "email": "info@3x1.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\CircleDocs\\": "",
+            "Modules\\CircleDocs\\App\\": "app/",
+            "Modules\\CircleDocs\\Database\\Factories\\": "database/factories/",
+            "Modules\\CircleDocs\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\CircleDocs\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1|^8.2",
+        "tomatophp/tomato-admin": "^1.2",
+        "tomatophp/tomato-plugins": "^1.2",
+        "tomatophp/console-helpers": "^1.1",
+        "joshbrw/laravel-module-installer": "^2.0",
+        "nwidart/laravel-modules": "^10.0"
+    }
+}

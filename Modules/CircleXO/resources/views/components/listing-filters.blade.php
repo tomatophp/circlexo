@@ -2,14 +2,23 @@
     <Swiper
         :breakpoints="{
           '350': {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 10,
           },
           '768': {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          '1024': {
             slidesPerView: 4,
             spaceBetween: 10,
           },
           '1024': {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+
+          '1900': {
             slidesPerView: 5,
             spaceBetween: 10,
           },
@@ -96,6 +105,13 @@
             color="#8A7407"
             :link="$link"
         />
+
+        @php $profileFilterSlider = \Modules\CircleXo\App\Facades\CircleXo::slots('profile-filter-slider'); @endphp
+        @foreach($profileFilterSlider as $slot)
+            @if(view()->exists($slot))
+                @include($slot)
+            @endif
+        @endforeach
     </Swiper>
 </div>
 

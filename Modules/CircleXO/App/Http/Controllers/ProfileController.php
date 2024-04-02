@@ -81,7 +81,7 @@ class ProfileController extends Controller
                 $query->where('name', 'LIKE', '%'.$request->get('search').'%');
             });
         }
-        $chats = $messages->paginate(20);
+        $chats = $messages->paginate(2);
 
         $getSelectedChat = null;
         if($request->has('chat') && $request->get('chat')){
