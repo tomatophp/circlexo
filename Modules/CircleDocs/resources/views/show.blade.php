@@ -1,3 +1,22 @@
+@php
+    SEO::openGraphType('WebPage');
+    SEO::openGraphSiteName(setting('site_name'));
+    SEO::openGraphTitle((isset($currentPage) ? $doc->name . ' | ' . $currentPage->title : $doc->name) .' | '. setting('site_name'));
+    SEO::openGraphUrl(url()->current());
+    SEO::openGraphImage((isset($currentPage) ? $currentPage->getMedia('cover')->first()?->getUrl() : $doc->getMedia('cover')->first()?->getUrl()) ?: setting('site_profile'));
+    SEO::metaByProperty('og:description',(isset($currentPage) ? $currentPage->description : $doc->description) ?: setting('site_description'));
+
+    SEO::twitterCard('summary_large_image');
+    SEO::twitterTitle((isset($currentPage) ? $doc->name . ' | ' . $currentPage->title : $doc->name) .' | '. setting('site_name'));
+    SEO::twitterDescription((isset($currentPage) ? $currentPage->description : $doc->description) ?: setting('site_description'));
+    SEO::twitterImage((isset($currentPage) ? $currentPage->getMedia('cover')->first()?->getUrl() : $doc->getMedia('cover')->first()?->getUrl()) ?: setting('site_profile'));
+
+    SEO::canonical(url()->current());
+@endphp
+@seoTitle((isset($currentPage) ? $doc->name . ' | ' . $currentPage->title : $doc->name) .' | '. setting('site_name'))
+@seoDescription((isset($currentPage) ? $currentPage->description : $doc->description) ?: setting('site_description'))
+@seoKeywords(setting('site_keywords'))
+
 <x-circle-xo-public-profile-layout :account="$account">
     <div class="w-full py-4 px-8 mt-4 border-b border-zinc-700">
         <div class="flex justify-between">
