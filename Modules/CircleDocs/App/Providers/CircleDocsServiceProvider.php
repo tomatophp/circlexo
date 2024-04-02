@@ -4,9 +4,8 @@ namespace Modules\CircleDocs\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Modules\CircleApps\App\Facades\CircleAppsMenu;
 use Modules\CircleDocs\App\Console\CircleDocsInstall;
-use Modules\CircleXo\App\Facades\CircleXoSlots;
+use Modules\CircleXO\App\Facades\CircleXoSlots;
 
 class CircleDocsServiceProvider extends ServiceProvider
 {
