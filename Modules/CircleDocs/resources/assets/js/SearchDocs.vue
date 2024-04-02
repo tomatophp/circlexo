@@ -80,6 +80,14 @@ export default {
             type: Number,
             required: true
         },
+        username: {
+            type: String,
+            required: true
+        },
+        package: {
+            type: String,
+            required: true
+        },
         url: {
             type: String,
             required: true
@@ -98,10 +106,9 @@ export default {
             ).searchClient
         };
     },
-    methods:{
-        goToProfile(item){
-            console.log(item);
-            this.$splade.visit(this.$props.url +"/"+ item.username)
+    methods: {
+        goToProfile(item) {
+            this.$splade.visit(this.$props.url + "/" + this.$props.username + "/docs/" + this.$props.package + "/" + item.slug)
         }
     }
 }
