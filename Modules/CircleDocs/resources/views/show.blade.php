@@ -260,7 +260,7 @@
         <x-slot:title>
             {{__('Docs Search')}}
         </x-slot:title>
-        <SearchDocs url="{{ url('/') }}" id="{{$doc->id}}" placeholder="{{__('Search By Any Thing On Docs')}}" />
+        <SearchDocs url="{{ url('/') }}" id="{{$doc->id}}" username="{{$account->username}}" package="{{$doc->package}}" placeholder="{{__('Search By Any Thing On Docs')}}" />
     </x-splade-modal>
 </x-circle-xo-public-profile-layout>
 
