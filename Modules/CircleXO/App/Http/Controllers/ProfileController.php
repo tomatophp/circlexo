@@ -81,7 +81,7 @@ class ProfileController extends Controller
                 $query->where('name', 'LIKE', '%'.$request->get('search').'%');
             });
         }
-        $chats = $messages->paginate(2);
+        $chats = $messages->paginate(20);
 
         $getSelectedChat = null;
         if($request->has('chat') && $request->get('chat')){
@@ -215,6 +215,7 @@ class ProfileController extends Controller
         $request->validate([
             "name" => "required|string|max:255",
             "bio" => "nullable|string|max:255",
+            "lang" => "nullable|string|max:255",
             "username" => "required|string|max:255|unique:accounts,username,".auth('accounts')->id(),
             "email" => "required|string|email|max:255|unique:accounts,email,".auth('accounts')->id(),
         ]);
@@ -222,6 +223,11 @@ class ProfileController extends Controller
         $account = auth('accounts')->user();
 
         $account->update($request->all());
+
+
+        if($request->has('lang') && !empty($request->get('lang'))){
+            $account->meta('lang', $request->get('lang'));
+        }
 
         if($request->has('bio') && !empty($request->get('bio'))){
             $account->meta('bio', $request->get('bio'));
