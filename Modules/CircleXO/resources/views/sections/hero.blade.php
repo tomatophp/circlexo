@@ -23,13 +23,15 @@
             @php
                 $accounts = \App\Models\Account::inRandomOrder()->take($section['profile_count'] ?? 4)->get();
             @endphp
-            <CardsSlider>
-                @foreach ($accounts as $account)
-                    <swiper-slide>
-                        <x-circle-xo-profile-card :account="$account" />
-                    </swiper-slide>
-                @endforeach
-            </CardsSlider>
+            <div style="direction: ltr !important;">
+                <CardsSlider>
+                    @foreach ($accounts as $account)
+                        <swiper-slide>
+                            <x-circle-xo-profile-card :account="$account" />
+                        </swiper-slide>
+                    @endforeach
+                </CardsSlider>
+            </div>
         </div>
     </div>
 </section>

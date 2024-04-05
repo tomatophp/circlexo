@@ -42,6 +42,8 @@ class CircleXOServiceProvider extends ServiceProvider
         $this->app->bind('circle-xo-slots', function () {
             return new \Modules\CircleXO\App\Services\CircleSlotServices();
         });
+
+        $this->app['router']->pushMiddlewareToGroup('web', \Modules\CircleXO\App\Http\Middleware\LangMiddleware::class);
     }
 
     public function registerComponents(): void

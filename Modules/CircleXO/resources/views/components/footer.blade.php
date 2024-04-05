@@ -49,3 +49,12 @@
         @endif
     </nav>
 </footer>
+
+<x-splade-script>
+    let htmlEl = document.querySelector("html");
+    if ("{{app()->getLocale()}}" === "ar") {
+        htmlEl.setAttribute("dir", "rtl");
+    } else {
+        htmlEl.setAttribute("dir", "ltr");
+    }
+</x-splade-script>
